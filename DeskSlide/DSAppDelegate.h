@@ -12,4 +12,11 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+
+
+// parse login
+- (void)presentLoginViewController:(UIViewController*)controller animated:(BOOL)animated;
+- (void)logOut;
+
+
 @end

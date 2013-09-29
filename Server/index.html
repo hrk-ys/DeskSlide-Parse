@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Desk Slide</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+
+	<script src="//code.jquery.com/jquery.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+	<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
+	<script src="js/desk-slide.js"></script>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+    <![endif]-->
+	<style>
+.form-regist .form-regist-heading,
+.form-regist .checkbox {
+  margin-bottom: 10px;
+}
+.form-regist input[type="file"] {
+  font-size: 12px;
+}
+.form-regist a {
+  margin-top: 10px;
+}
+	</style>
+  </head>
+
+  <body style="padding-top:50px;">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Desk Slide</a>
+		</div>
+        <div class="navbar-collapse collapse">
+		  <ul class="nav navbar-nav navbar-right">
+            <li><a class="navbar-brand logout" href="#">Logout</a></li>
+		  </ul>
+		</div>
+      </div>
+    </div>
+
+	<div class="jumbotron">
+      <div class="container">
+	    <form class="form-regist">
+	    <div class="row">
+		  <div class="col-lg-6">
+		    <h2 class='form-regist-heading'>input text</h2>
+			<textarea id="text-document" class="form-control" rows="4"></textarea>
+		  </div>
+		  <div class="col-lg-6">
+		    <h2 class='form-regist-heading'>input file</h2>
+			<input type="file" id="exampleInputFile"></input>
+		  </div>
+		  <div class="col-lg-8 col-lg-offset-2">
+            <a id="regist-document" class="btn btn-lg btn-primary btn-block" >Regist</a>
+		  </div>
+		</div>
+        </form>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row" id="document">
+      </div>
+    </div>
+  </body>
+</html>
+  

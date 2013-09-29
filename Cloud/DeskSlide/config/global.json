@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "DeskSlide": {
+            "applicationId": "pFG9MpdcFCveSEsE7sD3gHQPa1UeH2ikIOeg2vFS", 
+            "masterKey": "ityTo44Sk7ontzC7CxUrH7TIY2N1iGQaxXubgCs6"
+        }, 
+        "_default": {
+            "link": "DeskSlide"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.12"
+    }
+}

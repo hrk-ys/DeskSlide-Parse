@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		428906B4306148B29122289D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2BE02A234641CD9A2FB596 /* libPods.a */; };
 		E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7317F02353008C7968 /* UIKit.framework */; };
 		E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7517F02353008C7968 /* Foundation.framework */; };
 		E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7717F02353008C7968 /* CoreGraphics.framework */; };
@@ -18,6 +19,12 @@
 		E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E922FA8917F02353008C7968 /* Default-568h@2x.png */; };
 		E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */; };
 		E922FA9017F02353008C7968 /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FA8F17F02353008C7968 /* DSViewController.m */; };
+		E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FAC817F04885008C7968 /* DSLoginViewController.m */; };
+		E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E78B17F074CC00544C88 /* bg@2x.png */; };
+		E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */; };
+		E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79217F07DB800544C88 /* DSToolView.m */; };
+		E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79517F0A3CC00544C88 /* DSConstants.m */; };
+		E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79817F0A92800544C88 /* DSDocumentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +44,19 @@
 		E922FA8C17F02353008C7968 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E922FA8E17F02353008C7968 /* DSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSViewController.h; sourceTree = "<group>"; };
 		E922FA8F17F02353008C7968 /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
+		E922FAC717F04885008C7968 /* DSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLoginViewController.h; sourceTree = "<group>"; };
+		E922FAC817F04885008C7968 /* DSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLoginViewController.m; sourceTree = "<group>"; };
+		E9B0E78B17F074CC00544C88 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
+		E9B0E78D17F07B0800544C88 /* DSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingViewController.h; sourceTree = "<group>"; };
+		E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSettingViewController.m; sourceTree = "<group>"; };
+		E9B0E79117F07DB800544C88 /* DSToolView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSToolView.h; sourceTree = "<group>"; };
+		E9B0E79217F07DB800544C88 /* DSToolView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSToolView.m; sourceTree = "<group>"; };
+		E9B0E79417F0A3CC00544C88 /* DSConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSConstants.h; sourceTree = "<group>"; };
+		E9B0E79517F0A3CC00544C88 /* DSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSConstants.m; sourceTree = "<group>"; };
+		E9B0E79717F0A92800544C88 /* DSDocumentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDocumentCell.h; sourceTree = "<group>"; };
+		E9B0E79817F0A92800544C88 /* DSDocumentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDocumentCell.m; sourceTree = "<group>"; };
+		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		FB2BE02A234641CD9A2FB596 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +67,7 @@
 				E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */,
 				E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */,
 				E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */,
+				428906B4306148B29122289D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +80,7 @@
 				E922FA7917F02353008C7968 /* DeskSlide */,
 				E922FA7217F02353008C7968 /* Frameworks */,
 				E922FA7117F02353008C7968 /* Products */,
+				FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +98,7 @@
 				E922FA7317F02353008C7968 /* UIKit.framework */,
 				E922FA7517F02353008C7968 /* Foundation.framework */,
 				E922FA7717F02353008C7968 /* CoreGraphics.framework */,
+				FB2BE02A234641CD9A2FB596 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -83,11 +106,19 @@
 		E922FA7917F02353008C7968 /* DeskSlide */ = {
 			isa = PBXGroup;
 			children = (
+				E9B0E78817F06CB800544C88 /* Category */,
+				E922FAC617F04846008C7968 /* Controllers */,
+				E9B0E79017F07D9C00544C88 /* Views */,
+				E9B0E79417F0A3CC00544C88 /* DSConstants.h */,
+				E9B0E79517F0A3CC00544C88 /* DSConstants.m */,
 				E922FA8217F02353008C7968 /* DSAppDelegate.h */,
 				E922FA8317F02353008C7968 /* DSAppDelegate.m */,
 				E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */,
 				E922FA8E17F02353008C7968 /* DSViewController.h */,
 				E922FA8F17F02353008C7968 /* DSViewController.m */,
+				E9B0E78D17F07B0800544C88 /* DSSettingViewController.h */,
+				E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */,
+				E9B0E78A17F074CC00544C88 /* Resource */,
 				E922FA7A17F02353008C7968 /* Supporting Files */,
 			);
 			path = DeskSlide;
@@ -107,6 +138,41 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E922FAC617F04846008C7968 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E922FAC717F04885008C7968 /* DSLoginViewController.h */,
+				E922FAC817F04885008C7968 /* DSLoginViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		E9B0E78817F06CB800544C88 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
+		E9B0E78A17F074CC00544C88 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0E78B17F074CC00544C88 /* bg@2x.png */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		E9B0E79017F07D9C00544C88 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E9B0E79117F07DB800544C88 /* DSToolView.h */,
+				E9B0E79217F07DB800544C88 /* DSToolView.m */,
+				E9B0E79717F0A92800544C88 /* DSDocumentCell.h */,
+				E9B0E79817F0A92800544C88 /* DSDocumentCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E922FA9317F02353008C7968 /* Build configuration list for PBXNativeTarget "DeskSlide" */;
 			buildPhases = (
+				B2DD17FB0C5F4DAF912F2792 /* Check Pods Manifest.lock */,
 				E922FA6C17F02353008C7968 /* Sources */,
 				E922FA6D17F02353008C7968 /* Frameworks */,
 				E922FA6E17F02353008C7968 /* Resources */,
+				C2CFD37846F44FBAB195034B /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -164,10 +232,44 @@
 				E922FA8817F02353008C7968 /* Default@2x.png in Resources */,
 				E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */,
 				E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */,
+				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B2DD17FB0C5F4DAF912F2792 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C2CFD37846F44FBAB195034B /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E922FA6C17F02353008C7968 /* Sources */ = {
@@ -177,6 +279,11 @@
 				E922FA8017F02353008C7968 /* main.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
+				E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */,
+				E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */,
+				E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */,
+				E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */,
+				E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +367,7 @@
 		};
 		E922FA9417F02353008C7968 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -271,6 +379,7 @@
 		};
 		E922FA9517F02353008C7968 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -299,6 +408,7 @@
 				E922FA9517F02353008C7968 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -11,4 +11,17 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+    #import <Parse/Parse.h>
+    #import <HYUtils/HYUtils.h>
+#import <FontAwesomeKit.h>
+    #import "DSConstants.h"
+#import "DSToolView.h"
+
 #endif
+
+//#ifdef DEBUG
+static const int ddLogLevel = LOG_LEVEL_VERBOSE;
+//#else
+//static const int ddLogLevel  = LOG_LEVEL_OFF;
+//#end

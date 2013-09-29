@@ -1,0 +1,45 @@
+//
+//  DSDocumentCell.m
+//  DeskSlide
+//
+//  Created by Hiroki Yoshifuji on 2013/09/24.
+//  Copyright (c) 2013年 Hiroki Yoshifuji. All rights reserved.
+//
+
+#import "DSDocumentCell.h"
+
+@implementation DSDocumentCell
+
+- (id)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self) {
+        // Initialization code
+    }
+    return self;
+}
+
+- (void)setDocument:(PFObject*)object
+{
+    LOGTrace;
+    if ([[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeText]) {
+        NSDictionary* attributes = @{FAKImageAttributeForegroundColor: [UIColor colorWithWhite:0.400 alpha:1.000]};
+        self.bgImageView.image = [FontAwesomeKit imageForIcon:FAKIconFileText
+                                                     imageSize:CGSizeMake(70, 70)
+                                                      fontSize:70
+                                                    attributes:attributes];
+    } else {
+        self.bgImageView = nil;
+    }
+    self.textLabel.text = [object objectForKey:kDSDocumentTextKey];
+}
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
+{
+    // Drawing code
+}
+*/
+
+@end
