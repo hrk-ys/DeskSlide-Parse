@@ -25,6 +25,7 @@
 		E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79217F07DB800544C88 /* DSToolView.m */; };
 		E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79517F0A3CC00544C88 /* DSConstants.m */; };
 		E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79817F0A92800544C88 /* DSDocumentCell.m */; };
+		E9B0E7A517F8850800544C88 /* DSPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E7A417F8850800544C88 /* DSPreviewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		E9B0E79517F0A3CC00544C88 /* DSConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSConstants.m; sourceTree = "<group>"; };
 		E9B0E79717F0A92800544C88 /* DSDocumentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSDocumentCell.h; sourceTree = "<group>"; };
 		E9B0E79817F0A92800544C88 /* DSDocumentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSDocumentCell.m; sourceTree = "<group>"; };
+		E9B0E7A317F8850700544C88 /* DSPreviewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSPreviewViewController.h; sourceTree = "<group>"; };
+		E9B0E7A417F8850800544C88 /* DSPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPreviewViewController.m; sourceTree = "<group>"; };
 		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB2BE02A234641CD9A2FB596 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -116,6 +119,8 @@
 				E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */,
 				E922FA8E17F02353008C7968 /* DSViewController.h */,
 				E922FA8F17F02353008C7968 /* DSViewController.m */,
+				E9B0E7A317F8850700544C88 /* DSPreviewViewController.h */,
+				E9B0E7A417F8850800544C88 /* DSPreviewViewController.m */,
 				E9B0E78D17F07B0800544C88 /* DSSettingViewController.h */,
 				E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */,
 				E9B0E78A17F074CC00544C88 /* Resource */,
@@ -284,6 +289,7 @@
 				E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */,
 				E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */,
 				E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */,
+				E9B0E7A517F8850800544C88 /* DSPreviewViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

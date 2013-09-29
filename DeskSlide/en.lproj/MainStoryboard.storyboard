@@ -9,15 +9,15 @@
             <objects>
                 <viewController restorationIdentifier="" storyboardIdentifier="Main" id="2" customClass="DSViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg@2x.png" id="6wb-eD-fu7" userLabel="bg">
-                                <rect key="frame" x="0.0" y="0.0" width="325" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="325" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rdc-8l-Usx">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BzS-a6-PmY">
@@ -34,7 +34,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="ih8-ry-8PI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="ih8-ry-8PI">
                                                     <rect key="frame" x="5" y="5" width="60" height="60"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
@@ -52,6 +52,7 @@
                                         <connections>
                                             <outlet property="bgImageView" destination="ih8-ry-8PI" id="5GZ-OC-tAX"/>
                                             <outlet property="textLabel" destination="duk-19-Wgo" id="chi-Nu-Ilz"/>
+                                            <segue destination="Vw7-Wb-jH5" kind="push" id="vuU-vO-5Jt"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -61,7 +62,7 @@
                                 </connections>
                             </collectionView>
                             <view contentMode="scaleToFill" id="Wgh-oV-lG3" userLabel="toolView" customClass="DSToolView">
-                                <rect key="frame" x="20" y="492" width="280" height="44"/>
+                                <rect key="frame" x="20" y="404" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="o2W-3z-Xe5" userLabel="textButton">
@@ -90,6 +91,9 @@
                                         <state key="highlighted">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedLibrary:" destination="2" eventType="touchUpInside" id="XgK-rE-Af7"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="yB2-Iw-p2X" userLabel="settingButton">
                                         <rect key="frame" x="200" y="0.0" width="80" height="44"/>
@@ -140,16 +144,78 @@
             </objects>
             <point key="canvasLocation" x="409" y="-34"/>
         </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="VLL-Xd-veL">
+            <objects>
+                <viewController id="Vw7-Wb-jH5" customClass="DSPreviewViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YKC-JX-Tlg">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg@2x.png" id="otS-NX-UFQ" userLabel="bg">
+                                <rect key="frame" x="0.0" y="0.0" width="325" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" id="JhQ-Aq-NLj">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" id="cWH-Gh-4y8">
+                                <rect key="frame" x="20" y="20" width="280" height="420"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
+                            </textView>
+                            <view contentMode="scaleToFill" id="gbD-Ln-8sz" userLabel="toolView" customClass="DSToolView">
+                                <rect key="frame" x="20" y="404" width="280" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="OhJ-ce-2Sa" userLabel="closeButton">
+                                        <rect key="frame" x="190" y="0.0" width="90" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="Close">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedCloseButton:" destination="Vw7-Wb-jH5" eventType="touchUpInside" id="ltn-00-Dh6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.064705141130000005" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fam-1Q-zzg"/>
+                    <connections>
+                        <outlet property="closeButton" destination="OhJ-ce-2Sa" id="CsX-Hd-Vam"/>
+                        <outlet property="imageView" destination="JhQ-Aq-NLj" id="YIM-Pv-lsS"/>
+                        <outlet property="textView" destination="cWH-Gh-4y8" id="K0h-9Q-BRX"/>
+                        <outlet property="toolView" destination="gbD-Ln-8sz" id="WPs-kf-lQE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7ma-rm-5D6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="-34"/>
+        </scene>
         <!--Setting View Controller-->
         <scene sceneID="G0Q-Bp-NvH">
             <objects>
                 <tableViewController id="KwD-2w-4j1" customClass="DSSettingViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="f37-eV-cfs">
-                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Cpf-9p-7Uc" userLabel="toolView" customClass="DSToolView">
-                            <rect key="frame" x="0.0" y="110" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="toX-aN-R4i" userLabel="settingButton">
@@ -226,7 +292,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ysk-Ds-5D8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="843" y="-34"/>
+            <point key="canvasLocation" x="957" y="646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dfQ-oO-Xam">
@@ -256,10 +322,18 @@
                 <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
+        <class className="DSPreviewViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/DSPreviewViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="toolView" candidateClass="DSToolView"/>
+            </relationships>
+        </class>
         <class className="DSSettingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSSettingViewController.h"/>
             <relationships>
-                <relationship kind="action" name="tappedCloseButton:"/>
                 <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="toolView" candidateClass="DSToolView"/>
             </relationships>
@@ -270,6 +344,7 @@
         <class className="DSViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tappedLibrary:"/>
                 <relationship kind="action" name="tappedRefreshButton:"/>
                 <relationship kind="action" name="tappedTextButton:"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
@@ -289,13 +364,10 @@
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
         </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
-        </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

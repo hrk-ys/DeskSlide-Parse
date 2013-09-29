@@ -41,6 +41,7 @@ install_resource()
 }
 install_resource "Facebook-iOS-SDK/src/FBUserSettingsViewResources.bundle"
 install_resource "FontAwesomeKit/FontAwesomeKit/FontAwesome.otf"
+install_resource "SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle"
 
 rsync -avr --no-relative --exclude '*/.svn/*' --files-from="$RESOURCES_TO_COPY" / "${CONFIGURATION_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
 rm -f "$RESOURCES_TO_COPY"

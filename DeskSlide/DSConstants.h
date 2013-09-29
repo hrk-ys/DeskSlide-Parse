@@ -17,6 +17,8 @@ extern NSString *const kDSDocumentClassKey;
 // Field keys
 extern NSString *const kDSDocumentTypeKey;
 extern NSString *const kDSDocumentTextKey;
+extern NSString *const kDSDocumentFileKey;
 
 // DocumentType
 extern NSString *const kDSDocumentTypeText;
+extern NSString *const kDSDocumentTypeFile;

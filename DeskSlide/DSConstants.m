@@ -18,7 +18,9 @@ NSString *const kDSDocumentClassKey = @"Document";
 // Field keys
 NSString *const kDSDocumentTypeKey  = @"type";
 NSString *const kDSDocumentTextKey  = @"text";
+NSString *const kDSDocumentFileKey  = @"file";
 
 
 // DocumentType
 NSString *const kDSDocumentTypeText = @"text";
+NSString *const kDSDocumentTypeFile = @"file";

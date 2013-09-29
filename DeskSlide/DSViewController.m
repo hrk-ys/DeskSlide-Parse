@@ -10,9 +10,13 @@
 
 #import "DSAppDelegate.h"
 #import "DSDocumentCell.h"
+#import "DSPreviewViewController.h"
+
+#import <SVProgressHUD.h>
 
 @interface DSViewController ()
-<UICollectionViewDataSource, UICollectionViewDelegate>
+<UICollectionViewDataSource, UICollectionViewDelegate,
+UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -131,7 +135,6 @@
     LOGTrace;
     
     PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
-//    [photo setObject:[PFUser currentUser] forKey:kPAPPhotoUserKey];
     [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
     [doc setObject:text forKey:kDSDocumentTextKey];
  
@@ -149,5 +152,78 @@
 }
 
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[DSDocumentCell class]]) {
+        NSIndexPath* indexPath = [self.collectionView indexPathForCell:sender];
+        PFObject* object = [self.dataSource objectAtIndex:indexPath.item];
+        DSPreviewViewController* preview = segue.destinationViewController;
+        preview.object = object;
+        
+    }
+}
+
+- (IBAction)tappedLibrary:(id)sender {
+    LOGTrace;
+    
+    UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
+    imagePicker.delegate = self;
+    [self presentViewController:imagePicker animated:YES completion:nil];
+}
+
+- (void)uploadImage:(NSData*)data
+{
+    LOGTrace;
+    PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+    
+    //HUD creation here (see example for code)
+    [SVProgressHUD show];
+    
+    // Save PFFile
+    [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (!error) {
+            
+            PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
+            [doc setObject:kDSDocumentTypeFile forKey:kDSDocumentTypeKey];
+            [doc setObject:imageFile forKey:kDSDocumentFileKey];
+            
+            [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [SVProgressHUD dismiss];
+                if (!error) {
+                    [self.dataSource insertObject:doc atIndex:0];
+                    [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
+                }
+                else{
+                    // Log details of the failure
+                    [error show];
+                }
+            }];
+        }
+        else{
+            [SVProgressHUD dismiss];
+            [error show];
+        }
+    } progressBlock:^(int percentDone) {
+        // Update your progress spinner here. percentDone will be between 0 and 100.
+        [SVProgressHUD showProgress:(int)percentDone/100];
+    }];
+}
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    LOGInfoTrace;
+    
+    UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    // Upload image
+    NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
+    [self uploadImage:imageData];
+}
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
+{
+    LOGInfoTrace;
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end

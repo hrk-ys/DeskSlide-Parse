@@ -7,6 +7,7 @@
 //
 
 #import "DSDocumentCell.h"
+#import <SDWebImage/UIImageView+WebCache.h>
 
 @implementation DSDocumentCell
 
@@ -22,14 +23,16 @@
 - (void)setDocument:(PFObject*)object
 {
     LOGTrace;
+    
     if ([[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeText]) {
         NSDictionary* attributes = @{FAKImageAttributeForegroundColor: [UIColor colorWithWhite:0.400 alpha:1.000]};
         self.bgImageView.image = [FontAwesomeKit imageForIcon:FAKIconFileText
                                                      imageSize:CGSizeMake(70, 70)
                                                       fontSize:70
                                                     attributes:attributes];
-    } else {
-        self.bgImageView = nil;
+    } else if ([[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeFile]){
+        PFFile *file = [object objectForKey:kDSDocumentFileKey];
+        [self.bgImageView setImageWithURL:[NSURL URLWithString:file.url]];
     }
     self.textLabel.text = [object objectForKey:kDSDocumentTextKey];
 }

@@ -33,25 +33,52 @@ $(function() {
      var text = $("#text-document").val();
 	 console.log( text );
 
-    if (text.length == 0) {
-		return;
+    if (text.length > 0) {
+
+		var doc = new Document;
+		doc.set("type", "text");
+		doc.set("text", text);
+		doc.save(null, {
+			success: function(doc) {
+			  $("#document").prepend(
+	        	'<div class="col-lg-3"><h2>' + doc.get('type') +
+				'</h2><p>' + doc.get('text') + '</p></div>'
+			  );
+			},
+			error: function(doc, error) {
+				alert('Failed to create new object, with error code: ' + error.description);
+	
+			},
+		});
+	} else {
+		var fileUploadControl = $("#profilePhotoFileUpload")[0];
+		if (fileUploadControl.files.length == 0) {
+			return;
+		}
+
+		var file = fileUploadControl.files[0];
+  		var parseFile = new Parse.File(file.name, file);
+		parseFile.save().then(function() {
+			var doc = new Document;
+			doc.set("type", "file");
+			doc.set("file", parseFile);
+			doc.save(null, {
+				success: function(doc) {
+				  $("#document").prepend(
+		        	'<div class="col-lg-3"><h2>' + doc.get('type') +
+					'</h2><img class="doc-image" src="' + doc.get('file').url() + '"></div>'
+				  );
+				},
+				error: function(doc, error) {
+					alert('Failed to create new object, with error code: ' + error.description);
+		
+				},
+			});
+		},
+	   	function(error) {
+				alert('Failed to file upload, with error code: ' + error.description);
+		});
 	}
-
-	var doc = new Document;
-	doc.set("type", "text");
-	doc.set("text", text);
-	doc.save(null, {
-		success: function(doc) {
-		  $("#document").prepend(
-        	'<div class="col-lg-3"><h2>' + doc.get('type') +
-			'</h2><p>' + doc.get('text') + '</p></div>'
-		  );
-		},
-		error: function(doc, error) {
-			alert('Failed to create new object, with error code: ' + error.description);
-
-		},
-	});
 
   });
 
@@ -67,10 +94,17 @@ $(function() {
 				  + ' - ' + object.get('type')
 				  + ' - ' + object.get('text')
 				  );
-		  $("#document").append(
-        	'<div class="col-lg-3"><h2>' + object.get('type') +
-			'</h2><p>' + object.get('text') + '</p></div>'
-		  );
+		  if (object.get("type") == "text") {
+			  $("#document").append(
+   		     	'<div class="col-lg-3"><h2>' + object.get('type') +
+				'</h2><p>' + object.get('text') + '</p></div>'
+			  );
+		  } else {
+			  $("#document").append(
+		       	'<div class="col-lg-3"><h2>' + object.get('type') +
+				'</h2><img class="doc-image" src="' + object.get('file').url() + '"></div>'
+			  );
+		  }
 
         }
       },
