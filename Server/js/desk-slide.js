@@ -38,12 +38,14 @@ $(function() {
 		var doc = new Document;
 		doc.set("type", "text");
 		doc.set("text", text);
+		doc.setACL(new Parse.ACL(Parse.User.current()));
 		doc.save(null, {
 			success: function(doc) {
 			  $("#document").prepend(
 	        	'<div class="col-lg-3"><h2>' + doc.get('type') +
 				'</h2><p>' + doc.get('text') + '</p></div>'
 			  );
+     		  $("#text-document").val("");
 			},
 			error: function(doc, error) {
 				alert('Failed to create new object, with error code: ' + error.description);
@@ -62,6 +64,7 @@ $(function() {
 			var doc = new Document;
 			doc.set("type", "file");
 			doc.set("file", parseFile);
+		    doc.setACL(new Parse.ACL(Parse.User.current()));
 			doc.save(null, {
 				success: function(doc) {
 				  $("#document").prepend(

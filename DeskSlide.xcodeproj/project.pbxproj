@@ -459,7 +459,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DeskSlide/Vender\"",
@@ -472,7 +472,7 @@
 					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -481,7 +481,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DeskSlide/Vender\"",
@@ -494,7 +494,7 @@
 					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
