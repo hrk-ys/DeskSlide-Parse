@@ -16,6 +16,7 @@
     #import <HYUtils/HYUtils.h>
 #import <FontAwesomeKit.h>
     #import "DSConstants.h"
+#import "DSUtils.h"
 #import "DSToolView.h"
 
 #endif

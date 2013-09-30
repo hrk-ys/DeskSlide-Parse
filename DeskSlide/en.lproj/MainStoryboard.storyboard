@@ -188,6 +188,21 @@
                                             <action selector="tappedCloseButton:" destination="Vw7-Wb-jH5" eventType="touchUpInside" id="ltn-00-Dh6"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="dig-oN-OD4">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                        <state key="normal" title="Save">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedSaveButton:" destination="Vw7-Wb-jH5" eventType="touchUpInside" id="7Qq-Vi-Wwm"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.064705141130000005" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -198,6 +213,7 @@
                     <connections>
                         <outlet property="closeButton" destination="OhJ-ce-2Sa" id="CsX-Hd-Vam"/>
                         <outlet property="imageView" destination="JhQ-Aq-NLj" id="YIM-Pv-lsS"/>
+                        <outlet property="saveButton" destination="dig-oN-OD4" id="UJG-CG-9mF"/>
                         <outlet property="textView" destination="cWH-Gh-4y8" id="K0h-9Q-BRX"/>
                         <outlet property="toolView" destination="gbD-Ln-8sz" id="WPs-kf-lQE"/>
                     </connections>
@@ -325,8 +341,11 @@
         <class className="DSPreviewViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSPreviewViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tappedCloseButton:"/>
+                <relationship kind="action" name="tappedSaveButton:"/>
                 <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="saveButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="textView" candidateClass="UITextView"/>
                 <relationship kind="outlet" name="toolView" candidateClass="DSToolView"/>
             </relationships>
@@ -363,6 +382,9 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
