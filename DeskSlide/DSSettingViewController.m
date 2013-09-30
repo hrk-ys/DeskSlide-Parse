@@ -13,6 +13,7 @@
 #import "GAIDictionaryBuilder.h"
 
 typedef enum {
+	kDSSettingTableRowVersion,
 	kDSSettingTableRowWebURL,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
@@ -65,6 +66,23 @@ typedef enum {
 #pragma mark - Table view delegate
 
 
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    LOGTrace;
+    
+    UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    switch (indexPath.row) {
+        case kDSSettingTableRowVersion:
+        {
+            cell.detailTextLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)
+                                         kCFBundleVersionKey];
+        }
+            break;
+        default:
+            break;
+    }
+    return cell;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     LOGTrace;

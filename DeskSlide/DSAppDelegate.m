@@ -11,6 +11,8 @@
 #import "DSLoginViewController.h"
 
 
+#import <Crashlytics/Crashlytics.h>
+
 #import <DDFileLogger.h>
 #import <DDTTYLogger.h>
 
@@ -24,6 +26,7 @@
 {
     // Override point for customization after application launch.
     
+    [Crashlytics startWithAPIKey:@"b23780728daaf4165202578d33fcddfe13bf2bef"];
     [self setupLogger];
     [self setupTracker];
     [self setupParse:launchOptions];

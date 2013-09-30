@@ -31,6 +31,7 @@
 		E9B0E7B417F8FA4600544C88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B317F8FA4600544C88 /* CoreData.framework */; };
 		E9B0E7B617F8FA5500544C88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */; };
 		E9B0E7B817F8FA5E00544C88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B717F8FA5E00544C88 /* libz.dylib */; };
+		E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		E9B0E7B317F8FA4600544C88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E9B0E7B717F8FA5E00544C88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = DeskSlide/Vender/Crashlytics.framework; sourceTree = "<group>"; };
 		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB2BE02A234641CD9A2FB596 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */,
 				428906B4306148B29122289D /* libPods.a in Frameworks */,
 				E9B0E7B217F8FA1100544C88 /* libGoogleAnalyticsServices.a in Frameworks */,
+				E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +125,7 @@
 		E922FA7217F02353008C7968 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */,
 				E922FA7317F02353008C7968 /* UIKit.framework */,
 				E922FA7517F02353008C7968 /* Foundation.framework */,
 				E922FA7717F02353008C7968 /* CoreGraphics.framework */,
@@ -239,6 +243,7 @@
 				E922FA6D17F02353008C7968 /* Frameworks */,
 				E922FA6E17F02353008C7968 /* Resources */,
 				C2CFD37846F44FBAB195034B /* Copy Pods Resources */,
+				E9B0E7B917F8FFB700544C88 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -322,6 +327,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		E9B0E7B917F8FFB700544C88 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "./Crashlytics.framework/run b23780728daaf4165202578d33fcddfe13bf2bef";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -425,6 +443,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DeskSlide/Vender\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
@@ -441,6 +463,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/DeskSlide/Vender\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
