@@ -15,6 +15,7 @@
     #import <Parse/Parse.h>
     #import <HYUtils/HYUtils.h>
 #import <FontAwesomeKit.h>
+#import "GAI.h"
     #import "DSConstants.h"
 #import "DSUtils.h"
 #import "DSToolView.h"

@@ -16,7 +16,8 @@
 
 @interface DSViewController ()
 <UICollectionViewDataSource, UICollectionViewDelegate,
-UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+UINavigationControllerDelegate, UIImagePickerControllerDelegate,
+UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -38,6 +39,7 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate>
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    self.screenName = NSStringFromClass(self.class);
     self.shouldReloadOnAppear = YES;
     
 
@@ -67,8 +69,8 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate>
         self.shouldReloadOnAppear = NO;
         [self loadObjects];
     }
-
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -125,23 +127,42 @@ UINavigationControllerDelegate, UIImagePickerControllerDelegate>
         return;
     }
     
-    [self sendText:text];
+    UIAlertView* av = [[UIAlertView alloc] initWithTitle:@"登録しますか？" message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    [av show];
+    
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    LOGTrace;
+    
+    if (buttonIndex == 0) return;
+    
+    [self sendText:alertView.message];
+}
 
 
 - (void)sendText:(NSString*)text
 {
     LOGTrace;
     
+    [SVProgressHUD show];
+    
     PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
     [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
     [doc setObject:text forKey:kDSDocumentTextKey];
  
     [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
         if (error) {
+            [SVProgressHUD dismiss];
             [error show];
+            return;
         }
+        
+        [SVProgressHUD showSuccessWithStatus:@"Success"];
+        [self.dataSource insertObject:doc atIndex:0];
+        [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
     }];
 }
 

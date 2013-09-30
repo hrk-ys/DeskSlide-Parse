@@ -36,7 +36,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    
+    self.screenName = NSStringFromClass(self.class);
     
     [self.toolView setupToolButton:self.saveButton icon:FAKIconSave];
     [self.saveButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];

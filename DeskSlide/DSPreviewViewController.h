@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DSPreviewViewController : UIViewController
+@interface DSPreviewViewController : GAITrackedViewController
 
 @property (nonatomic) PFObject* object;
 

@@ -25,6 +25,7 @@
     // Override point for customization after application launch.
     
     [self setupLogger];
+    [self setupTracker];
     [self setupParse:launchOptions];
     
     return YES;
@@ -124,5 +125,25 @@
     [self presentLoginViewController:self.window.rootViewController animated:YES];
 }
 
+
+- (void)setupTracker
+{
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+#ifdef DEBUG
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    [[GAI sharedInstance] setDryRun:YES];
+#else
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
+#endif
+    
+    // Initialize tracker.
+    [[GAI sharedInstance] trackerWithTrackingId:@"UA-42236549-2"];
+}
 
 @end

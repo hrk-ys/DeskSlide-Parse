@@ -9,6 +9,8 @@
 #import "DSSettingViewController.h"
 
 #import "DSAppDelegate.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
 
 typedef enum {
 	kDSSettingTableRowWebURL,
@@ -45,6 +47,15 @@ typedef enum {
     [self.toolView setupToolButton:self.closeButton icon:FAKIconRemove];
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    [tracker set:kGAIScreenName value:NSStringFromClass(self.class)];
+    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
