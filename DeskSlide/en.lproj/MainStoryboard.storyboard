@@ -377,7 +377,6 @@
         <class className="DSSettingViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSSettingViewController.h"/>
             <relationships>
-                <relationship kind="action" name="tappedCloseButton:"/>
                 <relationship kind="outlet" name="closeButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="toolView" candidateClass="DSToolView"/>
             </relationships>
