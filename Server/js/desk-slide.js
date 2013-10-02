@@ -42,8 +42,8 @@ $(function() {
 		doc.save(null, {
 			success: function(doc) {
 			  $("#document").prepend(
-	        	'<div class="col-lg-3"><h2>' + doc.get('type') +
-				'</h2><p>' + doc.get('text') + '</p></div>'
+	        	'<div class="col-md-3"><h2>' + doc.get('type') +
+				'</h2><p class="doc-text">' + doc.get('text') + '</p></div>'
 			  );
      		  $("#text-document").val("");
 			},
@@ -68,7 +68,7 @@ $(function() {
 			doc.save(null, {
 				success: function(doc) {
 				  $("#document").prepend(
-		        	'<div class="col-lg-3"><h2>' + doc.get('type') +
+		        	'<div class="col-md-3"><h2>' + doc.get('type') +
 					'</h2><img class="doc-image" src="' + doc.get('file').url() + '"></div>'
 				  );
 				},
@@ -86,6 +86,12 @@ $(function() {
   });
 
   if ($("#document").size() > 0) {
+    var currentUser = Parse.User.current();
+	if (! currentUser) {
+        console.log("document download");
+	    location.href="/login.html";
+        return;
+	}
     console.log("document download");
     var query = new Parse.Query(Document);
 	query.descending("createdAt");
@@ -99,12 +105,12 @@ $(function() {
 				  );
 		  if (object.get("type") == "text") {
 			  $("#document").append(
-   		     	'<div class="col-lg-3"><h2>' + object.get('type') +
-				'</h2><p>' + object.get('text') + '</p></div>'
+   		     	'<div class="col-md-3"><h2>' + object.get('type') +
+				'</h2><p class="doc-text">' + object.get('text') + '</p></div>'
 			  );
 		  } else {
 			  $("#document").append(
-		       	'<div class="col-lg-3"><h2>' + object.get('type') +
+		       	'<div class="col-md-3"><h2>' + object.get('type') +
 				'</h2><img class="doc-image" src="' + object.get('file').url() + '"></div>'
 			  );
 		  }

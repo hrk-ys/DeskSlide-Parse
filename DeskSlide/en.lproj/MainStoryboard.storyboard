@@ -16,6 +16,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="325" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <adBannerView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="8gf-Aa-SFo">
+                                <rect key="frame" x="0.0" y="-50" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="gK6-81-tsD"/>
+                                </connections>
+                            </adBannerView>
+                            <view contentMode="scaleToFill" id="bgO-7t-QpB" userLabel="AdModView" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="-50" width="320" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="rdc-8l-Usx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -132,6 +144,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="ZA5-17-l9s"/>
                     <connections>
+                        <outlet property="adMobView" destination="bgO-7t-QpB" id="tlq-OQ-70w"/>
+                        <outlet property="banner" destination="8gf-Aa-SFo" id="iR4-Ol-4XN"/>
                         <outlet property="collectionView" destination="rdc-8l-Usx" id="wm6-Qn-33e"/>
                         <outlet property="libraryButton" destination="Ne2-BG-VmT" id="bqD-26-mIO"/>
                         <outlet property="refreshButton" destination="Q74-BN-MmL" id="9zR-Pu-LzA"/>
@@ -387,6 +401,11 @@
         <class className="DSViewController" superclassName="GAITrackedViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DSViewController.h"/>
             <relationships>
+                <relationship kind="action" name="tappedLibrary:"/>
+                <relationship kind="action" name="tappedRefreshButton:"/>
+                <relationship kind="action" name="tappedTextButton:"/>
+                <relationship kind="outlet" name="adMobView" candidateClass="GADBannerView"/>
+                <relationship kind="outlet" name="banner" candidateClass="ADBannerView"/>
                 <relationship kind="outlet" name="collectionView" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="libraryButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="refreshButton" candidateClass="UIButton"/>
@@ -394,6 +413,9 @@
                 <relationship kind="outlet" name="textButton" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="toolView" candidateClass="DSToolView"/>
             </relationships>
+        </class>
+        <class className="GADBannerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GADBannerView.h"/>
         </class>
         <class className="GAITrackedViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GAITrackedViewController.h"/>

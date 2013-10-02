@@ -9,6 +9,7 @@
 extern NSString *const APP_NAME;
 
 
+#define ADMOB_UNIT_ID @"a1524c396d0bb9b"
 
 #pragma mark - PFObject Document Class
 // Class key

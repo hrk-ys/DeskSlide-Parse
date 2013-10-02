@@ -12,12 +12,17 @@
 #import "DSDocumentCell.h"
 #import "DSPreviewViewController.h"
 
+#import "GADBannerView.h"
+
+#import <iAd/iAd.h>
 #import <SVProgressHUD.h>
 
 @interface DSViewController ()
 <UICollectionViewDataSource, UICollectionViewDelegate,
 UINavigationControllerDelegate, UIImagePickerControllerDelegate,
-UIAlertViewDelegate>
+UIAlertViewDelegate,
+ADBannerViewDelegate,
+GADBannerViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -27,6 +32,10 @@ UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *settingButton;
 @property (weak, nonatomic) IBOutlet UIButton *refreshButton;
 
+@property (weak, nonatomic) IBOutlet ADBannerView *banner;
+@property (nonatomic) BOOL bannerIsVisible;
+@property (weak, nonatomic) IBOutlet GADBannerView *adMobView;
+@property (nonatomic) BOOL adMobIsVisible;
 
 @property (nonatomic) BOOL shouldReloadOnAppear;
 @property (nonatomic) NSMutableArray* dataSource;
@@ -42,7 +51,11 @@ UIAlertViewDelegate>
     self.screenName = NSStringFromClass(self.class);
     self.shouldReloadOnAppear = YES;
     
-
+    self.adMobView.delegate = self;
+    self.adMobView.adUnitID = ADMOB_UNIT_ID;
+    self.adMobView.rootViewController = self;
+    self.adMobView.adSize = kGADAdSizeSmartBannerPortrait;
+    
     [self.toolView setupToolButton:self.textButton icon:FAKIconPaperClip];
     [self.toolView setupToolButton:self.libraryButton icon:FAKIconFolderOpen];
 //    [self setupToolButton:self.libraryButton icon:FAKIconPicture];
@@ -245,6 +258,84 @@ UIAlertViewDelegate>
 {
     LOGInfoTrace;
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
+
+- (void)bannerViewDidLoadAd:(ADBannerView *)banner
+{
+    LOGTrace;
+    if (!self.bannerIsVisible)
+    {
+
+        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
+        if(self.adMobIsVisible) {
+            self.adMobIsVisible = NO;
+            self.adMobView.originY = -self.adMobView.height;
+        }
+        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+        self.collectionView.frame = CGRectMake(0, banner.height, self.collectionView.width, self.view.height - banner.height);
+        [UIView commitAnimations];
+
+        self.bannerIsVisible = YES;
+    }
+}
+- (void)bannerView:(ADBannerView *)banner
+didFailToReceiveAdWithError:(NSError *)error
+{
+    LOGTrace;
+    
+    if (self.bannerIsVisible)
+    {
+        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        self.collectionView.frame = self.view.bounds;
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+    }
+    
+    GADRequest *request = [GADRequest request];
+#ifdef DEBUG
+    request.testDevices = [NSArray arrayWithObjects:
+                           GAD_SIMULATOR_ID,
+                           nil];
+#endif
+    
+    [self.adMobView loadRequest:request];
+
+}
+#pragma mark -
+#pragma mark admod
+
+- (void)adViewDidReceiveAd:(GADBannerView *)banner
+{
+    if(self.bannerIsVisible) return;
+    
+    if (!self.adMobIsVisible) {
+        
+        self.adMobIsVisible = YES;
+        
+        [UIView beginAnimations:@"animateAdModOn" context:NULL];
+        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+        self.collectionView.frame = CGRectMake(0, banner.height, self.collectionView.width, self.view.height - banner.height);
+        [UIView commitAnimations];
+
+    }
+}
+
+- (void)adView:(GADBannerView *)banner didFailToReceiveAdWithError:(GADRequestError *)error
+{
+    if (self.adMobIsVisible) {
+        self.adMobIsVisible = NO;
+        
+        [UIView beginAnimations:@"animateAdModOff" context:NULL];
+        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+        self.collectionView.frame = self.view.bounds;
+        [UIView commitAnimations];
+        self.bannerIsVisible = NO;
+
+    }
 }
 
 @end
