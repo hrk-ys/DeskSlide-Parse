@@ -24,8 +24,8 @@
         self.fields = PFLogInFieldsUsernameAndPassword
         | PFLogInFieldsLogInButton
         | PFLogInFieldsSignUpButton
-        | PFLogInFieldsFacebook
-        | PFLogInFieldsTwitter
+//        | PFLogInFieldsFacebook
+//        | PFLogInFieldsTwitter
         | PFLogInFieldsPasswordForgotten
         ;
         

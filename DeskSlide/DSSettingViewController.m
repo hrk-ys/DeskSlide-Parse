@@ -12,13 +12,16 @@
 #import "GAIFields.h"
 #import "GAIDictionaryBuilder.h"
 
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
 typedef enum {
 	kDSSettingTableRowVersion,
-	kDSSettingTableRowWebURL,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
 
 @interface DSSettingViewController ()
+<MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet DSToolView *toolView;
 @end
@@ -88,11 +91,6 @@ typedef enum {
     LOGTrace;
     
     switch (indexPath.row) {
-        case kDSSettingTableRowWebURL:
-        {
-            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://desk-slide.parseapp.com/"]];
-        }
-            break;
         case kDSSettingTableRowLogout:
         {
             [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
@@ -106,6 +104,29 @@ typedef enum {
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
+- (IBAction)tappedLinkButton:(id)sender
+{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        
+        controller.mailComposeDelegate = self;
+        [controller setSubject:@"DeskSlide PCブラウザ用URL"];
+        [controller setMessageBody:@"http://desk-slide.hrk-ys.net/" isHTML:NO];
+        
+        [self presentViewController:controller animated:YES completion:nil];
+
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://desk-slide.hrk-ys.net/"]];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    if (error) [error show];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 
 - (IBAction)tappedCloseButton:(id)sender {
     LOGTrace;
