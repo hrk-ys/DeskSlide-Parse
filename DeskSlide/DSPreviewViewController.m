@@ -60,7 +60,7 @@
         
         float statusBarHeight =[[UIApplication sharedApplication] statusBarFrame].size.height;
         self.textView.contentInset = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0);
-        self.textView.contentOffset = CGPointMake(0, -statusBarHeight);
+        self.textView.contentOffset = CGPointMake(20, -statusBarHeight);
         
     } else if ([DSUtils isFileObject:self.object]) {
         
