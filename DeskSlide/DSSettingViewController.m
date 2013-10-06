@@ -40,7 +40,11 @@ typedef enum {
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        self.view.backgroundColor = [UIColor whiteColor];
+    } else {
+        self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_w"]];
+    }
     
     UIView* toolView = self.tableView.tableFooterView;
     self.tableView.tableFooterView = nil;
@@ -48,7 +52,9 @@ typedef enum {
     [self.view addSubview:toolView];
     
     //FAKIconRemoveCircle, FAKIconRemoveSign
-    [self.toolView setupToolButton:self.closeButton icon:FAKIconRemove];
+    [self.toolView setupToolButton:self.closeButton icon:FAKIconRemove
+                             color:[UIColor blackColor]
+                    highlightColor:[UIColor lightGrayColor]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -74,6 +80,7 @@ typedef enum {
     LOGTrace;
     
     UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
+    
     switch (indexPath.row) {
         case kDSSettingTableRowVersion:
         {

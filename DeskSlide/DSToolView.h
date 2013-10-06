@@ -11,6 +11,13 @@
 @interface DSToolView : UIView
 
 - (UIImage*)buttonImage:(NSString*)icon;
-- (void)setupToolButton:(UIButton*)button icon:(NSString*)icon;
+- (UIImage*)buttonImage:(NSString*)icon
+                  color:(UIColor*)color;
+- (void)setupToolButton:(UIButton*)button
+                   icon:(NSString*)icon;
+- (void)setupToolButton:(UIButton*)button
+                   icon:(NSString*)icon
+                  color:(UIColor*)color
+         highlightColor:(UIColor*)highlightColor;
 
 @end

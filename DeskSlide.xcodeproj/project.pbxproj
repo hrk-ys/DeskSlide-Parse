@@ -20,6 +20,7 @@
 		E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */; };
 		E922FA9017F02353008C7968 /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FA8F17F02353008C7968 /* DSViewController.m */; };
 		E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FAC817F04885008C7968 /* DSLoginViewController.m */; };
+		E9AD6A1E17FFD269005A7D01 /* bg_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */; };
 		E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E78B17F074CC00544C88 /* bg@2x.png */; };
 		E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */; };
 		E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79217F07DB800544C88 /* DSToolView.m */; };
@@ -61,6 +62,7 @@
 		E922FA8F17F02353008C7968 /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
 		E922FAC717F04885008C7968 /* DSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLoginViewController.h; sourceTree = "<group>"; };
 		E922FAC817F04885008C7968 /* DSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLoginViewController.m; sourceTree = "<group>"; };
+		E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_w@2x.png"; sourceTree = "<group>"; };
 		E9B0E78B17F074CC00544C88 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		E9B0E78D17F07B0800544C88 /* DSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingViewController.h; sourceTree = "<group>"; };
 		E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSettingViewController.m; sourceTree = "<group>"; };
@@ -225,11 +227,12 @@
 		E9B0E78A17F074CC00544C88 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E9B0E78B17F074CC00544C88 /* bg@2x.png */,
+				E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */,
 				E9B0E7C617F9CAF400544C88 /* Icon-60.png */,
 				E9B0E7C717F9CAF400544C88 /* Icon-60@2x.png */,
 				E9B0E7C817F9CAF400544C88 /* Icon.png */,
 				E9B0E7C917F9CAF400544C88 /* Icon@2x.png */,
-				E9B0E78B17F074CC00544C88 /* bg@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				E922FA8817F02353008C7968 /* Default@2x.png in Resources */,
 				E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */,
 				E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */,
+				E9AD6A1E17FFD269005A7D01 /* bg_w@2x.png in Resources */,
 				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
 				E9B0E7CA17F9CAF400544C88 /* Icon-60.png in Resources */,
 				E9B0E7CB17F9CAF400544C88 /* Icon-60@2x.png in Resources */,

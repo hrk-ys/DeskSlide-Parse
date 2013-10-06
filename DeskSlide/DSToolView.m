@@ -36,19 +36,42 @@
 
 - (UIImage*)buttonImage:(NSString*)icon
 {
+    return [self buttonImage:icon color:[UIColor whiteColor]];
+}
+
+- (UIImage*)buttonImage:(NSString*)icon color:(UIColor*)color
+{
     return [FontAwesomeKit imageForIcon:icon
                               imageSize:CGSizeMake(15, 15)
                                fontSize:15
                              attributes:
-            @{ FAKImageAttributeForegroundColor : [UIColor whiteColor] }];
+            @{ FAKImageAttributeForegroundColor : color }];
 }
 
-- (void)setupToolButton:(UIButton*)button icon:(NSString*)icon
+- (void)setupToolButton:(UIButton*)button
+                   icon:(NSString*)icon
 {
-    [button setImage:[self buttonImage:icon]
+    [self setupToolButton:button
+                     icon:icon
+                    color:[UIColor whiteColor]
+           highlightColor:[UIColor grayColor]];
+}
+
+- (void)setupToolButton:(UIButton*)button
+                   icon:(NSString*)icon
+                  color:(UIColor*)color
+         highlightColor:(UIColor*)highlightColor
+{
+    [button setTitleColor:color forState:UIControlStateNormal];
+    [button setTitleColor:highlightColor forState:UIControlStateHighlighted];
+    
+    [button setImage:[self buttonImage:icon color:color]
             forState:UIControlStateNormal];
+    [button setImage:[self buttonImage:icon color:highlightColor]
+            forState:UIControlStateHighlighted];
     button.layer.borderColor = [UIColor lightGrayColor].CGColor;
     button.layer.borderWidth = 1.0f;
 }
+
 
 @end

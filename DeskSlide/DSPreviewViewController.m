@@ -23,6 +23,11 @@
 
 @implementation DSPreviewViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,6 +57,11 @@
                                                       fontSize:320
                                                    attributes:attributes];
         self.saveButton.hidden = YES;
+        
+        float statusBarHeight =[[UIApplication sharedApplication] statusBarFrame].size.height;
+        self.textView.contentInset = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0);
+        self.textView.contentOffset = CGPointMake(0, -statusBarHeight);
+        
     } else if ([DSUtils isFileObject:self.object]) {
         
         PFFile *file = [self.object objectForKey:kDSDocumentFileKey];
@@ -59,6 +69,21 @@
         
         self.saveButton.hidden = NO;
     }
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    self.wantsFullScreenLayout = YES;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleBlackTranslucent];
+}
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    self.wantsFullScreenLayout = NO;
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
 }
 
 - (void)didReceiveMemoryWarning

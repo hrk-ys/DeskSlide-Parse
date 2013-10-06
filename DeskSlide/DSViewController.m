@@ -27,57 +27,65 @@ GADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (weak, nonatomic) IBOutlet DSToolView *toolView;
-@property (weak, nonatomic) IBOutlet UIButton *textButton;
-@property (weak, nonatomic) IBOutlet UIButton *libraryButton;
-@property (weak, nonatomic) IBOutlet UIButton *settingButton;
-@property (weak, nonatomic) IBOutlet UIButton *refreshButton;
+@property (weak, nonatomic) IBOutlet UIButton   *textButton;
+@property (weak, nonatomic) IBOutlet UIButton   *libraryButton;
+@property (weak, nonatomic) IBOutlet UIButton   *settingButton;
+@property (weak, nonatomic) IBOutlet UIButton   *refreshButton;
 
-@property (weak, nonatomic) IBOutlet ADBannerView *banner;
-@property (nonatomic) BOOL bannerIsVisible;
+@property (weak, nonatomic) IBOutlet ADBannerView  *banner;
+@property (nonatomic) BOOL                          bannerIsVisible;
 @property (weak, nonatomic) IBOutlet GADBannerView *adMobView;
-@property (nonatomic) BOOL adMobIsVisible;
+@property (nonatomic) BOOL                          adMobIsVisible;
 
-@property (nonatomic) BOOL shouldReloadOnAppear;
-@property (nonatomic) NSMutableArray* dataSource;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionTopLaytou;
+
+@property (nonatomic) BOOL            shouldReloadOnAppear;
+@property (nonatomic) NSMutableArray *dataSource;
 @end
 
 @implementation DSViewController
 
+- (UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     
-    self.screenName = NSStringFromClass(self.class);
+    self.screenName           = NSStringFromClass(self.class);
     self.shouldReloadOnAppear = YES;
     
-    self.adMobView.delegate = self;
-    self.adMobView.adUnitID = ADMOB_UNIT_ID;
+    self.adMobView.delegate           = self;
+    self.adMobView.adUnitID           = ADMOB_UNIT_ID;
     self.adMobView.rootViewController = self;
-    self.adMobView.adSize = kGADAdSizeSmartBannerPortrait;
+    self.adMobView.adSize             = kGADAdSizeSmartBannerPortrait;
     
     [self.toolView setupToolButton:self.textButton icon:FAKIconPaperClip];
     [self.toolView setupToolButton:self.libraryButton icon:FAKIconFolderOpen];
-//    [self setupToolButton:self.libraryButton icon:FAKIconPicture];
+    //    [self setupToolButton:self.libraryButton icon:FAKIconPicture];
     [self.libraryButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
     [self.toolView setupToolButton:self.settingButton icon:FAKIconCog];
     [self.settingButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
     
     
     [self.toolView setupToolButton:self.refreshButton icon:FAKIconRefresh];
-    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     LOGTrace;
     [super viewWillAppear:animated];
     
     // If not logged in, present login view controller
     if (![PFUser currentUser]) {
-        [(DSAppDelegate*)[[UIApplication sharedApplication] delegate] presentLoginViewController:self animated:NO];
+        [(DSAppDelegate *) [[UIApplication sharedApplication] delegate] presentLoginViewController : self animated : NO];
+        
         return;
     }
-
+    
     if (self.shouldReloadOnAppear) {
         self.shouldReloadOnAppear = NO;
         [self loadObjects];
@@ -89,7 +97,6 @@ GADBannerViewDelegate>
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
 
 - (void)loadObjects
 {
@@ -107,7 +114,6 @@ GADBannerViewDelegate>
     }];
 }
 
-
 #pragma mark - collection view delegate
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
@@ -120,42 +126,42 @@ GADBannerViewDelegate>
 {
     LOGTrace;
     
-    DSDocumentCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DSDocumentCell"
+    DSDocumentCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"DSDocumentCell"
                                                                      forIndexPath:indexPath];
     [cell setDocument:self.dataSource[indexPath.item]];
     
     return cell;
 }
 
-- (IBAction)tappedTextButton:(id)sender {
+- (IBAction)tappedTextButton:(id)sender
+{
     LOGTrace;
     
     UIPasteboard *pastebd = [UIPasteboard generalPasteboard];
-
-    NSString* text = [pastebd valueForPasteboardType:@"public.utf8-plain-text"];
+    
+    NSString *text = [pastebd valueForPasteboardType:@"public.utf8-plain-text"];
     LOG(@"%@", text);
     
     if (!text || text.length == 0) {
         [UIAlertView showMessage:@"クリップボードにテキストがありません"];
+        
         return;
     }
     
-    UIAlertView* av = [[UIAlertView alloc] initWithTitle:@"登録しますか？" message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"登録しますか？" message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     [av show];
-    
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     LOGTrace;
     
-    if (buttonIndex == 0) return;
+    if (buttonIndex == 0) { return; }
     
     [self sendText:alertView.message];
 }
 
-
-- (void)sendText:(NSString*)text
+- (void)sendText:(NSString *)text
 {
     LOGTrace;
     
@@ -164,12 +170,12 @@ GADBannerViewDelegate>
     PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
     [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
     [doc setObject:text forKey:kDSDocumentTextKey];
- 
+    
     [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        
         if (error) {
             [SVProgressHUD dismiss];
             [error show];
+            
             return;
         }
         
@@ -179,44 +185,41 @@ GADBannerViewDelegate>
     }];
 }
 
-- (IBAction)tappedRefreshButton:(id)sender {
-    
+- (IBAction)tappedRefreshButton:(id)sender
+{
     [self loadObjects];
- 
 }
 
-
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([sender isKindOfClass:[DSDocumentCell class]]) {
-        NSIndexPath* indexPath = [self.collectionView indexPathForCell:sender];
-        PFObject* object = [self.dataSource objectAtIndex:indexPath.item];
-        DSPreviewViewController* preview = segue.destinationViewController;
+        NSIndexPath             *indexPath = [self.collectionView indexPathForCell:sender];
+        PFObject                *object    = [self.dataSource objectAtIndex:indexPath.item];
+        DSPreviewViewController *preview   = segue.destinationViewController;
         preview.object = object;
-        
     }
 }
 
-- (IBAction)tappedLibrary:(id)sender {
+- (IBAction)tappedLibrary:(id)sender
+{
     LOGTrace;
     
-    UIImagePickerController* imagePicker = [[UIImagePickerController alloc] init];
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
     imagePicker.delegate = self;
     [self presentViewController:imagePicker animated:YES completion:nil];
 }
 
-- (void)uploadImage:(NSData*)data
+- (void)uploadImage:(NSData *)data
 {
     LOGTrace;
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
     
-    //HUD creation here (see example for code)
+    // HUD creation here (see example for code)
     [SVProgressHUD show];
     
     // Save PFFile
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {
-            
             PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
             [doc setObject:kDSDocumentTypeFile forKey:kDSDocumentTypeKey];
             [doc setObject:imageFile forKey:kDSDocumentFileKey];
@@ -227,26 +230,27 @@ GADBannerViewDelegate>
                     [self.dataSource insertObject:doc atIndex:0];
                     [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
                 }
-                else{
+                else {
                     // Log details of the failure
                     [error show];
                 }
             }];
         }
-        else{
+        else {
             [SVProgressHUD dismiss];
             [error show];
         }
     } progressBlock:^(int percentDone) {
         // Update your progress spinner here. percentDone will be between 0 and 100.
-        [SVProgressHUD showProgress:(int)percentDone/100];
+        [SVProgressHUD showProgress:(int) percentDone / 100];
     }];
 }
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
 {
     LOGInfoTrace;
     
-    UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
@@ -254,33 +258,38 @@ GADBannerViewDelegate>
     NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
     [self uploadImage:imageData];
 }
+
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
     LOGInfoTrace;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-
-
-
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     LOGTrace;
-    if (!self.bannerIsVisible)
-    {
-
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        if(self.adMobIsVisible) {
-            self.adMobIsVisible = NO;
-            self.adMobView.originY = -self.adMobView.height;
-        }
-        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
-        self.collectionView.frame = CGRectMake(0, banner.height, self.collectionView.width, self.view.height - banner.height);
-        [UIView commitAnimations];
-
-        self.bannerIsVisible = YES;
-    }
+    if (self.bannerIsVisible) { return; }
+    
+    self.bannerIsVisible = YES;
+    
+    banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+    
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         banner.hidden = NO;
+                         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+                         
+                         self.collectionView.originY = CGRectGetMaxY(banner.frame);
+                     } completion:^(BOOL finished) {
+                         self.collectionTopLaytou.constant = CGRectGetHeight(banner.frame);
+                         
+                         if (self.adMobIsVisible) {
+                             self.adMobIsVisible = NO;
+                             self.adMobView.hidden = YES;
+                         }
+                     }];
 }
+
 - (void)bannerView:(ADBannerView *)banner
 didFailToReceiveAdWithError:(NSError *)error
 {
@@ -288,11 +297,18 @@ didFailToReceiveAdWithError:(NSError *)error
     
     if (self.bannerIsVisible)
     {
-        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
-        self.collectionView.frame = self.view.bounds;
-        [UIView commitAnimations];
         self.bannerIsVisible = NO;
+        
+        [UIView animateWithDuration:0.3f
+                         animations:^{
+                             banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+                             self.collectionView.originY = 0;
+                         }
+         
+                         completion:^(BOOL finished) {
+                             banner.hidden = YES;
+                             self.collectionTopLaytou.constant = 0;
+                         }];
     }
     
     GADRequest *request = [GADRequest request];
@@ -303,39 +319,46 @@ didFailToReceiveAdWithError:(NSError *)error
 #endif
     
     [self.adMobView loadRequest:request];
-
 }
+
 #pragma mark -
 #pragma mark admod
 
 - (void)adViewDidReceiveAd:(GADBannerView *)banner
 {
-    if(self.bannerIsVisible) return;
+    LOGTrace;
+    if (self.bannerIsVisible) { return; }
+    if (self.adMobIsVisible) { return; }
     
-    if (!self.adMobIsVisible) {
-        
-        self.adMobIsVisible = YES;
-        
-        [UIView beginAnimations:@"animateAdModOn" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
-        self.collectionView.frame = CGRectMake(0, banner.height, self.collectionView.width, self.view.height - banner.height);
-        [UIView commitAnimations];
-
-    }
+    self.adMobIsVisible = YES;
+    
+    banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         banner.hidden = NO;
+                         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
+                         self.collectionView.originY = CGRectGetMaxY(banner.frame);
+                     } completion:^(BOOL finished) {
+                         self.collectionTopLaytou.constant = banner.height;
+                     }];
 }
 
 - (void)adView:(GADBannerView *)banner didFailToReceiveAdWithError:(GADRequestError *)error
 {
-    if (self.adMobIsVisible) {
-        self.adMobIsVisible = NO;
-        
-        [UIView beginAnimations:@"animateAdModOff" context:NULL];
-        banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
-        self.collectionView.frame = self.view.bounds;
-        [UIView commitAnimations];
-        self.bannerIsVisible = NO;
-
-    }
+    LOGTrace;
+    if (!self.adMobIsVisible) { return; }
+    self.adMobIsVisible = NO;
+    
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+                         self.collectionView.originY = 0;
+                     }
+     
+                     completion:^(BOOL finished) {
+                         banner.hidden = YES;
+                         self.collectionTopLaytou.constant = 0;
+                     }];
 }
 
 @end
