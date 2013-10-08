@@ -320,6 +320,11 @@
 				CLASSPREFIX = DS;
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Hiroki Yoshifuji";
+				TargetAttributes = {
+					E922FA6F17F02353008C7968 = {
+						DevelopmentTeam = Z8E8FLY423;
+					};
+				};
 			};
 			buildConfigurationList = E922FA6B17F02353008C7968 /* Build configuration list for PBXProject "DeskSlide" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -506,6 +511,7 @@
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DeskSlide/Vender\"",
@@ -519,7 +525,7 @@
 					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -528,7 +534,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/DeskSlide/Vender\"",
@@ -542,7 +549,7 @@
 					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
