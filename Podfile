@@ -4,3 +4,8 @@ pod 'Parse', '1.2.13'
 pod 'FontAwesomeKit', '1.1.3'
 pod 'SDWebImage', '3.4'
 pod 'SVProgressHUD', '0.9'
+
+
+target 'DeskSlide Tests', :exclusive => true do
+  pod 'KIF', '~> 2.0'
+end

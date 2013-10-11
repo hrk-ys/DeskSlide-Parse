@@ -208,14 +208,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JhQ-Aq-NLj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-Gh-4y8">
                                 <rect key="frame" x="20" y="0.0" width="280" height="492"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -261,14 +258,36 @@
                                             <action selector="tappedSaveButton:" destination="Vw7-Wb-jH5" eventType="touchUpInside" id="7Qq-Vi-Wwm"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5c-JD-UfT">
+                                        <rect key="frame" x="100" y="0.0" width="90" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="90" id="xAN-Ua-7S7"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Delete">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedDeleteButton:" destination="Vw7-Wb-jH5" eventType="touchUpInside" id="NDj-BJ-bmG"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JhQ-Aq-NLj">
+                                        <rect key="frame" x="-15" y="-555" width="320" height="555"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.064705141130000005" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dig-oN-OD4" firstAttribute="top" secondItem="gbD-Ln-8sz" secondAttribute="top" id="IBc-Do-jy0"/>
+                                    <constraint firstAttribute="bottom" secondItem="F5c-JD-UfT" secondAttribute="bottom" id="K7I-N5-6J5"/>
                                     <constraint firstItem="dig-oN-OD4" firstAttribute="leading" secondItem="gbD-Ln-8sz" secondAttribute="leading" id="V7T-Jg-EhR"/>
+                                    <constraint firstItem="F5c-JD-UfT" firstAttribute="top" secondItem="gbD-Ln-8sz" secondAttribute="top" id="WSg-tn-VHU"/>
                                     <constraint firstAttribute="bottom" secondItem="dig-oN-OD4" secondAttribute="bottom" id="afY-qt-ABg"/>
                                     <constraint firstItem="OhJ-ce-2Sa" firstAttribute="top" secondItem="gbD-Ln-8sz" secondAttribute="top" id="l8w-uY-IYi"/>
                                     <constraint firstAttribute="height" constant="44" id="vtB-k8-UtS"/>
+                                    <constraint firstItem="OhJ-ce-2Sa" firstAttribute="leading" secondItem="F5c-JD-UfT" secondAttribute="trailing" id="w3Q-rK-QvT"/>
                                     <constraint firstAttribute="bottom" secondItem="OhJ-ce-2Sa" secondAttribute="bottom" id="xwL-sa-soN"/>
                                     <constraint firstAttribute="trailing" secondItem="OhJ-ce-2Sa" secondAttribute="trailing" id="y3E-Ae-laV"/>
                                 </constraints>
@@ -281,12 +300,8 @@
                             <constraint firstItem="Qqw-CP-ZMS" firstAttribute="top" secondItem="gbD-Ln-8sz" secondAttribute="bottom" constant="12" id="Ex0-dI-Y7K"/>
                             <constraint firstItem="otS-NX-UFQ" firstAttribute="top" secondItem="YKC-JX-Tlg" secondAttribute="top" id="HRT-jI-jCP"/>
                             <constraint firstAttribute="trailing" secondItem="cWH-Gh-4y8" secondAttribute="trailing" constant="20" id="KAB-R5-Nzo"/>
-                            <constraint firstItem="Qqw-CP-ZMS" firstAttribute="top" secondItem="JhQ-Aq-NLj" secondAttribute="bottom" id="KAa-Kn-fXa"/>
                             <constraint firstItem="otS-NX-UFQ" firstAttribute="leading" secondItem="YKC-JX-Tlg" secondAttribute="leading" id="SZp-CL-rna"/>
                             <constraint firstItem="gbD-Ln-8sz" firstAttribute="top" secondItem="cWH-Gh-4y8" secondAttribute="bottom" constant="20" id="T9i-3u-fa2"/>
-                            <constraint firstItem="JhQ-Aq-NLj" firstAttribute="leading" secondItem="YKC-JX-Tlg" secondAttribute="leading" id="Xe6-E2-uiE"/>
-                            <constraint firstItem="JhQ-Aq-NLj" firstAttribute="top" secondItem="YKC-JX-Tlg" secondAttribute="top" id="Znw-KT-PLa"/>
-                            <constraint firstAttribute="trailing" secondItem="JhQ-Aq-NLj" secondAttribute="trailing" id="caL-Fg-VMf"/>
                             <constraint firstAttribute="trailing" secondItem="gbD-Ln-8sz" secondAttribute="trailing" constant="20" id="dPD-if-zOC"/>
                             <constraint firstItem="cWH-Gh-4y8" firstAttribute="leading" secondItem="YKC-JX-Tlg" secondAttribute="leading" constant="20" id="hyC-Tt-quE"/>
                             <constraint firstItem="Qqw-CP-ZMS" firstAttribute="top" secondItem="otS-NX-UFQ" secondAttribute="bottom" id="uBe-0x-62t"/>
@@ -297,6 +312,7 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="blackOpaque"/>
                     <connections>
                         <outlet property="closeButton" destination="OhJ-ce-2Sa" id="CsX-Hd-Vam"/>
+                        <outlet property="deleteButton" destination="F5c-JD-UfT" id="xrf-tz-2HD"/>
                         <outlet property="imageView" destination="JhQ-Aq-NLj" id="YIM-Pv-lsS"/>
                         <outlet property="saveButton" destination="dig-oN-OD4" id="UJG-CG-9mF"/>
                         <outlet property="textView" destination="cWH-Gh-4y8" id="K0h-9Q-BRX"/>

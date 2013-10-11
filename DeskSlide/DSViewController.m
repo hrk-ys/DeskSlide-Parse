@@ -86,10 +86,7 @@ GADBannerViewDelegate>
         return;
     }
     
-    if (self.shouldReloadOnAppear) {
-        self.shouldReloadOnAppear = NO;
-        [self loadObjects];
-    }
+    [self loadObjects];
 }
 
 - (void)didReceiveMemoryWarning
@@ -268,6 +265,7 @@ GADBannerViewDelegate>
 - (void)bannerViewDidLoadAd:(ADBannerView *)banner
 {
     LOGTrace;
+    return;
     if (self.bannerIsVisible) { return; }
     
     self.bannerIsVisible = YES;

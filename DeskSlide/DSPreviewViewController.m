@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet DSToolView *toolView;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
 @end
 
@@ -46,6 +47,9 @@
     [self.toolView setupToolButton:self.saveButton icon:FAKIconSave];
     [self.saveButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
     [self.toolView setupToolButton:self.closeButton icon:FAKIconRemove];
+    
+
+    [self.toolView setupToolButton:self.deleteButton icon:FAKIconTrash];
 
     
     if ([DSUtils isTextObject:self.object]) {
@@ -111,6 +115,19 @@
     }
 }
 
+- (IBAction)tappedDeleteButton:(id)sender {
+    LOGInfoTrace;
+    
+    [SVProgressHUD show];
+    [self.object deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        [SVProgressHUD dismiss];
+        if (error) {
+            [error show];
+        }
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+}
 
 - (IBAction)tappedCloseButton:(id)sender {
     LOGInfoTrace;
