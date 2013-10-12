@@ -27,6 +27,18 @@ $(function() {
       }
     });
 	
+	return false;
+  });
+
+  $(".doc-delete").bind("click", function(){
+    var doc = new Document;
+	doc.id = objectId;
+	doc.destroy({
+		success: function(myObject) {
+		},
+		error: function(myObject, error) {
+		}
+	});
   });
 
   $("#regist-document").bind("click", function(){
@@ -85,6 +97,7 @@ $(function() {
 
   });
 
+
   if ($("#document").size() > 0) {
     var currentUser = Parse.User.current();
 	if (! currentUser) {
@@ -105,13 +118,29 @@ $(function() {
 				  );
 		  if (object.get("type") == "text") {
 			  $("#document").append(
-   		     	'<div class="col-md-3"><h2>' + object.get('type') +
-				'</h2><p class="doc-text">' + object.get('text') + '</p></div>'
+   		     	'<div class="col-md-3"><h2>' + object.get('type') + '</h2>'
+			   	+ '<p class="doc-text">' + object.get('text') + '</p>'
+				/*
+				+ '<div class="doc-delete">'
+				+ '<a>'
+			   	+ '<span class="glyphicon glyphicon-trash"></span>'
+				+ '</a>'
+				+ '</div>'
+				*/
+				+ '</div>'
 			  );
 		  } else {
 			  $("#document").append(
-		       	'<div class="col-md-3"><h2>' + object.get('type') +
-				'</h2><img class="doc-image" src="' + object.get('file').url() + '"></div>'
+		       	'<div class="col-md-3"><h2>' + object.get('type') + '</h2>'
+			   	+ '<div><img class="doc-image" src="' + object.get('file').url() + '"></div>'
+				/*
+				+ '<div class="doc-delete" data-id="' +  object.id + '">'
+				+ '<a>'
+			   	+ '<span class="glyphicon glyphicon-trash"></span>'
+				+ '</a>'
+				+ '</div>'
+				*/
+				+ '</div>'
 			  );
 		  }
 
@@ -124,3 +153,6 @@ $(function() {
 	
   }
 });
+
+
+
