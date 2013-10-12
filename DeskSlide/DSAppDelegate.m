@@ -31,6 +31,15 @@
     [self setupTracker];
     [self setupParse:launchOptions];
     
+    
+    // Register for push notifications
+    [application registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
+    
+    [self receiveNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
+    
     return YES;
 }
 							
@@ -59,6 +68,41 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+- (void)application:(UIApplication *)application
+didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
+{
+    // Store the deviceToken in the current Installation and save it to Parse.
+    PFInstallation *currentInstallation = [PFInstallation currentInstallation];
+    [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation saveInBackground];
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    LOGTrace;
+    [self receiveNotification:userInfo];
+}
+
+- (void)receiveNotification:(NSDictionary*)userInfo
+{
+    LOGTrace;
+    if (!userInfo) return;
+    
+    // Create a pointer to the Photo object
+    NSString *objectId = [userInfo objectForKey:@"o"];
+    PFObject *doc = [PFObject objectWithoutDataWithClassName:@"Document"
+                                                            objectId:objectId];
+    
+    // Fetch photo object
+    [doc fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+        // Show photo view controller
+        if (!error && [PFUser currentUser]) {
+            LOGTrace;
+        }
+    }];
+
+    
 }
 
 
