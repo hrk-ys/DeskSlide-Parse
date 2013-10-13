@@ -44,18 +44,28 @@
 	// Do any additional setup after loading the view.
     self.screenName = NSStringFromClass(self.class);
     
-    [self.toolView setupToolButton:self.saveButton icon:FAKIconSave];
+    [self.toolView setupToolButton:self.saveButton
+                              icon:FAKIconSave
+                             color:[UIColor blackColor]
+                    highlightColor:[UIColor darkGrayColor]];
     [self.saveButton setImageEdgeInsets:UIEdgeInsetsMake(0, 0, 0, 5)];
-    [self.toolView setupToolButton:self.closeButton icon:FAKIconRemove];
+    
+    [self.toolView setupToolButton:self.closeButton
+                              icon:FAKIconRemove
+                             color:[UIColor blackColor]
+                    highlightColor:[UIColor darkGrayColor]];
     
 
-    [self.toolView setupToolButton:self.deleteButton icon:FAKIconTrash];
+    [self.toolView setupToolButton:self.deleteButton
+                              icon:FAKIconTrash
+                             color:[UIColor blackColor]
+                    highlightColor:[UIColor darkGrayColor]];
 
     
     if ([DSUtils isTextObject:self.object]) {
         
         self.textView.text = [self.object objectForKey:kDSDocumentTypeText];
-        NSDictionary* attributes = @{FAKImageAttributeForegroundColor: [UIColor colorWithWhite:0.400 alpha:1.000]};
+        NSDictionary* attributes = @{FAKImageAttributeForegroundColor: [UIColor colorWithWhite:0.800 alpha:1.000]};
         self.imageView.image = [FontAwesomeKit imageForIcon:FAKIconFileText
                                                      imageSize:CGSizeMake(320, 320)
                                                       fontSize:320
@@ -131,7 +141,11 @@
 
 - (IBAction)tappedCloseButton:(id)sender {
     LOGInfoTrace;
-    [self.navigationController popViewControllerAnimated:YES];
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 @end

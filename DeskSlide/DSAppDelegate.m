@@ -9,6 +9,7 @@
 #import "DSAppDelegate.h"
 
 #import "DSLoginViewController.h"
+#import "DSPreviewViewController.h"
 
 
 #import <Crashlytics/Crashlytics.h>
@@ -76,6 +77,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     // Store the deviceToken in the current Installation and save it to Parse.
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
+    [currentInstallation setObject:[PFUser currentUser] forKey:@"owner"];
     [currentInstallation saveInBackground];
 }
 
@@ -89,6 +91,12 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     LOGTrace;
     if (!userInfo) return;
     
+    NSURL* url = [NSURL URLWithString:userInfo[@"aps"][@"alert"]];
+    if ([[UIApplication sharedApplication] canOpenURL:url]) {
+        [[UIApplication sharedApplication] openURL:url];
+        return;
+    }
+    
     // Create a pointer to the Photo object
     NSString *objectId = [userInfo objectForKey:@"o"];
     PFObject *doc = [PFObject objectWithoutDataWithClassName:@"Document"
@@ -99,6 +107,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
         // Show photo view controller
         if (!error && [PFUser currentUser]) {
             LOGTrace;
+            
+            DSPreviewViewController* preview = [[[self.window rootViewController] storyboard] instantiateViewControllerWithIdentifier:@"preview"];
+            preview.object = object;
+            [[self.window rootViewController] presentViewController:preview animated:YES completion:nil];
         }
     }];
 
