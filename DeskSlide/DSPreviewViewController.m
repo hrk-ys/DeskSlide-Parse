@@ -20,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *closeButton;
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 
+
+@property (nonatomic) BOOL fullScreen;
+
 @end
 
 @implementation DSPreviewViewController
@@ -81,6 +84,7 @@
         PFFile *file = [self.object objectForKey:kDSDocumentFileKey];
         [self.imageView setImageWithURL:[NSURL URLWithString:file.url]];
         
+        self.textView.hidden = YES;
         self.saveButton.hidden = NO;
     }
 }
@@ -145,6 +149,27 @@
         [self.navigationController popViewControllerAnimated:YES];
     } else {
         [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+    return self.fullScreen;
+}
+- (UIStatusBarAnimation)preferredStatusBarUpdateAnimation
+{
+    return UIStatusBarAnimationFade;
+}
+
+
+- (IBAction)tappedImageView:(id)sender {
+    LOGTrace;
+    self.fullScreen = !self.fullScreen;
+    self.toolView.hidden = self.fullScreen;
+    [[UIApplication sharedApplication] setStatusBarHidden:self.fullScreen withAnimation:YES];
+    
+    if ([self respondsToSelector:@selector(setNeedsStatusBarAppearanceUpdate)]) {
+        [self setNeedsStatusBarAppearanceUpdate];
     }
 }
 
