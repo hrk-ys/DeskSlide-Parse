@@ -37,6 +37,10 @@ GADBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet GADBannerView *adMobView;
 @property (nonatomic) BOOL                          adMobIsVisible;
 
+
+// tutorial
+@property (weak, nonatomic) IBOutlet UIView *tutorialView;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *collectionTopLaytou;
 
 @property (nonatomic) BOOL            shouldReloadOnAppear;
@@ -116,6 +120,8 @@ static NSDate* documentUpdatedAt = nil;
         if (!error) {
             self.dataSource = objects.mutableCopy;
             [self.collectionView reloadData];
+            
+            self.tutorialView.hidden = self.dataSource.count > 0;
             
             [self.class updateDocument];
             self.lastUpdateAt = documentUpdatedAt;
