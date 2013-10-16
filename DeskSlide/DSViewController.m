@@ -41,9 +41,18 @@ GADBannerViewDelegate>
 
 @property (nonatomic) BOOL            shouldReloadOnAppear;
 @property (nonatomic) NSMutableArray *dataSource;
+
+@property (nonatomic) NSDate* lastUpdateAt;
 @end
 
 @implementation DSViewController
+
+static NSDate* documentUpdatedAt = nil;
++ (void)updateDocument
+{
+    LOGTrace;
+    documentUpdatedAt = [NSDate date];
+}
 
 - (UIStatusBarStyle)preferredStatusBarStyle
 {
@@ -86,7 +95,9 @@ GADBannerViewDelegate>
         return;
     }
     
-    [self loadObjects];
+    if (!self.lastUpdateAt || ![self.lastUpdateAt isEqualToDate:documentUpdatedAt]) {
+        [self loadObjects];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,6 +116,9 @@ GADBannerViewDelegate>
         if (!error) {
             self.dataSource = objects.mutableCopy;
             [self.collectionView reloadData];
+            
+            [self.class updateDocument];
+            self.lastUpdateAt = documentUpdatedAt;
         } else {
             [error show];
         }

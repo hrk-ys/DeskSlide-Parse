@@ -7,6 +7,7 @@
 //
 
 #import "DSPreviewViewController.h"
+#import "DSViewController.h"
 
 #import <SVProgressHUD.h>
 #import <SDWebImage/UIImageView+WebCache.h>
@@ -137,6 +138,8 @@
         [SVProgressHUD dismiss];
         if (error) {
             [error show];
+        } else {
+            [DSViewController updateDocument];
         }
         [self.navigationController popViewControllerAnimated:YES];
     }];
