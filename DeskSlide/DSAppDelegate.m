@@ -8,8 +8,8 @@
 
 #import "DSAppDelegate.h"
 
-#import "DSLoginViewController.h"
 #import "DSPreviewViewController.h"
+#import "DSAuthViewController.h"
 
 
 #import <Crashlytics/Crashlytics.h>
@@ -18,7 +18,7 @@
 #import <DDTTYLogger.h>
 
 @interface DSAppDelegate ()
-<DSLoginViewControllerDelegate>
+<DSAuthViewControllerDelegate>
 @end
 
 @implementation DSAppDelegate
@@ -31,7 +31,7 @@
     [self setupLogger];
     [self setupTracker];
     [self setupParse:launchOptions];
-    
+
     
     // Register for push notifications
     [application registerForRemoteNotificationTypes:
@@ -75,6 +75,8 @@
 didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     // Store the deviceToken in the current Installation and save it to Parse.
+    if (!deviceToken) return;
+    
     PFInstallation *currentInstallation = [PFInstallation currentInstallation];
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation setObject:[PFUser currentUser] forKey:@"owner"];
@@ -156,24 +158,16 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 }
 
 - (void)presentLoginViewController:(UIViewController*)controller animated:(BOOL)animated {
-    DSLoginViewController *logInController = [[DSLoginViewController alloc] init];
-    logInController.loginDelegate = self;
-
-    [controller presentViewController:logInController animated:animated completion:nil];
+    DSAuthViewController* welcomController = [[DSAuthViewController alloc] init];
+    welcomController.delegate = self;
+    [controller presentViewController:welcomController animated:animated completion:nil];
 }
 
-- (void)logInViewController:(DSLoginViewController *)controller didLogInUser:(PFUser *)user
+- (void)authController:(DSAuthViewController *)controller didLoginUser:(PFUser *)user
 {
     LOGTrace;
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (void)logInViewControllerDidCancel:(DSLoginViewController *)controller
-{
-    LOGTrace;
-//    [self.window.rootViewController dismissViewControllerAnimated:YES completion:nil];
-}
-
 
 - (void)logOut {
     LOGTrace;

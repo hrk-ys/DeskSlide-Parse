@@ -27,6 +27,11 @@
 		E9590AF91807054100594FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9590AF71807054100594FFB /* InfoPlist.strings */; };
 		E9590B0418070BDE00594FFB /* LoginTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9590B0318070BDE00594FFB /* LoginTestCase.m */; };
 		E9590B0718070C2300594FFB /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E9590B0618070C2300594FFB /* KIFUITestActor+EXAdditions.m */; };
+		E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E99B83141810474000E7C4CB /* DSAuthViewController.m */; };
+		E99B83171810474000E7C4CB /* DSAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99B83151810474000E7C4CB /* DSAuthViewController.xib */; };
+		E99B831918104ADE00E7C4CB /* welcom_bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E99B831818104ADE00E7C4CB /* welcom_bg@2x.png */; };
+		E99B831D1810663F00E7C4CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99B831C1810663F00E7C4CB /* CFNetwork.framework */; };
+		E99B831F1810665000E7C4CB /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99B831E1810665000E7C4CB /* QuartzCore.framework */; };
 		E9AD6A1E17FFD269005A7D01 /* bg_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */; };
 		E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E78B17F074CC00544C88 /* bg@2x.png */; };
 		E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E78E17F07B0800544C88 /* DSSettingViewController.m */; };
@@ -48,6 +53,7 @@
 		E9B0E7DB17FC71C500544C88 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */; };
 		E9B0E7DD17FC77D600544C88 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DC17FC77D600544C88 /* MessageUI.framework */; };
 		E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */; };
+		E9DFBBC1181193F100153FA6 /* DSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +96,12 @@
 		E9590B0318070BDE00594FFB /* LoginTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginTestCase.m; sourceTree = "<group>"; };
 		E9590B0518070C2300594FFB /* KIFUITestActor+EXAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "KIFUITestActor+EXAdditions.h"; sourceTree = "<group>"; };
 		E9590B0618070C2300594FFB /* KIFUITestActor+EXAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "KIFUITestActor+EXAdditions.m"; sourceTree = "<group>"; };
+		E99B83131810474000E7C4CB /* DSAuthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSAuthViewController.h; sourceTree = "<group>"; };
+		E99B83141810474000E7C4CB /* DSAuthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAuthViewController.m; sourceTree = "<group>"; };
+		E99B83151810474000E7C4CB /* DSAuthViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DSAuthViewController.xib; sourceTree = "<group>"; };
+		E99B831818104ADE00E7C4CB /* welcom_bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "welcom_bg@2x.png"; sourceTree = "<group>"; };
+		E99B831C1810663F00E7C4CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E99B831E1810665000E7C4CB /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_w@2x.png"; sourceTree = "<group>"; };
 		E9B0E78B17F074CC00544C88 /* bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg@2x.png"; sourceTree = "<group>"; };
 		E9B0E78D17F07B0800544C88 /* DSSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSettingViewController.h; sourceTree = "<group>"; };
@@ -132,6 +144,8 @@
 		E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		E9B0E7DC17FC77D600544C88 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E9DFBBBF181193F100153FA6 /* DSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSignUpViewController.h; sourceTree = "<group>"; };
+		E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSignUpViewController.m; sourceTree = "<group>"; };
 		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB2BE02A234641CD9A2FB596 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +155,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99B831F1810665000E7C4CB /* QuartzCore.framework in Frameworks */,
+				E99B831D1810663F00E7C4CB /* CFNetwork.framework in Frameworks */,
 				E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */,
 				E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */,
 				E9B0E7DD17FC77D600544C88 /* MessageUI.framework in Frameworks */,
@@ -195,6 +211,8 @@
 		E922FA7217F02353008C7968 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E99B831E1810665000E7C4CB /* QuartzCore.framework */,
+				E99B831C1810663F00E7C4CB /* CFNetwork.framework */,
 				E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */,
 				E9B0E7DC17FC77D600544C88 /* MessageUI.framework */,
 				E9B0E7CE17FBA65400544C88 /* iAd.framework */,
@@ -257,6 +275,11 @@
 			children = (
 				E922FAC717F04885008C7968 /* DSLoginViewController.h */,
 				E922FAC817F04885008C7968 /* DSLoginViewController.m */,
+				E99B83131810474000E7C4CB /* DSAuthViewController.h */,
+				E99B83141810474000E7C4CB /* DSAuthViewController.m */,
+				E99B83151810474000E7C4CB /* DSAuthViewController.xib */,
+				E9DFBBBF181193F100153FA6 /* DSSignUpViewController.h */,
+				E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -293,6 +316,7 @@
 		E9B0E78A17F074CC00544C88 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E99B831818104ADE00E7C4CB /* welcom_bg@2x.png */,
 				E9B0E78B17F074CC00544C88 /* bg@2x.png */,
 				E9AD6A1D17FFD269005A7D01 /* bg_w@2x.png */,
 				E9B0E7C617F9CAF400544C88 /* Icon-60.png */,
@@ -438,10 +462,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99B831918104ADE00E7C4CB /* welcom_bg@2x.png in Resources */,
 				E922FA7E17F02353008C7968 /* InfoPlist.strings in Resources */,
 				E922FA8617F02353008C7968 /* Default.png in Resources */,
 				E922FA8817F02353008C7968 /* Default@2x.png in Resources */,
 				E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */,
+				E99B83171810474000E7C4CB /* DSAuthViewController.xib in Resources */,
 				E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */,
 				E9AD6A1E17FFD269005A7D01 /* bg_w@2x.png in Resources */,
 				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
@@ -544,6 +570,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E922FA8017F02353008C7968 /* main.m in Sources */,
+				E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
 				E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */,
@@ -553,6 +580,7 @@
 				E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */,
 				E9B0E7A517F8850800544C88 /* DSPreviewViewController.m in Sources */,
 				E9B0E7A817F8F76600544C88 /* DSUtils.m in Sources */,
+				E9DFBBC1181193F100153FA6 /* DSSignUpViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,15 +695,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/DeskSlide/Vender\"",
+					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
+					/work/github/DeskSlide,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics\"",
-					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1\"",
+					"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics",
+					"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1",
+					/work/github/DeskSlide,
+					"$(SRCROOT)/DeskSlide/Vender/Reveal",
+					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "8A454A7B-156D-4D25-BEC3-06738D9418F8";
@@ -691,15 +723,19 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/DeskSlide/Vender\"",
+					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
+					/work/github/DeskSlide,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics\"",
-					"\"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1\"",
+					"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics",
+					"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1",
+					/work/github/DeskSlide,
+					"$(SRCROOT)/DeskSlide/Vender/Reveal",
+					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
