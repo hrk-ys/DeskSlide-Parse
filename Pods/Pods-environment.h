@@ -9,13 +9,25 @@
 // CocoaLumberjack
 #define COCOAPODS_POD_AVAILABLE_CocoaLumberjack
 #define COCOAPODS_VERSION_MAJOR_CocoaLumberjack 1
-#define COCOAPODS_VERSION_MINOR_CocoaLumberjack 6
-#define COCOAPODS_VERSION_PATCH_CocoaLumberjack 2
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack 8
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack 1
+
+// CocoaLumberjack/Core
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack_Core
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack_Core 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Core 8
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Core 1
+
+// CocoaLumberjack/Extensions
+#define COCOAPODS_POD_AVAILABLE_CocoaLumberjack_Extensions
+#define COCOAPODS_VERSION_MAJOR_CocoaLumberjack_Extensions 1
+#define COCOAPODS_VERSION_MINOR_CocoaLumberjack_Extensions 8
+#define COCOAPODS_VERSION_PATCH_CocoaLumberjack_Extensions 1
 
 // Facebook-iOS-SDK
 #define COCOAPODS_POD_AVAILABLE_Facebook_iOS_SDK
 #define COCOAPODS_VERSION_MAJOR_Facebook_iOS_SDK 3
-#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 8
+#define COCOAPODS_VERSION_MINOR_Facebook_iOS_SDK 12
 #define COCOAPODS_VERSION_PATCH_Facebook_iOS_SDK 0
 
 // FontAwesomeKit
@@ -28,7 +40,7 @@
 #define COCOAPODS_POD_AVAILABLE_HYUtils
 #define COCOAPODS_VERSION_MAJOR_HYUtils 0
 #define COCOAPODS_VERSION_MINOR_HYUtils 0
-#define COCOAPODS_VERSION_PATCH_HYUtils 1
+#define COCOAPODS_VERSION_PATCH_HYUtils 3
 
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse

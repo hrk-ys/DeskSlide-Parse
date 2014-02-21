@@ -34,7 +34,6 @@
     self.signUpView.logo = [self _makeLogoWithFrame:self.signUpView.logo.frame];
     self.signUpView.usernameField.placeholder = @"ユーザ名";
     self.signUpView.passwordField.placeholder = @"パスワード";
-    self.signUpView.emailField.placeholder = @"Eメール";
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,11 +51,12 @@
     title.font = [UIFont systemFontOfSize:18.0f];
     
     UILabel* title2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, 280, 45)];
-    title2.text = @"ユーザ名、パスワードを入力してください。\nEメールはパスワードを忘れた場合に再登録するために使用します。";
+    title2.text = @"ユーザ名、パスワードを入力してください。";
     title2.numberOfLines = 0;
     title2.textColor = [UIColor whiteColor];
     title2.backgroundColor = [UIColor clearColor];
     title2.font = [UIFont systemFontOfSize:11.0f];
+    title2.textAlignment = NSTextAlignmentCenter;
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [view addSubview:title];
     [view addSubview:title2];

@@ -14,6 +14,8 @@
 
 #import "GADBannerView.h"
 
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
 #import <SVProgressHUD.h>
 
@@ -149,6 +151,34 @@ static NSDate* documentUpdatedAt = nil;
     
     return cell;
 }
+
+
+#pragma mark - action
+
+- (IBAction)tappedLinkButton:(id)sender {
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
+        
+        controller.mailComposeDelegate = self;
+        [controller setSubject:@"DeskSlide PCブラウザ用URL"];
+        [controller setMessageBody:@"http://desk-slide.hrk-ys.net/" isHTML:NO];
+        
+        [self presentViewController:controller animated:YES completion:nil];
+        
+    } else {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://desk-slide.hrk-ys.net/"]];
+    }
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    if (error) [error show];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
+
 
 - (IBAction)tappedTextButton:(id)sender
 {

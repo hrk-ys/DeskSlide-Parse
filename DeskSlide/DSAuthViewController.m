@@ -58,6 +58,7 @@ PFSignUpViewControllerDelegate>
     LOGTrace;
     DSSignUpViewController *signUpViewController = [[DSSignUpViewController alloc] init];
     [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    [signUpViewController setFields: PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton ];
 
     [self presentViewController:signUpViewController animated:YES completion:nil];
 }

@@ -26,7 +26,7 @@
 //        | PFLogInFieldsSignUpButton
 //        | PFLogInFieldsFacebook
 //        | PFLogInFieldsTwitter
-        | PFLogInFieldsPasswordForgotten
+//        | PFLogInFieldsPasswordForgotten
         | PFLogInFieldsDismissButton
         ;
         
