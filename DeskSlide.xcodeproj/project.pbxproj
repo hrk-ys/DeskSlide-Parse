@@ -726,7 +726,6 @@
 					"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics",
 					"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1",
 					/work/github/DeskSlide,
-					"$(SRCROOT)/DeskSlide/Vender/Reveal",
 					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -754,7 +753,6 @@
 					"$(SRCROOT)/DeskSlide/Vender/GoogleAnalytics",
 					"$(SRCROOT)/DeskSlide/Vender/GoogleAdMobAdsSdkiOS-6.5.1",
 					/work/github/DeskSlide,
-					"$(SRCROOT)/DeskSlide/Vender/Reveal",
 					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

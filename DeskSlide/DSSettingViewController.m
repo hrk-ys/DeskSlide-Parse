@@ -14,8 +14,11 @@
 
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
+#import <Helpshift.h>
 
 typedef enum {
+   	kDSSettingTableRowContact,
+    kDSSettingTableRowFAQ,
 	kDSSettingTableRowVersion,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
@@ -98,6 +101,16 @@ typedef enum {
     LOGTrace;
     
     switch (indexPath.row) {
+        case kDSSettingTableRowContact:
+        {
+            [[Helpshift sharedInstance] showConversation:self withOptions:nil];
+        }
+            break;
+        case kDSSettingTableRowFAQ:
+        {
+            [[Helpshift sharedInstance] showFAQs:self withOptions:nil];
+        }
+            break;
         case kDSSettingTableRowLogout:
         {
             [self.presentingViewController dismissViewControllerAnimated:YES completion:^{

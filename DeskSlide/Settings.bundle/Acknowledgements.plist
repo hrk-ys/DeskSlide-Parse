@@ -290,6 +290,14 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 		</dict>
 		<dict>
 			<key>FooterText</key>
+			<string>See http://www.helpshift.com/terms/</string>
+			<key>Title</key>
+			<string>Helpshift</string>
+			<key>Type</key>
+			<string>PSGroupSpecifier</string>
+		</dict>
+		<dict>
+			<key>FooterText</key>
 			<string>See https://parse.com/about/terms</string>
 			<key>Title</key>
 			<string>Parse</string>

@@ -42,6 +42,12 @@
 #define COCOAPODS_VERSION_MINOR_HYUtils 0
 #define COCOAPODS_VERSION_PATCH_HYUtils 3
 
+// Helpshift
+#define COCOAPODS_POD_AVAILABLE_Helpshift
+#define COCOAPODS_VERSION_MAJOR_Helpshift 4
+#define COCOAPODS_VERSION_MINOR_Helpshift 2
+#define COCOAPODS_VERSION_PATCH_Helpshift 0
+
 // Parse
 #define COCOAPODS_POD_AVAILABLE_Parse
 #define COCOAPODS_VERSION_MAJOR_Parse 1

@@ -16,6 +16,7 @@
 
 #import <DDFileLogger.h>
 #import <DDTTYLogger.h>
+#import <Helpshift.h>
 
 @interface DSAppDelegate ()
 <DSAuthViewControllerDelegate>
@@ -28,9 +29,15 @@
     // Override point for customization after application launch.
     
     [Crashlytics startWithAPIKey:@"b23780728daaf4165202578d33fcddfe13bf2bef"];
-    [self setupLogger];
+    [HYLog setupLogger];
+#ifdef DEBUG
+    [HYLog updateLogLevel:LOG_LEVEL_VERBOSE];
+#else
+    [HYLog updateLogLevel:LOG_LEVEL_OFF];
+#endif
     [self setupTracker];
     [self setupParse:launchOptions];
+    [self setupHelpshift:launchOptions];
 
     
     if ([PFUser currentUser]) {
@@ -79,6 +86,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     [currentInstallation setDeviceTokenFromData:deviceToken];
     [currentInstallation setObject:[PFUser currentUser] forKey:@"owner"];
     [currentInstallation saveInBackground];
+    
+    
+    [[Helpshift sharedInstance] registerDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -95,11 +105,18 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
      UIRemoteNotificationTypeAlert |
      UIRemoteNotificationTypeSound];
 }
+
 - (void)receiveNotification:(NSDictionary*)userInfo
 {
     LOGTrace;
     if (!userInfo) return;
     
+    //Helpshift::handle notification from APN
+    if ([[userInfo objectForKey:@"origin"] isEqualToString:@"helpshift"]) {
+        [[Helpshift sharedInstance] handleRemoteNotification:userInfo withController:self.window.rootViewController];
+        return;
+    }
+
     NSURL* url = [NSURL URLWithString:userInfo[@"aps"][@"alert"]];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
@@ -127,27 +144,6 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 }
 
 
-- (void)setupLogger
-{
-    DDFileLogger *fileLogger = [[DDFileLogger alloc] init];
-    fileLogger.rollingFrequency                       = 60 * 60 * 24;
-    fileLogger.logFileManager.maximumNumberOfLogFiles = 7;
-    [fileLogger setLogFormatter:[[LogFormatter alloc] init]];
-    [DDLog addLogger:fileLogger];
-    
-    DDTTYLogger *logger = [DDTTYLogger sharedInstance];
-    [logger setLogFormatter:[[LogFormatter alloc] init]];
-    [logger setColorsEnabled:YES];
-    [logger setForegroundColor:[UIColor redColor] backgroundColor:nil forFlag:
-     LOG_FLAG_ERROR];
-    [logger setForegroundColor:[UIColor orangeColor] backgroundColor:nil forFlag:
-     LOG_FLAG_WARN];
-    [logger setForegroundColor:[UIColor blueColor] backgroundColor:nil forFlag:
-     LOG_FLAG_INFO];
-    
-    [DDLog addLogger:logger];
-}
-
 
 - (void)setupParse:(NSDictionary*)launchOptions
 {
@@ -162,6 +158,11 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     // [defaultACL setPublicReadAccess:YES];
     [PFACL setDefaultACL:defaultACL withAccessForCurrentUser:YES];
 
+}
+
+- (void)setupHelpshift:(NSDictionary*)launchOptions
+{
+    [Helpshift installForApiKey:@"62abc7c6505789c20cc45f0538303d12" domainName:@"hrk-ys.helpshift.com" appID:@"hrk-ys_platform_20140222040126521-50d9c1f80382fa5"];
 }
 
 - (void)presentLoginViewController:(UIViewController*)controller animated:(BOOL)animated {
