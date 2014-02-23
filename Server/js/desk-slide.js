@@ -58,6 +58,8 @@ $(function() {
 				'</h2><p class="doc-text">' + doc.get('text') + '</p></div>'
 			  );
      		  $("#text-document").val("");
+			  mixpanel.track( "create doc", { "docType": "image" } );
+			  mixpanel.people.increment("doc count");
 			},
 			error: function(doc, error) {
 				alert('Failed to create new object, with error code: ' + error.description);
@@ -83,6 +85,8 @@ $(function() {
 		        	'<div class="col-md-3"><h2>' + doc.get('type') +
 					'</h2><img class="doc-image" src="' + doc.get('file').url() + '"></div>'
 				  );
+				  mixpanel.track( "create doc", { "docType": "image" } );
+			      mixpanel.people.increment("doc count");
 				},
 				error: function(doc, error) {
 					alert('Failed to create new object, with error code: ' + error.description);
@@ -151,6 +155,9 @@ $(function() {
       }
     });
 	
+	mixpanel.identify( currentUser.get("username") );
+    mixpanel.people.set({ "username": currentUser.get("username") });
+	mixpanel.track( "download doc" );
   }
 });
 
