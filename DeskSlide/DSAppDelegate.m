@@ -33,11 +33,9 @@
     [self setupParse:launchOptions];
 
     
-    // Register for push notifications
-    [application registerForRemoteNotificationTypes:
-     UIRemoteNotificationTypeBadge |
-     UIRemoteNotificationTypeAlert |
-     UIRemoteNotificationTypeSound];
+    if ([PFUser currentUser]) {
+        [self registNotification];
+    }
     
     [self receiveNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
     
@@ -88,6 +86,15 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     [self receiveNotification:userInfo];
 }
 
+- (void)registNotification
+{
+    LOGTrace;
+    // Register for push notifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeBadge |
+     UIRemoteNotificationTypeAlert |
+     UIRemoteNotificationTypeSound];
+}
 - (void)receiveNotification:(NSDictionary*)userInfo
 {
     LOGTrace;
@@ -167,6 +174,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 {
     LOGTrace;
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+    [self registNotification];
 }
 
 - (void)logOut {
