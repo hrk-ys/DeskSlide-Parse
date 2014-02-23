@@ -22,8 +22,6 @@
 
 - (void)setDocument:(PFObject*)object
 {
-    LOGTrace;
-    
     if ([[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeText]) {
         NSDictionary* attributes = @{FAKImageAttributeForegroundColor: [UIColor colorWithWhite:0.400 alpha:1.000]};
         self.bgImageView.image = [FontAwesomeKit imageForIcon:FAKIconFileText

@@ -8,6 +8,16 @@
 
 #import <Parse/Parse.h>
 
+@protocol DSSignUpViewControllerDelegate;
 @interface DSSignUpViewController : PFSignUpViewController
+
+@property (nonatomic, assign) id<DSSignUpViewControllerDelegate>signUpDelegate;
+
+@end
+
+@protocol DSSignUpViewControllerDelegate <NSObject>
+
+- (void)signUpViewController:(DSSignUpViewController *)controller didLogInUser:(PFUser *)user;
+- (void)signUpViewControllerDidCancel:(DSSignUpViewController *)controller;
 
 @end

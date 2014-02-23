@@ -60,6 +60,7 @@
 		E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */; };
 		E9C7804A18B8FC2600C4E79C /* HelpshiftLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */; };
 		E9C7805218B9144D00C4E79C /* HelpshiftConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */; };
+		E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7805518BA27A800C4E79C /* DSTracker.m */; };
 		E9DFBBC1181193F100153FA6 /* DSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -158,6 +159,8 @@
 		E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E9C7804018B8FC2600C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HelpshiftLocalizable.strings; sourceTree = "<group>"; };
 		E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HelpshiftConfig.plist; sourceTree = "<group>"; };
+		E9C7805418BA27A800C4E79C /* DSTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTracker.h; sourceTree = "<group>"; };
+		E9C7805518BA27A800C4E79C /* DSTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTracker.m; sourceTree = "<group>"; };
 		E9DFBBBF181193F100153FA6 /* DSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSignUpViewController.h; sourceTree = "<group>"; };
 		E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSignUpViewController.m; sourceTree = "<group>"; };
 		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 				E9B0E79017F07D9C00544C88 /* Views */,
 				E9B0E79417F0A3CC00544C88 /* DSConstants.h */,
 				E9B0E79517F0A3CC00544C88 /* DSConstants.m */,
+				E9C7805418BA27A800C4E79C /* DSTracker.h */,
+				E9C7805518BA27A800C4E79C /* DSTracker.m */,
 				E922FA8217F02353008C7968 /* DSAppDelegate.h */,
 				E922FA8317F02353008C7968 /* DSAppDelegate.m */,
 				E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */,
@@ -624,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E922FA8017F02353008C7968 /* main.m in Sources */,
+				E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */,
 				E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
@@ -762,6 +768,12 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"COCOAPODS=1",
+					"MIXPANEL_LOG=1",
+					"MIXPANEL_DEBUG=1",
+				);
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

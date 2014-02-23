@@ -10,6 +10,7 @@ PODS:
   - HYUtils (0.0.3):
     - CocoaLumberjack
   - KIF (2.0.0)
+  - Mixpanel (2.3.2)
   - Parse (1.2.13):
     - Facebook-iOS-SDK (~> 3.5)
   - SDWebImage (3.4):
@@ -19,9 +20,10 @@ PODS:
 
 DEPENDENCIES:
   - FontAwesomeKit (= 1.1.3)
-  - Helpshift
+  - Helpshift (= 4.2.0)
   - HYUtils (from `https://github.com/hrk-ys/HYUtils.git`, commit `11d1836e3917371a20171d43bb8bc50789920f35`)
   - KIF (~> 2.0)
+  - Mixpanel
   - Parse (= 1.2.13)
   - SDWebImage (= 3.4)
   - SVProgressHUD (= 0.9)
@@ -38,6 +40,7 @@ SPEC CHECKSUMS:
   Helpshift: a71c6cbe9de11f12e90e88a2f5a847976ebf4a11
   HYUtils: 3bf0dc6cb74f89a0adb510a9f7415a7874f4743f
   KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
+  Mixpanel: ddd79df92245a14d2b3064544d1e9ff037d8ac3a
   Parse: 71038f6c13fef880c628db7a2725bb7138ead81a
   SDWebImage: 366188f04c019bfd712d45e3b36aa52070f4abd8
   SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8

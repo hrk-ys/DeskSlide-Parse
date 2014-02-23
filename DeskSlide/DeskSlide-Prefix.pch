@@ -11,13 +11,13 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-#import <QuartzCore/QuartzCore.h>
+    #import <QuartzCore/QuartzCore.h>
     #import <Parse/Parse.h>
     #import <HYUtils/HYUtils.h>
-#import <FontAwesomeKit.h>
-#import "GAI.h"
+    #import <FontAwesomeKit.h>
     #import "DSConstants.h"
-#import "DSUtils.h"
-#import "DSToolView.h"
+    #import "DSTracker.h"
+    #import "DSUtils.h"
+    #import "DSToolView.h"
 
 #endif

@@ -9,6 +9,7 @@
 #import "DSSignUpViewController.h"
 
 @interface DSSignUpViewController ()
+<PFSignUpViewControllerDelegate>
 
 @end
 
@@ -19,6 +20,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.delegate = self;
     }
     return self;
 }
@@ -34,6 +36,13 @@
     self.signUpView.logo = [self _makeLogoWithFrame:self.signUpView.logo.frame];
     self.signUpView.usernameField.placeholder = @"ユーザ名";
     self.signUpView.passwordField.placeholder = @"パスワード";
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [DSTracker trackView:@"sign_up"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -63,4 +72,33 @@
     
     return view;
 }
+
+- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
+{
+    LOGTrace;
+    [DSTracker trackEvent:@"tapped sign up button"];
+    
+    NSString* username = info[@"username"];
+    NSString* password = info[@"password"];
+    
+    if (username && password && username.length != 0 && password.length != 0) {
+        return YES;
+    }
+    [UIAlertView showTitle:@"入力エラー" message:@"ユーザ名、パスワードを入力してください"];
+
+    return NO;
+}
+- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+{
+    LOGTrace;
+    [DSTracker trackEvent:@"sign up success"];
+    [self.signUpDelegate signUpViewController:self didLogInUser:user];
+}
+- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController
+{
+    LOGTrace;
+    [DSTracker trackEvent:@"sign up cancel"];
+    [self.signUpDelegate signUpViewControllerDidCancel:self];
+}
+
 @end

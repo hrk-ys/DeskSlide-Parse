@@ -5,6 +5,7 @@ pod 'FontAwesomeKit', '1.1.3'
 pod 'SDWebImage', '3.4'
 pod 'SVProgressHUD', '0.9'
 pod 'Helpshift', '4.2.0'
+pod 'Mixpanel', '2.3.2'
 
 target 'DeskSlide Tests', :exclusive => true do
   pod 'KIF', '~> 2.0'
