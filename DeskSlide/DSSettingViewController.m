@@ -18,7 +18,6 @@
 
 typedef enum {
    	kDSSettingTableRowContact,
-    kDSSettingTableRowFAQ,
 	kDSSettingTableRowVersion,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
@@ -114,11 +113,6 @@ typedef enum {
         case kDSSettingTableRowContact:
         {
             [[Helpshift sharedInstance] showConversation:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
-        }
-            break;
-        case kDSSettingTableRowFAQ:
-        {
-            [[Helpshift sharedInstance] showFAQs:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
         }
             break;
         case kDSSettingTableRowLogout:
