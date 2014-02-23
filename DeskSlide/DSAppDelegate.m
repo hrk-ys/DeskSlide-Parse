@@ -176,6 +176,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     LOGTrace;
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
+    
     [self registNotification];
 }
 

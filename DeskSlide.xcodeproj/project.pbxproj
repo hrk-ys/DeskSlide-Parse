@@ -58,6 +58,8 @@
 		E9B0E7DB17FC71C500544C88 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */; };
 		E9B0E7DD17FC77D600544C88 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DC17FC77D600544C88 /* MessageUI.framework */; };
 		E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */; };
+		E9C7804A18B8FC2600C4E79C /* HelpshiftLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */; };
+		E9C7805218B9144D00C4E79C /* HelpshiftConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */; };
 		E9DFBBC1181193F100153FA6 /* DSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -154,6 +156,8 @@
 		E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		E9B0E7DC17FC77D600544C88 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E9C7804018B8FC2600C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HelpshiftLocalizable.strings; sourceTree = "<group>"; };
+		E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HelpshiftConfig.plist; sourceTree = "<group>"; };
 		E9DFBBBF181193F100153FA6 /* DSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSignUpViewController.h; sourceTree = "<group>"; };
 		E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSignUpViewController.m; sourceTree = "<group>"; };
 		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -269,6 +273,8 @@
 		E922FA7A17F02353008C7968 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E9C7804F18B9144D00C4E79C /* HSThemes */,
+				E9C7803D18B8FC2600C4E79C /* HSLocalization */,
 				E922FA7B17F02353008C7968 /* DeskSlide-Info.plist */,
 				E922FA7C17F02353008C7968 /* InfoPlist.strings */,
 				E922FA7F17F02353008C7968 /* main.m */,
@@ -393,6 +399,22 @@
 			path = "GoogleAdMobAdsSdkiOS-6.5.1";
 			sourceTree = "<group>";
 		};
+		E9C7803D18B8FC2600C4E79C /* HSLocalization */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */,
+			);
+			path = HSLocalization;
+			sourceTree = "<group>";
+		};
+		E9C7804F18B9144D00C4E79C /* HSThemes */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */,
+			);
+			path = HSThemes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,6 +482,16 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				de,
+				es,
+				fr,
+				it,
+				ja,
+				ko,
+				pt,
+				ru,
+				tr,
+				"zh-Hans",
 			);
 			mainGroup = E922FA6717F02353008C7968;
 			productRefGroup = E922FA7117F02353008C7968 /* Products */;
@@ -477,6 +509,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9C7805218B9144D00C4E79C /* HelpshiftConfig.plist in Resources */,
 				E99B831918104ADE00E7C4CB /* welcom_bg@2x.png in Resources */,
 				E922FA7E17F02353008C7968 /* InfoPlist.strings in Resources */,
 				E97B2EE218B7B92300795D07 /* Icon-Small-50@2x.png in Resources */,
@@ -487,6 +520,7 @@
 				E99B83171810474000E7C4CB /* DSAuthViewController.xib in Resources */,
 				E97B2EDC18B7AA9300795D07 /* Settings.bundle in Resources */,
 				E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */,
+				E9C7804A18B8FC2600C4E79C /* HelpshiftLocalizable.strings in Resources */,
 				E9AD6A1E17FFD269005A7D01 /* bg_w@2x.png in Resources */,
 				E97B2EE318B7B92300795D07 /* Icon-Small.png in Resources */,
 				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
@@ -646,6 +680,14 @@
 				E9590AF81807054100594FFB /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9C7804018B8FC2600C4E79C /* en */,
+			);
+			name = HelpshiftLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

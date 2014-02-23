@@ -1,0 +1,85 @@
+/* 
+  HelpshiftLocalizable.strings
+  Helpshift
+
+  Copyright (c) 2014 Helpshift,Inc., All rights reserved.
+*/
+
+
+"Rate our App" = "アプリを評価";
+"If you love our app, please take a moment to rate it in the App Store" = "もしよろしければレビューを書いていただいてもよいでしょうか？";
+"Rate" = "評価";
+"Send Feedback" = "フィードバック送信";
+"No Internet!" = "ネットワークエラー";
+"No working Internet connection is found." = "インターネット接続がありません。";
+"Take a screenshot on your iPhone" = "スクリーンショットを撮影";
+"Take a screenshot on your iPad" = "iPadでスクリーンショットを撮影";
+"Go to the screen you want a screenshot of, hold down the power button and the home button on your iPhone, at the same time." = "キャプチャーしたい画面に行き、iPhoneのホームボタンと電源ボタンを同時に押してしてください。";
+"Go to the screen you want a screenshot of, hold down the power button and the home button on your iPad, at the same time." = "キャプチャーしたい画面に行き、iPadのホームボタンと電源ボタンを同時に押してしてください。";
+"That's it, your screenshot is now in your iPhone gallery!" = "スクリーンショットは写真アプリに保村されます";
+"That's it, your screenshot is now in your iPad gallery!" = "スクリーンショットは写真アプリに保村されます";
+"Take screenshot" = "OK";
+"Opening Gallery..." = "ライブラリーを開いています...";
+"Sending Screenshot..." = "スクリーンショット送信中...";
+"Screenshot sent" = "スクリーンショットが送信されました";
+"Your message was not sent.Tap \"Try Again\" to send this message?" = "メッセージが送信されました。 \"再試行\" をタップしてこのメッセージを送信しますか?";
+"No faqs found in this section" = "このカテゴリでは質問がありません";
+"Could not fetch faqs" = "よくある質問が取得できませんでした";
+"We could not fetch the required data" = "必要なデータが取得できませんでした";
+"FAQ" = "よくある質問";
+"Can't find what you were looking for?" = "一致する情報はありませんでした。";
+"Sorry to hear that. Could you please tell us a little bit more about the problem you are facing?" = "申し訳ございませんが、直面されている問題についてもう少し詳しく教えていただけませんか?";
+"We're happy to help you!" = "できる限りサポート致します。";
+"Describe your problem" = "検索ワードを入力してください";
+"Email invalid" = "メールが設定されていません";
+"Please provide a valid email address." = "有効なメールアドレスを入力してください。";
+"Invalid Entry" = "入力値が無効です";
+"Please enter a brief description of the issue you are facing." = "お問い合わせ内容を入力してください。";
+"Question" = "FAQ";
+"Was this helpful?" = "問題は解決しましたか?";
+"You found this helpful." = "ご協力ありがとうございます";
+"You didn't find this helpful." = "ご協力ありがとうございます";
+"Try Again" = "再試行";
+"Cancel" = "キャンセル";
+"REVIEW" = "レビュー";
+"Send" = "送信";
+"Change" = "変更";
+"You have answered: NO" = "回答:いいえ";
+"You have answered: YES" = "回答: はい";
+"Ok, attach" = "写真を選択";
+"Learn how" = "撮影方法";
+"YES" = "はい";
+"NO" = "いいえ";
+"Accepted review request" = "レビューリクエストを受け取りました";
+"SEND" = "送信";
+"OK" = "OK";
+"Close" = "終了";
+"Loading..." = "読み込み中...";
+"Help" = "ヘルプ";
+"Sending failed !" = "送信失敗!";
+"Screenshot could not be sent. Image is too large, try again with another image" = "スクリーンショットが送信できませんでした。画像が大きすぎます。他の画像で再試行してください。";
+"Name invalid" = "名前が無効です";
+"Please provide a name." = "名前を入力してください。";
+"New message from Support" = "サポートからの新規メッセージ";
+"new messages from Support" = "サポートからの新規メッセージ";
+"No FAQs found" = "よくある質問が見つかりませんでした";
+"Conversation" = "お問い合わせ";
+"Name" = "氏名";
+"Email (optional)" = "メール（任意）";
+"Email" = "メール";
+"Sending your message..." = "メッセージ送信中です...";
+"Message send failure." = "メッセージ送信に失敗しました。";
+"Please check your network connection and try again." = "ネットワーク接続をご確認の上、再試行してください。";
+"CONTACT US" = "お問い合わせ";
+"Back" = "戻る";
+"Thanks for messaging us! Did we answer all your questions?" = "お問い合わせいただいた問題は解決されましたか?";
+"You ended the conversation above." = "上記のお問い合わせを終了しました。";
+"YES, THANKS!" = "はい";
+"START A NEW CONVERSATION" = "他のお問い合わせを入力する
+";
+"New Conversation" = "お問い合わせ";
+"What's on your mind?" = "お問い合わせ内容を入力してください?";
+"Thanks for contacting us." = "ご連絡ありがとうございます。";
+"Your message has been received." = "メッセージを送信しました。";
+"Your message has been received. Thanks for contacting us!" = "ご連絡ありがとうございます。メッセージ受け取りました。できるかぎり早めに回答します。";
+"What else can we help you with?" = "他に何かお問い合わせはありますか?";

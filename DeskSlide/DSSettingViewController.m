@@ -85,6 +85,16 @@ typedef enum {
     UITableViewCell * cell = [super tableView:tableView cellForRowAtIndexPath:indexPath];
     
     switch (indexPath.row) {
+        case kDSSettingTableRowContact:
+        {
+            NSInteger count = [[Helpshift sharedInstance] getNotificationCountFromRemote:NO];
+            if (count > 0) {
+                cell.textLabel.text = S(@"ご意見・ご要望 (%d)", count);
+            } else {
+                cell.textLabel.text = @"ご意見・ご要望";
+            }
+        }
+            break;
         case kDSSettingTableRowVersion:
         {
             cell.detailTextLabel.text = [[[NSBundle mainBundle] infoDictionary] objectForKey:(NSString *)
@@ -103,12 +113,12 @@ typedef enum {
     switch (indexPath.row) {
         case kDSSettingTableRowContact:
         {
-            [[Helpshift sharedInstance] showConversation:self withOptions:nil];
+            [[Helpshift sharedInstance] showConversation:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
         }
             break;
         case kDSSettingTableRowFAQ:
         {
-            [[Helpshift sharedInstance] showFAQs:self withOptions:nil];
+            [[Helpshift sharedInstance] showFAQs:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
         }
             break;
         case kDSSettingTableRowLogout:
