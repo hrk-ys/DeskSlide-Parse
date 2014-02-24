@@ -270,8 +270,14 @@ static NSDate* documentUpdatedAt = nil;
 
 - (void)uploadImage:(NSData *)data
 {
-    LOGTrace;
+    
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+    [self uploadImageFile:imageFile];
+}
+
+- (void)uploadImageFile:(PFFile *)imageFile
+{
+    LOGTrace;
     
     // HUD creation here (see example for code)
     [SVProgressHUD show];
@@ -313,12 +319,27 @@ static NSDate* documentUpdatedAt = nil;
     LOGInfoTrace;
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSURL* imageURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
+    
+    NSString* path = imageURL.path;
+    PFFile* imageFile;
+    if ([[path uppercaseString] hasSuffix:@"PNG"]) {
+        NSData *imageData = UIImagePNGRepresentation(image);
+    
+        imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
+    } else {
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5f);
+        
+        imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
+    }
+    
+    [self uploadImageFile:imageFile];
+    
     // Upload image
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
-    [self uploadImage:imageData];
+//    [self uploadImage:imageData];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
