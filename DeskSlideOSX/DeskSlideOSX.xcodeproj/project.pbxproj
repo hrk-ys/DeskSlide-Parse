@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19E00272E9804B128032FA08 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D3ED618648D4E78A12D618F /* libPods.a */; };
+		E9C7806818BE438F00C4E79C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C7806718BE438F00C4E79C /* Cocoa.framework */; };
+		E9C7807218BE438F00C4E79C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7807018BE438F00C4E79C /* InfoPlist.strings */; };
+		E9C7807418BE438F00C4E79C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7807318BE438F00C4E79C /* main.m */; };
+		E9C7807818BE438F00C4E79C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = E9C7807618BE438F00C4E79C /* Credits.rtf */; };
+		E9C7807B18BE438F00C4E79C /* DSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7807A18BE438F00C4E79C /* DSAppDelegate.m */; };
+		E9C7807E18BE438F00C4E79C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9C7807C18BE438F00C4E79C /* MainMenu.xib */; };
+		E9C7808018BE438F00C4E79C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9C7807F18BE438F00C4E79C /* Images.xcassets */; };
+		E9C7808718BE438F00C4E79C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C7808618BE438F00C4E79C /* XCTest.framework */; };
+		E9C7808818BE438F00C4E79C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C7806718BE438F00C4E79C /* Cocoa.framework */; };
+		E9C7809018BE438F00C4E79C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7808E18BE438F00C4E79C /* InfoPlist.strings */; };
+		E9C7809218BE438F00C4E79C /* DeskSlideOSXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7809118BE438F00C4E79C /* DeskSlideOSXTests.m */; };
+		E9C7809D18BE4CED00C4E79C /* DSController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7809C18BE4CED00C4E79C /* DSController.m */; };
+		E9C7809F18BE559500C4E79C /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C7809E18BE559400C4E79C /* libsqlite3.dylib */; };
+		E9C780A118BE55C700C4E79C /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780A018BE55C700C4E79C /* libz.dylib */; };
+		E9C780A918BED01C00C4E79C /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780A818BED01C00C4E79C /* CFNetwork.framework */; };
+		E9C780AB18BED02800C4E79C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780AA18BED02800C4E79C /* CoreGraphics.framework */; };
+		E9C780AD18BED03400C4E79C /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780AC18BED03400C4E79C /* CoreLocation.framework */; };
+		E9C780AF18BED04200C4E79C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780AE18BED04200C4E79C /* QuartzCore.framework */; };
+		E9C780B118BED04C00C4E79C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780B018BED04C00C4E79C /* Security.framework */; };
+		E9C780B318BED05800C4E79C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780B218BED05800C4E79C /* SystemConfiguration.framework */; };
+		E9C780BF18BED69D00C4E79C /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C780BE18BED69D00C4E79C /* ApplicationServices.framework */; };
+		E9C9AA7018BF6CCD00358617 /* ParseOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9C9AA6F18BF6CCD00358617 /* ParseOSX.framework */; };
+		E9C9AA7218BF6D7C00358617 /* ParseOSX.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E9C9AA6F18BF6CCD00358617 /* ParseOSX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E9C7808918BE438F00C4E79C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E9C7805C18BE438F00C4E79C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9C7806318BE438F00C4E79C;
+			remoteInfo = DeskSlideOSX;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E9C9AA7118BF6D5100358617 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E9C9AA7218BF6D7C00358617 /* ParseOSX.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		5393392073944D25907980EA /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6D3ED618648D4E78A12D618F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C7806418BE438F00C4E79C /* DeskSlideOSX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskSlideOSX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C7806718BE438F00C4E79C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		E9C7806A18BE438F00C4E79C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		E9C7806B18BE438F00C4E79C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		E9C7806C18BE438F00C4E79C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E9C7806F18BE438F00C4E79C /* DeskSlideOSX-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeskSlideOSX-Info.plist"; sourceTree = "<group>"; };
+		E9C7807118BE438F00C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9C7807318BE438F00C4E79C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E9C7807518BE438F00C4E79C /* DeskSlideOSX-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DeskSlideOSX-Prefix.pch"; sourceTree = "<group>"; };
+		E9C7807718BE438F00C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		E9C7807918BE438F00C4E79C /* DSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DSAppDelegate.h; sourceTree = "<group>"; };
+		E9C7807A18BE438F00C4E79C /* DSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSAppDelegate.m; sourceTree = "<group>"; };
+		E9C7807D18BE438F00C4E79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		E9C7807F18BE438F00C4E79C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		E9C7808518BE438F00C4E79C /* DeskSlideOSXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DeskSlideOSXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9C7808618BE438F00C4E79C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E9C7808D18BE438F00C4E79C /* DeskSlideOSXTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeskSlideOSXTests-Info.plist"; sourceTree = "<group>"; };
+		E9C7808F18BE438F00C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E9C7809118BE438F00C4E79C /* DeskSlideOSXTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeskSlideOSXTests.m; sourceTree = "<group>"; };
+		E9C7809B18BE4CED00C4E79C /* DSController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSController.h; sourceTree = "<group>"; };
+		E9C7809C18BE4CED00C4E79C /* DSController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSController.m; sourceTree = "<group>"; };
+		E9C7809E18BE559400C4E79C /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		E9C780A018BE55C700C4E79C /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		E9C780A818BED01C00C4E79C /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E9C780AA18BED02800C4E79C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E9C780AC18BED03400C4E79C /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		E9C780AE18BED04200C4E79C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E9C780B018BED04C00C4E79C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E9C780B218BED05800C4E79C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E9C780BE18BED69D00C4E79C /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
+		E9C9AA6F18BF6CCD00358617 /* ParseOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ParseOSX.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E9C7806118BE438F00C4E79C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C780BF18BED69D00C4E79C /* ApplicationServices.framework in Frameworks */,
+				E9C780B318BED05800C4E79C /* SystemConfiguration.framework in Frameworks */,
+				E9C780B118BED04C00C4E79C /* Security.framework in Frameworks */,
+				E9C780AF18BED04200C4E79C /* QuartzCore.framework in Frameworks */,
+				E9C780AD18BED03400C4E79C /* CoreLocation.framework in Frameworks */,
+				E9C780AB18BED02800C4E79C /* CoreGraphics.framework in Frameworks */,
+				E9C780A918BED01C00C4E79C /* CFNetwork.framework in Frameworks */,
+				E9C780A118BE55C700C4E79C /* libz.dylib in Frameworks */,
+				E9C7809F18BE559500C4E79C /* libsqlite3.dylib in Frameworks */,
+				E9C7806818BE438F00C4E79C /* Cocoa.framework in Frameworks */,
+				19E00272E9804B128032FA08 /* libPods.a in Frameworks */,
+				E9C9AA7018BF6CCD00358617 /* ParseOSX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C7808218BE438F00C4E79C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C7808818BE438F00C4E79C /* Cocoa.framework in Frameworks */,
+				E9C7808718BE438F00C4E79C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E9C7805B18BE438F00C4E79C = {
+			isa = PBXGroup;
+			children = (
+				E9C7806D18BE438F00C4E79C /* DeskSlideOSX */,
+				E9C7808B18BE438F00C4E79C /* DeskSlideOSXTests */,
+				E9C7806618BE438F00C4E79C /* Frameworks */,
+				E9C7806518BE438F00C4E79C /* Products */,
+				5393392073944D25907980EA /* Pods.xcconfig */,
+			);
+			sourceTree = "<group>";
+		};
+		E9C7806518BE438F00C4E79C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7806418BE438F00C4E79C /* DeskSlideOSX.app */,
+				E9C7808518BE438F00C4E79C /* DeskSlideOSXTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9C7806618BE438F00C4E79C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9C9AA6F18BF6CCD00358617 /* ParseOSX.framework */,
+				E9C780BE18BED69D00C4E79C /* ApplicationServices.framework */,
+				E9C780B218BED05800C4E79C /* SystemConfiguration.framework */,
+				E9C780B018BED04C00C4E79C /* Security.framework */,
+				E9C780AE18BED04200C4E79C /* QuartzCore.framework */,
+				E9C780AC18BED03400C4E79C /* CoreLocation.framework */,
+				E9C780AA18BED02800C4E79C /* CoreGraphics.framework */,
+				E9C780A818BED01C00C4E79C /* CFNetwork.framework */,
+				E9C780A018BE55C700C4E79C /* libz.dylib */,
+				E9C7809E18BE559400C4E79C /* libsqlite3.dylib */,
+				E9C7806718BE438F00C4E79C /* Cocoa.framework */,
+				E9C7808618BE438F00C4E79C /* XCTest.framework */,
+				E9C7806918BE438F00C4E79C /* Other Frameworks */,
+				6D3ED618648D4E78A12D618F /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9C7806918BE438F00C4E79C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7806A18BE438F00C4E79C /* AppKit.framework */,
+				E9C7806B18BE438F00C4E79C /* CoreData.framework */,
+				E9C7806C18BE438F00C4E79C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		E9C7806D18BE438F00C4E79C /* DeskSlideOSX */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7807918BE438F00C4E79C /* DSAppDelegate.h */,
+				E9C7807A18BE438F00C4E79C /* DSAppDelegate.m */,
+				E9C7809B18BE4CED00C4E79C /* DSController.h */,
+				E9C7809C18BE4CED00C4E79C /* DSController.m */,
+				E9C7807C18BE438F00C4E79C /* MainMenu.xib */,
+				E9C7807F18BE438F00C4E79C /* Images.xcassets */,
+				E9C7806E18BE438F00C4E79C /* Supporting Files */,
+			);
+			path = DeskSlideOSX;
+			sourceTree = "<group>";
+		};
+		E9C7806E18BE438F00C4E79C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7806F18BE438F00C4E79C /* DeskSlideOSX-Info.plist */,
+				E9C7807018BE438F00C4E79C /* InfoPlist.strings */,
+				E9C7807318BE438F00C4E79C /* main.m */,
+				E9C7807518BE438F00C4E79C /* DeskSlideOSX-Prefix.pch */,
+				E9C7807618BE438F00C4E79C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E9C7808B18BE438F00C4E79C /* DeskSlideOSXTests */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7809118BE438F00C4E79C /* DeskSlideOSXTests.m */,
+				E9C7808C18BE438F00C4E79C /* Supporting Files */,
+			);
+			path = DeskSlideOSXTests;
+			sourceTree = "<group>";
+		};
+		E9C7808C18BE438F00C4E79C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E9C7808D18BE438F00C4E79C /* DeskSlideOSXTests-Info.plist */,
+				E9C7808E18BE438F00C4E79C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E9C7806318BE438F00C4E79C /* DeskSlideOSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9C7809518BE438F00C4E79C /* Build configuration list for PBXNativeTarget "DeskSlideOSX" */;
+			buildPhases = (
+				79E9EDFA2FFA4E678456F469 /* Check Pods Manifest.lock */,
+				E9C7806018BE438F00C4E79C /* Sources */,
+				E9C7806118BE438F00C4E79C /* Frameworks */,
+				E9C7806218BE438F00C4E79C /* Resources */,
+				3F0F46D253C04D8C96C5AA74 /* Copy Pods Resources */,
+				E9C9AA7118BF6D5100358617 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DeskSlideOSX;
+			productName = DeskSlideOSX;
+			productReference = E9C7806418BE438F00C4E79C /* DeskSlideOSX.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E9C7808418BE438F00C4E79C /* DeskSlideOSXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E9C7809818BE438F00C4E79C /* Build configuration list for PBXNativeTarget "DeskSlideOSXTests" */;
+			buildPhases = (
+				E9C7808118BE438F00C4E79C /* Sources */,
+				E9C7808218BE438F00C4E79C /* Frameworks */,
+				E9C7808318BE438F00C4E79C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E9C7808A18BE438F00C4E79C /* PBXTargetDependency */,
+			);
+			name = DeskSlideOSXTests;
+			productName = DeskSlideOSXTests;
+			productReference = E9C7808518BE438F00C4E79C /* DeskSlideOSXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E9C7805C18BE438F00C4E79C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = DS;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Hiroki Yoshifuji";
+				TargetAttributes = {
+					E9C7808418BE438F00C4E79C = {
+						TestTargetID = E9C7806318BE438F00C4E79C;
+					};
+				};
+			};
+			buildConfigurationList = E9C7805F18BE438F00C4E79C /* Build configuration list for PBXProject "DeskSlideOSX" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E9C7805B18BE438F00C4E79C;
+			productRefGroup = E9C7806518BE438F00C4E79C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E9C7806318BE438F00C4E79C /* DeskSlideOSX */,
+				E9C7808418BE438F00C4E79C /* DeskSlideOSXTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E9C7806218BE438F00C4E79C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C7807218BE438F00C4E79C /* InfoPlist.strings in Resources */,
+				E9C7808018BE438F00C4E79C /* Images.xcassets in Resources */,
+				E9C7807818BE438F00C4E79C /* Credits.rtf in Resources */,
+				E9C7807E18BE438F00C4E79C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C7808318BE438F00C4E79C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C7809018BE438F00C4E79C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F0F46D253C04D8C96C5AA74 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79E9EDFA2FFA4E678456F469 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E9C7806018BE438F00C4E79C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C7807418BE438F00C4E79C /* main.m in Sources */,
+				E9C7807B18BE438F00C4E79C /* DSAppDelegate.m in Sources */,
+				E9C7809D18BE4CED00C4E79C /* DSController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E9C7808118BE438F00C4E79C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E9C7809218BE438F00C4E79C /* DeskSlideOSXTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E9C7808A18BE438F00C4E79C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E9C7806318BE438F00C4E79C /* DeskSlideOSX */;
+			targetProxy = E9C7808918BE438F00C4E79C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E9C7807018BE438F00C4E79C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9C7807118BE438F00C4E79C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		E9C7807618BE438F00C4E79C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9C7807718BE438F00C4E79C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		E9C7807C18BE438F00C4E79C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9C7807D18BE438F00C4E79C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		E9C7808E18BE438F00C4E79C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9C7808F18BE438F00C4E79C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E9C7809318BE438F00C4E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		E9C7809418BE438F00C4E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		E9C7809618BE438F00C4E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5393392073944D25907980EA /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					/work/github/DeskSlide/DeskSlideOSX,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
+				INFOPLIST_FILE = "DeskSlideOSX/DeskSlideOSX-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E9C7809718BE438F00C4E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5393392073944D25907980EA /* Pods.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)",
+					/work/github/DeskSlide/DeskSlideOSX,
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
+				INFOPLIST_FILE = "DeskSlideOSX/DeskSlideOSX-Info.plist";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		E9C7809918BE438F00C4E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeskSlideOSX.app/Contents/MacOS/DeskSlideOSX";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DeskSlideOSXTests/DeskSlideOSXTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E9C7809A18BE438F00C4E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeskSlideOSX.app/Contents/MacOS/DeskSlideOSX";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
+				INFOPLIST_FILE = "DeskSlideOSXTests/DeskSlideOSXTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E9C7805F18BE438F00C4E79C /* Build configuration list for PBXProject "DeskSlideOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C7809318BE438F00C4E79C /* Debug */,
+				E9C7809418BE438F00C4E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9C7809518BE438F00C4E79C /* Build configuration list for PBXNativeTarget "DeskSlideOSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C7809618BE438F00C4E79C /* Debug */,
+				E9C7809718BE438F00C4E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E9C7809818BE438F00C4E79C /* Build configuration list for PBXNativeTarget "DeskSlideOSXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9C7809918BE438F00C4E79C /* Debug */,
+				E9C7809A18BE438F00C4E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E9C7805C18BE438F00C4E79C /* Project object */;
+}
