@@ -210,7 +210,6 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
 
 - (IBAction)onLogin:(id)sender
 {
-    [self.loginWindow makeKeyAndOrderFront:nil];
     [self.loginWindow makeKeyAndOrderFront:sender];
 }
 
@@ -306,11 +305,14 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
     }
     
     
+    [self.loginMenuItem setEnabled:NO];
     [PFUser logInWithUsernameInBackground:username password:password
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             [self updateMenuItem];
                                             [self.loginWindow close];
+                                            
+                                            [self showTitle:@"" message:@"ログインしました" forWindow:nil];
                                         } else {
                                             [self showError:error forWindow:self.loginWindow];
                                         }
