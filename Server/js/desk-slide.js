@@ -55,7 +55,7 @@ $(function() {
 			success: function(doc) {
 			  $("#document").prepend(
 	        	'<div class="col-md-3"><h2>' + doc.get('type') +
-				'</h2><p class="doc-text">' + doc.get('text') + '</p></div>'
+				'</h2><p class="doc-text">' + $('<div />').text(doc.get('text')).html() + '</p></div>'
 			  );
      		  $("#text-document").val("");
 			  mixpanel.track( "create doc", { "docType": "image" } );
@@ -123,7 +123,7 @@ $(function() {
 		  if (object.get("type") == "text") {
 			  $("#document").append(
    		     	'<div class="col-md-3"><h2>' + object.get('type') + '</h2>'
-			   	+ '<p class="doc-text">' + object.get('text') + '</p>'
+			   	+ '<p class="doc-text">' +  $('<div />').text(object.get('text')).html() + '</p>'
 				/*
 				+ '<div class="doc-delete">'
 				+ '<a>'
