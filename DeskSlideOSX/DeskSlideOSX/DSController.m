@@ -176,12 +176,10 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
             
             [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
-                    NSLog(@"send ok");
                     [self showTitle:@"" message:@"送信しました" forWindow:NULL];
                 }
                 else {
                     // Log details of the failure
-                    NSLog(@"error:%@", error);
                     [self showError:error forWindow:nil];
                 }
                 self.sendImageMenuItem.title = kDSSendImageMenuItemTitle;
@@ -195,7 +193,6 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
         }
     } progressBlock:^(int percentDone) {
         // Update your progress spinner here. percentDone will be between 0 and 100.
-        NSLog(@"percent:%d", percentDone);
         if (progressBlock) progressBlock(percentDone);
     }];
 }
@@ -281,10 +278,8 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
             [self.selectFileMenuItem setTitle:[NSString stringWithFormat:@"%@: %d %%", kDSSelectImageMenuItemTitle, percentDone]];
         }];
         // open file here
-        NSLog(@"file opened '%@'", filePath);
         
     }else if( pressedButton == NSCancelButton ){
-     	NSLog(@"Cancel button was pressed.");
     }else{
      	// error
     }
@@ -294,7 +289,7 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
 
 #pragma mark - login
 
-- (IBAction)tappedLoginButton:(id)sender
+- (IBAction)tappedLoginButton:(NSButton*)sender
 {
     NSString *username = self.usernameField.stringValue;
     NSString *password = self.passwordField.stringValue;
@@ -305,9 +300,11 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
     }
     
     
+    [sender setEnabled:NO];
     [self.loginMenuItem setEnabled:NO];
     [PFUser logInWithUsernameInBackground:username password:password
                                     block:^(PFUser *user, NSError *error) {
+                                        [sender setEnabled:YES];
                                         if (user) {
                                             [self updateMenuItem];
                                             [self.loginWindow close];
