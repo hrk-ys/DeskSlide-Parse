@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment defaultVersion="1080" identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="4514"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="494" id="495"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <menu id="WJd-K6-3iT">
+            <items>
+                <menuItem title="Webページを開く http://desk-slide.hrk-ys.net/" id="cbE-1U-SF2">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preformOpen:" target="xIL-VE-jnj" id="lsx-fI-SB2"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="qkI-eh-e20"/>
+                <menuItem title="ログイン" id="nbx-da-xfj">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onLogin:" target="xIL-VE-jnj" id="fIv-cX-Zyj"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="ログアウト" id="o9Y-ti-LDu">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onLogout:" target="xIL-VE-jnj" id="C1g-Fn-jkI"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="12r-Wr-zta"/>
+                <menuItem title="クリップボードのテキストを送信" id="Cdj-my-fAq">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onSendText:" target="xIL-VE-jnj" id="c0o-db-8h1"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="送信するファイルを選択" id="jhK-fa-ouT">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="onSelectFile:" target="xIL-VE-jnj" id="Mx0-Rp-MSr"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="F1Z-CO-79P"/>
+                <menuItem title="終了" id="ET4-XJ-VtJ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="terminate:" target="-3" id="7jt-VW-WYS"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <connections>
+                <outlet property="delegate" destination="xIL-VE-jnj" id="GXE-pb-Ce5"/>
+            </connections>
+        </menu>
+        <customObject id="494" customClass="DSAppDelegate">
+            <connections>
+                <outlet property="controller" destination="xIL-VE-jnj" id="QAZ-VH-w9t"/>
+            </connections>
+        </customObject>
+        <customObject id="420" customClass="NSFontManager"/>
+        <customObject id="xIL-VE-jnj" customClass="DSController">
+            <connections>
+                <outlet property="loginMenuItem" destination="nbx-da-xfj" id="hTn-bW-dkF"/>
+                <outlet property="loginWindow" destination="2qf-dN-4VD" id="iOn-bU-qeS"/>
+                <outlet property="logoutMenuItem" destination="o9Y-ti-LDu" id="g9f-oS-xf9"/>
+                <outlet property="passwordField" destination="ioF-Xm-7Nr" id="Bzz-dK-ED0"/>
+                <outlet property="selectFileMenuItem" destination="jhK-fa-ouT" id="XvH-nL-ttB"/>
+                <outlet property="sendTextMenuItem" destination="Cdj-my-fAq" id="2A1-iw-0io"/>
+                <outlet property="statusMenu" destination="WJd-K6-3iT" id="Q1u-Sh-3Ba"/>
+                <outlet property="usernameField" destination="0Mf-ZU-5bd" id="4kP-LA-hyM"/>
+            </connections>
+        </customObject>
+        <window title="Window" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="2qf-dN-4VD">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="1170" y="985" width="297" height="193"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1178"/>
+            <view key="contentView" id="58h-UR-YI4">
+                <rect key="frame" x="0.0" y="0.0" width="297" height="193"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wK6-wr-EwI">
+                        <rect key="frame" x="18" y="121" width="75" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Username" id="1lJ-JJ-Ji5">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBp-4b-H3W">
+                        <rect key="frame" x="18" y="89" width="75" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Password" id="rKW-fq-a5K">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Mf-ZU-5bd">
+                        <rect key="frame" x="92" y="116" width="185" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="xac-CB-hp5">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ngx-dj-RgU">
+                        <rect key="frame" x="104" y="149" width="89" height="24"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="justified" title="DeskSlide" id="tff-kr-hwK">
+                            <font key="font" metaFont="system" size="18"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lzc-UG-miM">
+                        <rect key="frame" x="14" y="38" width="269" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" title="Login" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="rT0-a4-eEg">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="tappedLoginButton:" target="xIL-VE-jnj" id="bnL-xM-7Ht"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yCr-a0-7we">
+                        <rect key="frame" x="20" y="5" width="259" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="会員登録はスマートフォンから行ってください" id="MaH-kI-Mcc">
+                            <font key="font" size="11" name="AquaKana"/>
+                            <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <secureTextField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ioF-Xm-7Nr">
+                        <rect key="frame" x="92" y="84" width="185" height="22"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <secureTextFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" usesSingleLineMode="YES" id="E79-vm-U3r">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <allowedInputSourceLocales>
+                                <string>NSAllRomanInputSourcesLocaleIdentifier</string>
+                            </allowedInputSourceLocales>
+                        </secureTextFieldCell>
+                    </secureTextField>
+                </subviews>
+            </view>
+        </window>
+    </objects>
+</document>

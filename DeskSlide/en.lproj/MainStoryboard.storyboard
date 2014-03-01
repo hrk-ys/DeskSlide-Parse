@@ -454,7 +454,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="Cpf-9p-7Uc" userLabel="toolView" customClass="DSToolView">
-                            <rect key="frame" x="0.0" y="372" width="320" height="44"/>
+                            <rect key="frame" x="0.0" y="328" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aN-R4i" userLabel="settingButton">
@@ -496,26 +496,8 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="CY3-eG-bd0" style="IBUITableViewCellStyleDefault" id="pJa-FK-gua">
-                                        <rect key="frame" x="0.0" y="230" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pJa-FK-gua" id="871-Ws-tLy">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="FAQ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CY3-eG-bd0">
-                                                    <rect key="frame" x="15" y="0.0" width="270" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="K4n-ky-q1t" detailTextLabel="cTe-Qa-Gma" style="IBUITableViewCellStyleValue1" id="Z5e-ph-KSh">
-                                        <rect key="frame" x="0.0" y="274" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="230" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Z5e-ph-KSh" id="2Il-Jh-zdT">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -540,7 +522,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="ySm-M3-5Vu" style="IBUITableViewCellStyleDefault" id="moi-uw-UkX">
-                                        <rect key="frame" x="0.0" y="318" width="320" height="44"/>
+                                        <rect key="frame" x="0.0" y="274" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="moi-uw-UkX" id="Lci-mx-roj">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>

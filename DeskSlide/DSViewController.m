@@ -18,13 +18,15 @@
 #import <MessageUI/MFMailComposeViewController.h>
 #import <iAd/iAd.h>
 #import <SVProgressHUD.h>
+#import <Mixpanel.h>
 
 @interface DSViewController ()
 <UICollectionViewDataSource, UICollectionViewDelegate,
 UINavigationControllerDelegate, UIImagePickerControllerDelegate,
 UIAlertViewDelegate,
 ADBannerViewDelegate,
-GADBannerViewDelegate>
+GADBannerViewDelegate,
+MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -70,7 +72,6 @@ static NSDate* documentUpdatedAt = nil;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    self.screenName           = NSStringFromClass(self.class);
     self.shouldReloadOnAppear = YES;
     
     self.adMobView.delegate           = self;
@@ -105,6 +106,12 @@ static NSDate* documentUpdatedAt = nil;
         [self loadObjects];
     }
 }
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    [DSTracker trackView:@"main"];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -127,6 +134,8 @@ static NSDate* documentUpdatedAt = nil;
             
             [self.class updateDocument];
             self.lastUpdateAt = documentUpdatedAt;
+            
+            [[Mixpanel sharedInstance].people set:@"doc count" to:@(self.dataSource.count)];
         } else {
             [error show];
         }
@@ -226,6 +235,9 @@ static NSDate* documentUpdatedAt = nil;
             return;
         }
         
+        [DSTracker trackEvent:@"create doc" properties:@{ @"docType": @"text"}];
+        [DSTracker increment:@"doc count" by:@1];
+        
         [SVProgressHUD showSuccessWithStatus:@"Success"];
         [self.dataSource insertObject:doc atIndex:0];
         [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
@@ -258,8 +270,14 @@ static NSDate* documentUpdatedAt = nil;
 
 - (void)uploadImage:(NSData *)data
 {
-    LOGTrace;
+    
     PFFile *imageFile = [PFFile fileWithName:@"Image.jpg" data:data];
+    [self uploadImageFile:imageFile];
+}
+
+- (void)uploadImageFile:(PFFile *)imageFile
+{
+    LOGTrace;
     
     // HUD creation here (see example for code)
     [SVProgressHUD show];
@@ -274,6 +292,9 @@ static NSDate* documentUpdatedAt = nil;
             [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 [SVProgressHUD dismiss];
                 if (!error) {
+                    [DSTracker trackEvent:@"create doc" properties:@{ @"docType": @"image"}];
+                    [DSTracker increment:@"doc count" by:@1];
+                    
                     [self.dataSource insertObject:doc atIndex:0];
                     [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
                 }
@@ -298,12 +319,27 @@ static NSDate* documentUpdatedAt = nil;
     LOGInfoTrace;
     
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    NSURL* imageURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
     [picker dismissViewControllerAnimated:YES completion:nil];
     
+    
+    NSString* path = imageURL.path;
+    PFFile* imageFile;
+    if ([[path uppercaseString] hasSuffix:@"PNG"]) {
+        NSData *imageData = UIImagePNGRepresentation(image);
+    
+        imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
+    } else {
+        NSData *imageData = UIImageJPEGRepresentation(image, 0.5f);
+        
+        imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
+    }
+    
+    [self uploadImageFile:imageFile];
+    
     // Upload image
-    NSData *imageData = UIImageJPEGRepresentation(image, 0.05f);
-    [self uploadImage:imageData];
+//    [self uploadImage:imageData];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker

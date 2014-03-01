@@ -17,6 +17,7 @@
 #import <DDFileLogger.h>
 #import <DDTTYLogger.h>
 #import <Helpshift.h>
+#import <Mixpanel.h>
 
 @interface DSAppDelegate ()
 <DSAuthViewControllerDelegate>
@@ -29,18 +30,21 @@
     // Override point for customization after application launch.
     
     [Crashlytics startWithAPIKey:@"b23780728daaf4165202578d33fcddfe13bf2bef"];
+    
     [HYLog setupLogger];
 #ifdef DEBUG
     [HYLog updateLogLevel:LOG_LEVEL_VERBOSE];
 #else
     [HYLog updateLogLevel:LOG_LEVEL_OFF];
 #endif
-    [self setupTracker];
+    
+    [DSTracker sharedInstance];
     [self setupParse:launchOptions];
     [self setupHelpshift:launchOptions];
 
     
     if ([PFUser currentUser]) {
+        [DSTracker setUserId:[[PFUser currentUser] username]];
         [self registNotification];
     }
     
@@ -89,6 +93,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     
     
     [[Helpshift sharedInstance] registerDeviceToken:deviceToken];
+    [[Mixpanel sharedInstance].people addPushDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
@@ -120,6 +125,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     NSURL* url = [NSURL URLWithString:userInfo[@"aps"][@"alert"]];
     if ([[UIApplication sharedApplication] canOpenURL:url]) {
         [[UIApplication sharedApplication] openURL:url];
+        return;
+    }
+    
+    if (![userInfo enableValue:@"o"]) {
         return;
     }
     
@@ -176,7 +185,7 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     LOGTrace;
     [controller.presentingViewController dismissViewControllerAnimated:YES completion:nil];
     
-    
+    [DSTracker updateUserId:[[PFUser currentUser] username]];
     [self registNotification];
 }
 
@@ -185,29 +194,10 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
     
     // Log out
     [PFUser logOut];
+    [DSTracker reset];
     
     [self presentLoginViewController:self.window.rootViewController animated:YES];
 }
 
-
-- (void)setupTracker
-{
-    // Optional: automatically send uncaught exceptions to Google Analytics.
-    [GAI sharedInstance].trackUncaughtExceptions = YES;
-    
-    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
-    [GAI sharedInstance].dispatchInterval = 20;
-    
-    // Optional: set Logger to VERBOSE for debug information.
-#ifdef DEBUG
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
-    [[GAI sharedInstance] setDryRun:YES];
-#else
-    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelNone];
-#endif
-    
-    // Initialize tracker.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-42236549-2"];
-}
 
 @end

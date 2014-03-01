@@ -16,7 +16,7 @@
 
 @interface DSAuthViewController ()
 <DSLoginViewControllerDelegate,
-PFSignUpViewControllerDelegate>
+DSSignUpViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton *registButton;
 
 @end
@@ -46,6 +46,13 @@ PFSignUpViewControllerDelegate>
     self.registButton.layer.cornerRadius = 3.0f;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+
+    [DSTracker trackView:@"welcom"];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -56,23 +63,22 @@ PFSignUpViewControllerDelegate>
 
 - (IBAction)tappedRegistButton:(id)sender {
     LOGTrace;
+    
     DSSignUpViewController *signUpViewController = [[DSSignUpViewController alloc] init];
-    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    [signUpViewController setSignUpDelegate:self];
     [signUpViewController setFields: PFSignUpFieldsUsernameAndPassword | PFSignUpFieldsSignUpButton | PFSignUpFieldsDismissButton ];
 
     [self presentViewController:signUpViewController animated:YES completion:nil];
 }
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
+
+- (void)signUpViewController:(DSSignUpViewController *)controller didLogInUser:(PFUser *)user
 {
-    LOGTrace;
     [self.delegate authController:self didLoginUser:user];
 }
-- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController
+- (void)signUpViewControllerDidCancel:(DSSignUpViewController *)controller
 {
-    LOGTrace;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
 
 
 

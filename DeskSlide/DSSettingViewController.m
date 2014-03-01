@@ -9,8 +9,6 @@
 #import "DSSettingViewController.h"
 
 #import "DSAppDelegate.h"
-#import "GAIFields.h"
-#import "GAIDictionaryBuilder.h"
 
 #import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
@@ -18,7 +16,6 @@
 
 typedef enum {
    	kDSSettingTableRowContact,
-    kDSSettingTableRowFAQ,
 	kDSSettingTableRowVersion,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
@@ -65,9 +62,8 @@ typedef enum {
     [super viewDidAppear:animated];
     
     
-    id tracker = [[GAI sharedInstance] defaultTracker];
-    [tracker set:kGAIScreenName value:NSStringFromClass(self.class)];
-    [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+    [DSTracker trackView:@"setting"];
+
 }
 - (void)didReceiveMemoryWarning
 {
@@ -116,13 +112,10 @@ typedef enum {
             [[Helpshift sharedInstance] showConversation:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
         }
             break;
-        case kDSSettingTableRowFAQ:
-        {
-            [[Helpshift sharedInstance] showFAQs:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
-        }
-            break;
         case kDSSettingTableRowLogout:
         {
+            [DSTracker trackEvent:@"tapped logout"];
+    
             [self.presentingViewController dismissViewControllerAnimated:YES completion:^{
                 [(DSAppDelegate*)[[UIApplication sharedApplication] delegate] logOut];
             }];

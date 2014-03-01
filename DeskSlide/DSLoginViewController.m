@@ -58,7 +58,10 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    
+    [DSTracker trackView:@"login"];
 }
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -90,6 +93,9 @@
 
 
 - (BOOL)logInViewController:(PFLogInViewController *)logInController shouldBeginLogInWithUsername:(NSString *)username password:(NSString *)password {
+    
+    [DSTracker trackEvent:@"tapped login button"];
+    
     // Check if both fields are completed
     if (username && password && username.length != 0 && password.length != 0) {
         return YES; // Begin login process
@@ -101,35 +107,17 @@
 }
 
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
+    
+    [DSTracker trackEvent:@"login success"];
     [self.loginDelegate logInViewController:self didLogInUser:user];
 }
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController
 {
+    [DSTracker trackEvent:@"login cancel"];
     [self.loginDelegate logInViewControllerDidCancel:self];
 }
 
-- (BOOL)signUpViewController:(PFSignUpViewController *)signUpController shouldBeginSignUp:(NSDictionary *)info
-{
-    LOGTrace;
-    NSString* username = info[@"username"];
-    NSString* password = info[@"password"];
-    
-    if (username && password && username.length != 0 && password.length != 0) {
-        return YES;
-    }
-    [UIAlertView showTitle:@"入力エラー" message:@"ユーザ名、パスワードを入力してください"];
 
-    return NO;
-}
-- (void)signUpViewController:(PFSignUpViewController *)signUpController didSignUpUser:(PFUser *)user
-{
-    LOGTrace;
-    [self.loginDelegate logInViewController:self didLogInUser:user];
-}
-- (void)signUpViewControllerDidCancelSignUp:(PFSignUpViewController *)signUpController
-{
-    LOGTrace;
-    [self.loginDelegate logInViewControllerDidCancel:self];
-}
+
 
 @end

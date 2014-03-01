@@ -11,7 +11,7 @@
 @protocol DSLoginViewControllerDelegate;
 @interface DSLoginViewController : PFLogInViewController
 
-@property (nonatomic) id<DSLoginViewControllerDelegate> loginDelegate;
+@property (nonatomic,assign) id<DSLoginViewControllerDelegate> loginDelegate;
 
 @end
 
