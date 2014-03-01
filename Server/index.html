@@ -9,13 +9,13 @@
     <title>Desk Slide</title>
 
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css">
 
 	<script src="//code.jquery.com/jquery.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 	<script src="http://www.parsecdn.com/js/parse-1.2.12.min.js"></script>
 	<!-- start Mixpanel --><script type="text/javascript">(function(e,b){if(!b.__SV){var a,f,i,g;window.mixpanel=b;a=e.createElement("script");a.type="text/javascript";a.async=!0;a.src=("https:"===e.location.protocol?"https:":"http:")+'//cdn.mxpnl.com/libs/mixpanel-2.2.min.js';f=e.getElementsByTagName("script")[0];f.parentNode.insertBefore(a,f);b._i=[];b.init=function(a,e,d){function f(b,h){var a=h.split(".");2==a.length&&(b=b[a[0]],h=a[1]);b[h]=function(){b.push([h].concat(Array.prototype.slice.call(arguments,0)))}}var c=b;"undefined"!==
 typeof d?c=b[d]=[]:d="mixpanel";c.people=c.people||[];c.toString=function(b){var a="mixpanel";"mixpanel"!==d&&(a+="."+d);b||(a+=" (stub)");return a};c.people.toString=function(){return c.toString(1)+".people (stub)"};i="disable track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.track_charge people.clear_charges people.delete_user".split(" ");for(g=0;g<i.length;g++)f(c,i[g]);
@@ -41,8 +41,11 @@ mixpanel.init("61871337d5301da2039fed897c5f7e6f");</script><!-- end Mixpanel -->
 .form-regist input {
   margin-top: 10px;
 }
+.form-regist textarea {
+  width: 300px !important;
+}
 .doc-image {
-  widht : 140px;
+  width : 140px;
   height: 140px;
 }
 .doc-text {
@@ -90,45 +93,50 @@ mixpanel.init("61871337d5301da2039fed897c5f7e6f");</script><!-- end Mixpanel -->
       </div>
     </div>
 
-
-	<div style="padding:0px 30px;" >
+    <div style="padding:0px 30px;" >
       <div class="container">
-		<script type="text/javascript"><!--
+        <script type="text/javascript"><!--
 google_ad_client = "ca-pub-1525765559709019";
 /* DeskSlide PC */
 google_ad_slot = "2146450541";
 google_ad_width = 728;
 google_ad_height = 90;
 //-->
-		</script>
-		<script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
-		</script>
-	  </div>
+        </script>
+      <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js">
+      </script>
+  </div>
+
+	<div>
+		<ul class="list-group">
+			  <li class="list-group-item"><a href="https://hrk-ys.helpshift.com" target="brank">FAQ・ご意見・ご要望はこちら</a> </li>
+			  <li class="list-group-item"><a href="https://hrk-ys.helpshift.com/a/deskslide/?s=%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F&f=mac-os-x%E7%89%88-deskslide%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" target="brank">Mac OS X DeskSlideのダウンロードはこちら</a></li>
+		</ul>
 	</div>
 
-	<div class="jumbotron">
+	<div class="well">
       <div class="container">
-	    <form class="form-regist">
-	    <div class="row">
-		  <div class="col-xs-6">
-		    <h2 class='form-regist-heading'>input text</h2>
+	    <form class="form-regist form-inline">
+		  <div class="form-group">
+		    <h2 class='form-regist-heading'>テキスト</h2>
 			<textarea id="text-document" class="form-control" rows="4"></textarea>
 		  </div>
-		  <div class="col-xs-6">
-		    <h2 class='form-regist-heading'>input file</h2>
+		  <div class="form-group">
+				  <strong>or</strong>
+		  </div>
+		  <div class="form-group">
+		    <h2 class='form-regist-heading'>画像ファイル</h2>
 			<div class="form-regist-file-desc">ドラッグ&ドロップ可
 			<input type="file" id="profilePhotoFileUpload"></input>
 			</div>
 		  </div>
-		  <div class="col-xs-11">
+		  <div class="">
 			<!--
             <a id="regist-document" class="btn btn-lg btn-primary btn-block" >Regist</a>
 			-->
-			<input id="regist-document" type="button"  class="btn btn-lg btn-primary btn-block" value="Regist">
+			<input id="regist-document" type="button"  class="btn btn-lg btn-primary" value="登録">
 		  </div>
-		</div>
         </form>
-		<a href="https://hrk-ys.helpshift.com">FAQ・ご意見・ご要望はこちら</a>
       </div>
     </div>
 
