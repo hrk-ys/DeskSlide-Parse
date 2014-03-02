@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="50" id="2xD-gQ-P6B"/>
                                 </constraints>
                             </view>
-                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDw-44-j7m" userLabel="adDisableView">
+                            <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDw-44-j7m" userLabel="adDisableView">
                                 <rect key="frame" x="0.0" y="70" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -261,6 +261,7 @@
                     <connections>
                         <outlet property="adDisableButton" destination="Bsq-Dw-ttd" id="g2K-vE-bzo"/>
                         <outlet property="adDisableView" destination="hDw-44-j7m" id="1nV-W3-Dgp"/>
+                        <outlet property="adDisableViewHeight" destination="BvP-XZ-g6p" id="qHK-3u-zis"/>
                         <outlet property="adMobView" destination="bgO-7t-QpB" id="tlq-OQ-70w"/>
                         <outlet property="collectionTopLaytou" destination="gmQ-Q9-6hF" id="AbF-be-jJn"/>
                         <outlet property="collectionView" destination="rdc-8l-Usx" id="wm6-Qn-33e"/>

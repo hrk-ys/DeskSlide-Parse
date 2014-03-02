@@ -6,7 +6,7 @@ Parse.Cloud.define("hello", function(request, response) {
 });
 
 Parse.Cloud.define("config", function(request, response) {
-  response.success({"config_version":"1.0", "twitter_invite_message":"DeskSlide スマホ、PC間の簡単データ転送 https://itunes.apple.com/us/app/deskslide-sumaho-pc-jianno/id718222782?mt=8"});
+  response.success({"config_version":"1.0", "ad_disable_btn":"1", "twitter_invite_message":"DeskSlide スマホ、PC間の簡単データ転送 https://itunes.apple.com/us/app/deskslide-sumaho-pc-jianno/id718222782?mt=8"});
 });
 
 Parse.Cloud.afterSave("Document", function(request) {

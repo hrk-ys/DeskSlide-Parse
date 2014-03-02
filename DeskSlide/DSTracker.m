@@ -61,9 +61,7 @@
     Mixpanel* mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [mixpanel identify:mixpanel.distinctId];
     
-#ifdef DEBUG
     mixpanel.flushInterval = 10;
-#endif
 }
 
 + (void)reset

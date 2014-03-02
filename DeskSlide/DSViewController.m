@@ -41,6 +41,7 @@ MFMailComposeViewControllerDelegate>
 @property (nonatomic) BOOL                          adMobIsVisible;
 @property (weak, nonatomic) IBOutlet UIView *adDisableView;
 @property (weak, nonatomic) IBOutlet UIButton *adDisableButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *adDisableViewHeight;
 
 
 // tutorial
@@ -81,6 +82,9 @@ static NSDate* documentUpdatedAt = nil;
     
     if (! [[DSConfig sharedInstance] disableAd]) {
         
+        if (! [[[DSConfig sharedInstance] configForKey:@"ad_disable_btn"] isEqualToString:@"1"]) {
+            self.adDisableViewHeight.constant = 0;
+        }
         [self.adDisableButton setBackgroundImage:[[UIImage imageNamed:@"btn_w"] stretchableImageWithLeftCapWidth:12 topCapHeight:10]  forState:UIControlStateNormal];
         
         self.adMobView.delegate           = self;
