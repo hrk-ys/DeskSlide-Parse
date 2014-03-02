@@ -30,7 +30,7 @@
                                                     attributes:attributes];
     } else if ([[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeFile]){
         PFFile *file = [object objectForKey:kDSDocumentFileKey];
-        [self.bgImageView setImageWithURL:[NSURL URLWithString:file.url]];
+        [self.bgImageView setImageWithURL:[NSURL URLWithString:file.url] placeholderImage:nil options:SDWebImageRetryFailed];
     }
     self.textLabel.text = [object objectForKey:kDSDocumentTextKey];
 }

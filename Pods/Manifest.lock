@@ -16,17 +16,17 @@ PODS:
   - SDWebImage (3.4):
     - SDWebImage/Core
   - SDWebImage/Core (3.4)
-  - SVProgressHUD (0.9)
+  - SVProgressHUD (1.0)
 
 DEPENDENCIES:
   - FontAwesomeKit (= 1.1.3)
   - Helpshift (= 4.2.0)
   - HYUtils (from `https://github.com/hrk-ys/HYUtils.git`, commit `11d1836e3917371a20171d43bb8bc50789920f35`)
   - KIF (~> 2.0)
-  - Mixpanel
+  - Mixpanel (= 2.3.2)
   - Parse (= 1.2.13)
   - SDWebImage (= 3.4)
-  - SVProgressHUD (= 0.9)
+  - SVProgressHUD (= 1.0)
 
 EXTERNAL SOURCES:
   HYUtils:
@@ -43,6 +43,6 @@ SPEC CHECKSUMS:
   Mixpanel: ddd79df92245a14d2b3064544d1e9ff037d8ac3a
   Parse: 71038f6c13fef880c628db7a2725bb7138ead81a
   SDWebImage: 366188f04c019bfd712d45e3b36aa52070f4abd8
-  SVProgressHUD: 03d4845ec8e64591726428a08236c6a5489d45f8
+  SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0

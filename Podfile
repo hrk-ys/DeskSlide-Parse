@@ -2,8 +2,8 @@ platform :ios, 6.1
 pod 'HYUtils', :git => 'https://github.com/hrk-ys/HYUtils.git', :commit => '11d1836e3917371a20171d43bb8bc50789920f35'
 pod 'Parse', '1.2.13'
 pod 'FontAwesomeKit', '1.1.3'
-pod 'SDWebImage', '3.4'
-pod 'SVProgressHUD', '0.9'
+pod 'SDWebImage', '3.5.2'
+pod 'SVProgressHUD', '1.0'
 pod 'Helpshift', '4.2.0'
 pod 'Mixpanel', '2.3.2'
 

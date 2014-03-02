@@ -18,6 +18,7 @@
     #import "DSConstants.h"
     #import "DSTracker.h"
     #import "DSUtils.h"
+    #import "DSConfig.h"
     #import "DSToolView.h"
 
 #endif

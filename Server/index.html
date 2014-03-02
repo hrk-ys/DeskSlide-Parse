@@ -45,7 +45,6 @@ mixpanel.init("61871337d5301da2039fed897c5f7e6f");</script><!-- end Mixpanel -->
   width: 300px !important;
 }
 .doc-image {
-  width : 140px;
   height: 140px;
 }
 .doc-text {
@@ -108,8 +107,13 @@ google_ad_height = 90;
 
 	<div>
 		<ul class="list-group">
-			  <li class="list-group-item"><a href="https://hrk-ys.helpshift.com" target="brank">FAQ・ご意見・ご要望はこちら</a> </li>
-			  <li class="list-group-item"><a href="https://hrk-ys.helpshift.com/a/deskslide/?s=%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F&f=mac-os-x%E7%89%88-deskslide%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" target="brank">Mac OS X DeskSlideのダウンロードはこちら</a></li>
+      <script>
+        var trackLink = function(event_name) {
+          mixpanel.track( event_name );
+        }
+     </script>
+		 <li class="list-group-item"><a href="https://hrk-ys.helpshift.com" onclick="trackLink('click faq' ); return true;" target="_blank">FAQ・ご意見・ご要望はこちら</a> </li>
+		<li class="list-group-item"><a href="https://hrk-ys.helpshift.com/a/deskslide/?s=%E3%82%88%E3%81%8F%E3%81%82%E3%82%8B%E8%B3%AA%E5%95%8F&f=mac-os-x%E7%89%88-deskslide%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6" onclick="trackLink('click faq osx'); return true;" target="_blank">Mac OS X DeskSlideのダウンロードはこちら</a></li>
 		</ul>
 	</div>
 

@@ -50,6 +50,8 @@
     
     [self receiveNotification:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]];
     
+    [[DSConfig sharedInstance] updateConfig];
+    
     return YES;
 }
 							

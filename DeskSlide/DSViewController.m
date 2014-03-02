@@ -14,11 +14,12 @@
 
 #import "GADBannerView.h"
 
-#import <MessageUI/MessageUI.h>
 #import <MessageUI/MFMailComposeViewController.h>
-#import <iAd/iAd.h>
-#import <SVProgressHUD.h>
+#import <MessageUI/MessageUI.h>
 #import <Mixpanel.h>
+#import <SVProgressHUD.h>
+#import <Social/Social.h>
+#import <iAd/iAd.h>
 
 @interface DSViewController ()
 <UICollectionViewDataSource, UICollectionViewDelegate,
@@ -36,10 +37,10 @@ MFMailComposeViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIButton   *settingButton;
 @property (weak, nonatomic) IBOutlet UIButton   *refreshButton;
 
-@property (weak, nonatomic) IBOutlet ADBannerView  *banner;
-@property (nonatomic) BOOL                          bannerIsVisible;
 @property (weak, nonatomic) IBOutlet GADBannerView *adMobView;
 @property (nonatomic) BOOL                          adMobIsVisible;
+@property (weak, nonatomic) IBOutlet UIView *adDisableView;
+@property (weak, nonatomic) IBOutlet UIButton *adDisableButton;
 
 
 // tutorial
@@ -74,10 +75,26 @@ static NSDate* documentUpdatedAt = nil;
     
     self.shouldReloadOnAppear = YES;
     
-    self.adMobView.delegate           = self;
-    self.adMobView.adUnitID           = ADMOB_UNIT_ID;
-    self.adMobView.rootViewController = self;
-    self.adMobView.adSize             = kGADAdSizeSmartBannerPortrait;
+#ifdef DEBUG
+    [[DSConfig sharedInstance] setDisableAd:NO];
+#endif
+    
+    if (! [[DSConfig sharedInstance] disableAd]) {
+        
+        [self.adDisableButton setBackgroundImage:[[UIImage imageNamed:@"btn_w"] stretchableImageWithLeftCapWidth:12 topCapHeight:10]  forState:UIControlStateNormal];
+        
+        self.adMobView.delegate           = self;
+        self.adMobView.adUnitID           = ADMOB_UNIT_ID;
+        self.adMobView.rootViewController = self;
+        self.adMobView.adSize             = kGADAdSizeSmartBannerPortrait;
+        GADRequest *request = [GADRequest request];
+#ifdef DEBUG
+        request.testDevices = [NSArray arrayWithObjects:
+                               GAD_SIMULATOR_ID,
+                               nil];
+#endif
+        [self.adMobView loadRequest:request];
+    }
     
     [self.toolView setupToolButton:self.textButton icon:FAKIconPaperClip];
     [self.toolView setupToolButton:self.libraryButton icon:FAKIconFolderOpen];
@@ -189,6 +206,18 @@ static NSDate* documentUpdatedAt = nil;
 
 
 
+- (void)showTextInputAlert
+{
+    UIAlertView *av =
+    [[UIAlertView alloc] initWithTitle:@"テキスト登録"
+                               message:@"登録するテキストを入力してください"
+                              delegate:self
+                     cancelButtonTitle:@"キャンセル"
+                     otherButtonTitles:@"登録", nil];
+    av.alertViewStyle = UIAlertViewStylePlainTextInput;
+    [av show];
+}
+
 - (IBAction)tappedTextButton:(id)sender
 {
     LOGTrace;
@@ -196,16 +225,20 @@ static NSDate* documentUpdatedAt = nil;
     UIPasteboard *pastebd = [UIPasteboard generalPasteboard];
     
     NSString *text = [pastebd valueForPasteboardType:@"public.utf8-plain-text"];
-    LOG(@"%@", text);
-    
-    if (!text || text.length == 0) {
-        [UIAlertView showMessage:@"クリップボードにテキストがありません"];
+
+    // クリップボードにテキストがある場合
+    if (text || text.length > 0) {
+        UIAlertView *av =
+        [[UIAlertView alloc] initWithTitle:@"テキストを登録しますか？"
+                                   message:text
+                                  delegate:self
+                         cancelButtonTitle:@"キャンセル"
+                         otherButtonTitles:@"登録", nil];
+        [av show];
         
-        return;
+    } else {
+        [self showTextInputAlert];
     }
-    
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"登録しますか？" message:text delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
-    [av show];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -213,8 +246,16 @@ static NSDate* documentUpdatedAt = nil;
     LOGTrace;
     
     if (buttonIndex == 0) { return; }
+    if (buttonIndex == 2) { [self showTextInputAlert]; return; }
     
-    [self sendText:alertView.message];
+    NSString* message;
+    if (alertView.alertViewStyle == UIAlertViewStylePlainTextInput) {
+        message = [[alertView textFieldAtIndex:0] text];
+    } else {
+        message = alertView.message;
+    }
+    
+    [self sendText:message];
 }
 
 - (void)sendText:(NSString *)text
@@ -241,6 +282,7 @@ static NSDate* documentUpdatedAt = nil;
         [SVProgressHUD showSuccessWithStatus:@"Success"];
         [self.dataSource insertObject:doc atIndex:0];
         [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
+        self.tutorialView.hidden = YES;
     }];
 }
 
@@ -321,14 +363,11 @@ static NSDate* documentUpdatedAt = nil;
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     NSURL* imageURL = [info objectForKey:UIImagePickerControllerReferenceURL];
     
-    [picker dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    NSString* path = imageURL.path;
-    PFFile* imageFile;
+    NSString *path = imageURL.path;
+    PFFile   *imageFile;
     if ([[path uppercaseString] hasSuffix:@"PNG"]) {
         NSData *imageData = UIImagePNGRepresentation(image);
-    
+        
         imageFile = [PFFile fileWithName:@"Image.png" data:imageData];
     } else {
         NSData *imageData = UIImageJPEGRepresentation(image, 0.5f);
@@ -336,7 +375,9 @@ static NSDate* documentUpdatedAt = nil;
         imageFile = [PFFile fileWithName:@"Image.jpg" data:imageData];
     }
     
-    [self uploadImageFile:imageFile];
+    [self dismissViewControllerAnimated:YES completion:^{
+        [self uploadImageFile:imageFile];
+    }];
     
     // Upload image
 //    [self uploadImage:imageData];
@@ -348,61 +389,26 @@ static NSDate* documentUpdatedAt = nil;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    LOGTrace;
-    return;
-    if (self.bannerIsVisible) { return; }
+- (IBAction)tappedDisableAd:(id)sender {
     
-    self.bannerIsVisible = YES;
+    NSString* message = [[DSConfig sharedInstance] configForKey:@"twitter_invite_message"];
     
-    banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [UIView animateWithDuration:0.3f
-                     animations:^{
-                         banner.hidden = NO;
-                         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
-                         
-                         self.collectionView.originY = CGRectGetMaxY(banner.frame);
-                     } completion:^(BOOL finished) {
-                         self.collectionTopLaytou.constant = CGRectGetHeight(banner.frame);
-                         
-                         if (self.adMobIsVisible) {
-                             self.adMobIsVisible = NO;
-                             self.adMobView.hidden = YES;
-                         }
-                     }];
-}
-
-- (void)bannerView:(ADBannerView *)banner
-didFailToReceiveAdWithError:(NSError *)error
-{
-    LOGTrace;
+    [controller setInitialText:message];
+    [controller setCompletionHandler:^(SLComposeViewControllerResult result) {
+        if (result == SLComposeViewControllerResultDone) {
+            [[DSConfig sharedInstance] setDisableAd:YES];
+            [DSTracker trackView:@"twitter share"];
+            
+            [UIAlertView showMessage:@"ツイートありがとうございます。\n次回から広告が非表示になります。\n※反映に少し時間がかかる場合がございます。"];
+        } else if (result == SLComposeViewControllerResultCancelled) {
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }
+    }];
     
-    if (self.bannerIsVisible)
-    {
-        self.bannerIsVisible = NO;
-        
-        [UIView animateWithDuration:0.3f
-                         animations:^{
-                             banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
-                             self.collectionView.originY = 0;
-                         }
-         
-                         completion:^(BOOL finished) {
-                             banner.hidden = YES;
-                             self.collectionTopLaytou.constant = 0;
-                         }];
-    }
+    [self presentViewController:controller animated:YES completion:nil];
     
-    GADRequest *request = [GADRequest request];
-#ifdef DEBUG
-    request.testDevices = [NSArray arrayWithObjects:
-                           GAD_SIMULATOR_ID,
-                           nil];
-#endif
-    
-    [self.adMobView loadRequest:request];
 }
 
 #pragma mark -
@@ -411,19 +417,21 @@ didFailToReceiveAdWithError:(NSError *)error
 - (void)adViewDidReceiveAd:(GADBannerView *)banner
 {
     LOGTrace;
-    if (self.bannerIsVisible) { return; }
     if (self.adMobIsVisible) { return; }
     
     self.adMobIsVisible = YES;
     
-    banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+    banner.frame = CGRectOffset(banner.frame, 0, -(banner.frame.size.height + self.adDisableView.height));
+    self.adDisableView.originY = banner.originY + banner.height;
     [UIView animateWithDuration:0.3f
                      animations:^{
                          banner.hidden = NO;
-                         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height);
-                         self.collectionView.originY = CGRectGetMaxY(banner.frame);
+                         banner.frame = CGRectOffset(banner.frame, 0, banner.frame.size.height + self.adDisableView.height);
+                         self.adDisableView.hidden = NO;
+                         self.adDisableView.originY = banner.originY + banner.height;
+                         self.collectionView.originY = CGRectGetMaxY(self.adDisableView.frame);
                      } completion:^(BOOL finished) {
-                         self.collectionTopLaytou.constant = banner.height;
+                         self.collectionTopLaytou.constant = banner.height+self.adDisableView.height;
                      }];
 }
 
@@ -435,12 +443,14 @@ didFailToReceiveAdWithError:(NSError *)error
     
     [UIView animateWithDuration:0.3f
                      animations:^{
-                         banner.frame = CGRectOffset(banner.frame, 0, -banner.frame.size.height);
+                         banner.frame = CGRectOffset(banner.frame, 0, -(banner.frame.size.height + self.adDisableView.height));
+                         self.adDisableView.originY = CGRectGetMaxY(banner.frame);
                          self.collectionView.originY = 0;
                      }
      
                      completion:^(BOOL finished) {
                          banner.hidden = YES;
+                         self.adDisableView.hidden = YES;
                          self.collectionTopLaytou.constant = 0;
                      }];
 }

@@ -21,6 +21,8 @@
 		E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E922FA8B17F02353008C7968 /* MainStoryboard.storyboard */; };
 		E922FA9017F02353008C7968 /* DSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FA8F17F02353008C7968 /* DSViewController.m */; };
 		E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FAC817F04885008C7968 /* DSLoginViewController.m */; };
+		E929386E18C2FC3B00F28256 /* DSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E929386D18C2FC3B00F28256 /* DSConfig.m */; };
+		E929387418C3116000F28256 /* btn_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E929387318C3116000F28256 /* btn_w@2x.png */; };
 		E9590AF11807054100594FFB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9590AF01807054100594FFB /* XCTest.framework */; };
 		E9590AF21807054100594FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7517F02353008C7968 /* Foundation.framework */; };
 		E9590AF31807054100594FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7317F02353008C7968 /* UIKit.framework */; };
@@ -95,6 +97,10 @@
 		E922FA8F17F02353008C7968 /* DSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSViewController.m; sourceTree = "<group>"; };
 		E922FAC717F04885008C7968 /* DSLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSLoginViewController.h; sourceTree = "<group>"; };
 		E922FAC817F04885008C7968 /* DSLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSLoginViewController.m; sourceTree = "<group>"; };
+		E929386C18C2FC3B00F28256 /* DSConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSConfig.h; sourceTree = "<group>"; };
+		E929386D18C2FC3B00F28256 /* DSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSConfig.m; sourceTree = "<group>"; };
+		E929386F18C3059500F28256 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
+		E929387318C3116000F28256 /* btn_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_w@2x.png"; sourceTree = "<group>"; };
 		E9590AEF1807054100594FFB /* DeskSlide Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeskSlide Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9590AF01807054100594FFB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9590AF61807054100594FFB /* DeskSlide Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeskSlide Tests-Info.plist"; sourceTree = "<group>"; };
@@ -228,6 +234,7 @@
 		E922FA7217F02353008C7968 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E929386F18C3059500F28256 /* Reveal.framework */,
 				E99B831E1810665000E7C4CB /* QuartzCore.framework */,
 				E99B831C1810663F00E7C4CB /* CFNetwork.framework */,
 				E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */,
@@ -271,6 +278,8 @@
 				E922FA7A17F02353008C7968 /* Supporting Files */,
 				E9B0E7A617F8F76600544C88 /* DSUtils.h */,
 				E9B0E7A717F8F76600544C88 /* DSUtils.m */,
+				E929386C18C2FC3B00F28256 /* DSConfig.h */,
+				E929386D18C2FC3B00F28256 /* DSConfig.m */,
 			);
 			path = DeskSlide;
 			sourceTree = "<group>";
@@ -338,6 +347,7 @@
 		E9B0E78A17F074CC00544C88 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				E929387318C3116000F28256 /* btn_w@2x.png */,
 				E97B2EDD18B7B92200795D07 /* Icon-Small-50.png */,
 				E97B2EDE18B7B92200795D07 /* Icon-Small-50@2x.png */,
 				E97B2EDF18B7B92200795D07 /* Icon-Small.png */,
@@ -520,6 +530,7 @@
 				E97B2EE218B7B92300795D07 /* Icon-Small-50@2x.png in Resources */,
 				E97B2EE418B7B92300795D07 /* Icon-Small@2x.png in Resources */,
 				E922FA8617F02353008C7968 /* Default.png in Resources */,
+				E929387418C3116000F28256 /* btn_w@2x.png in Resources */,
 				E922FA8817F02353008C7968 /* Default@2x.png in Resources */,
 				E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */,
 				E99B83171810474000E7C4CB /* DSAuthViewController.xib in Resources */,
@@ -630,6 +641,7 @@
 			files = (
 				E922FA8017F02353008C7968 /* main.m in Sources */,
 				E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */,
+				E929386E18C2FC3B00F28256 /* DSConfig.m in Sources */,
 				E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
@@ -771,8 +783,6 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"COCOAPODS=1",
-					"MIXPANEL_LOG=1",
-					"MIXPANEL_DEBUG=1",
 				);
 				INFOPLIST_FILE = "DeskSlide/DeskSlide-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
