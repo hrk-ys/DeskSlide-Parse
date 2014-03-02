@@ -22,3 +22,12 @@
     #import "DSToolView.h"
 
 #endif
+
+#define CRASHLYTICS_API_KEY     @""
+#define PARSE_APP_ID            @""
+#define PARSE_CLIENT_KEY        @""
+#define HELPSHIFT_API_KEY       @""
+#define HELPSHIFT_DOMAIN_NAME   @""
+#define HELPSHIFT_APP_ID        @""
+#define MIXPANEL_TOKEN          @""
+#define GA_TRACKING_ID          @""

@@ -29,7 +29,7 @@
 {
     // Override point for customization after application launch.
     
-    [Crashlytics startWithAPIKey:@"b23780728daaf4165202578d33fcddfe13bf2bef"];
+    [Crashlytics startWithAPIKey:CRASHLYTICS_API_KEY];
     
     [HYLog setupLogger];
 #ifdef DEBUG
@@ -158,8 +158,8 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 
 - (void)setupParse:(NSDictionary*)launchOptions
 {
-    [Parse setApplicationId:@"pFG9MpdcFCveSEsE7sD3gHQPa1UeH2ikIOeg2vFS"
-                  clientKey:@"HiymDpcIsmQCXoYrWEgv89kAYvLbkjMn2p15gmlX"];
+    [Parse setApplicationId:PARSE_APP_ID
+                  clientKey:PARSE_CLIENT_KEY];
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
@@ -173,7 +173,9 @@ didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
 
 - (void)setupHelpshift:(NSDictionary*)launchOptions
 {
-    [Helpshift installForApiKey:@"62abc7c6505789c20cc45f0538303d12" domainName:@"hrk-ys.helpshift.com" appID:@"hrk-ys_platform_20140222040126521-50d9c1f80382fa5"];
+    [Helpshift installForApiKey:HELPSHIFT_API_KEY
+                     domainName:HELPSHIFT_DOMAIN_NAME
+                          appID:HELPSHIFT_APP_ID];
 }
 
 - (void)presentLoginViewController:(UIViewController*)controller animated:(BOOL)animated {

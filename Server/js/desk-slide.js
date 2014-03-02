@@ -7,8 +7,8 @@ $(function() {
   Parse.$ = jQuery;
 
   // Initialize Parse with your Parse application javascript keys
-  Parse.initialize("pFG9MpdcFCveSEsE7sD3gHQPa1UeH2ikIOeg2vFS",
-                   "w7Whf1MwhH608Cl5t3wcQ8lrZiVbKfSIDrpODNN7");
+  Parse.initialize("",
+                   "");
 
   var Document = Parse.Object.extend("Document");
 

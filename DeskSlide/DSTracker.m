@@ -53,12 +53,12 @@
 #endif
     
     // Initialize tracker.
-    [[GAI sharedInstance] trackerWithTrackingId:@"UA-42236549-2"];
+    [[GAI sharedInstance] trackerWithTrackingId:GA_TRACKING_ID];
 }
 
 - (void)setupMixpanel
 {
-    Mixpanel* mixpanel = [Mixpanel sharedInstanceWithToken:@"61871337d5301da2039fed897c5f7e6f"];
+    Mixpanel* mixpanel = [Mixpanel sharedInstanceWithToken:MIXPANEL_TOKEN];
     [mixpanel identify:mixpanel.distinctId];
     
 #ifdef DEBUG
