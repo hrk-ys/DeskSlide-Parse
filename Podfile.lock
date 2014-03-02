@@ -11,11 +11,11 @@ PODS:
     - CocoaLumberjack
   - KIF (2.0.0)
   - Mixpanel (2.3.2)
-  - Parse (1.2.13):
-    - Facebook-iOS-SDK (~> 3.5)
-  - SDWebImage (3.4):
+  - Parse (1.2.18):
+    - Facebook-iOS-SDK (~> 3.11)
+  - SDWebImage (3.5.2):
     - SDWebImage/Core
-  - SDWebImage/Core (3.4)
+  - SDWebImage/Core (3.5.2)
   - SVProgressHUD (1.0)
 
 DEPENDENCIES:
@@ -24,8 +24,8 @@ DEPENDENCIES:
   - HYUtils (from `https://github.com/hrk-ys/HYUtils.git`, commit `11d1836e3917371a20171d43bb8bc50789920f35`)
   - KIF (~> 2.0)
   - Mixpanel (= 2.3.2)
-  - Parse (= 1.2.13)
-  - SDWebImage (= 3.4)
+  - Parse (= 1.2.18)
+  - SDWebImage (= 3.5.2)
   - SVProgressHUD (= 1.0)
 
 EXTERNAL SOURCES:
@@ -41,8 +41,8 @@ SPEC CHECKSUMS:
   HYUtils: 3bf0dc6cb74f89a0adb510a9f7415a7874f4743f
   KIF: ff3b46deb62ce3f8e99c6a2c786729e1eea241ba
   Mixpanel: ddd79df92245a14d2b3064544d1e9ff037d8ac3a
-  Parse: 71038f6c13fef880c628db7a2725bb7138ead81a
-  SDWebImage: 366188f04c019bfd712d45e3b36aa52070f4abd8
+  Parse: 6dd57f2af9f89dc6facc755cec4e96f8b739b1fb
+  SDWebImage: fe7ce01ae4e0a884d168f59c9dd82d35baf8429e
   SVProgressHUD: 5e10939a296debf5fe5a5895eda9539b8b2114f1
 
 COCOAPODS: 0.29.0
