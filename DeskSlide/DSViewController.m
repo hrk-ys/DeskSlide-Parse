@@ -141,6 +141,11 @@ static NSDate* documentUpdatedAt = nil;
     // Dispose of any resources that can be recreated.
 }
 
+- (void)layoutTutorialView
+{
+    self.tutorialView.hidden = self.dataSource.count > 4;
+}
+
 - (void)loadObjects
 {
     LOGTrace;
@@ -152,7 +157,7 @@ static NSDate* documentUpdatedAt = nil;
             self.dataSource = objects.mutableCopy;
             [self.collectionView reloadData];
             
-            self.tutorialView.hidden = self.dataSource.count > 0;
+            [self layoutTutorialView];
             
             [self.class updateDocument];
             self.lastUpdateAt = documentUpdatedAt;
@@ -287,7 +292,8 @@ static NSDate* documentUpdatedAt = nil;
         [SVProgressHUD showSuccessWithStatus:@"Success"];
         [self.dataSource insertObject:doc atIndex:0];
         [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
-        self.tutorialView.hidden = YES;
+        
+        [self layoutTutorialView];
     }];
 }
 
@@ -337,13 +343,14 @@ static NSDate* documentUpdatedAt = nil;
             [doc setObject:imageFile forKey:kDSDocumentFileKey];
             
             [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-                [SVProgressHUD dismiss];
+                [SVProgressHUD showSuccessWithStatus:@"Success"];
                 if (!error) {
                     [DSTracker trackEvent:@"create doc" properties:@{ @"docType": @"image"}];
                     [DSTracker increment:@"doc count" by:@1];
                     
                     [self.dataSource insertObject:doc atIndex:0];
                     [self.collectionView insertItemsAtIndexPaths:@[ [NSIndexPath indexPathForItem:0 inSection:0] ]];
+                    [self layoutTutorialView];
                 }
                 else {
                     // Log details of the failure
