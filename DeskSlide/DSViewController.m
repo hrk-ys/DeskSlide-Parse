@@ -74,6 +74,7 @@ static NSDate* documentUpdatedAt = nil;
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
+    self.dataSource = @[].mutableCopy;
     self.shouldReloadOnAppear = YES;
     
 #ifdef DEBUG
@@ -356,7 +357,7 @@ static NSDate* documentUpdatedAt = nil;
         }
     } progressBlock:^(int percentDone) {
         // Update your progress spinner here. percentDone will be between 0 and 100.
-        [SVProgressHUD showProgress:(int) percentDone / 100];
+//        [SVProgressHUD showProgress:percentDone];
     }];
 }
 
