@@ -74,7 +74,7 @@ $(function() {
 		}
 
 		var file = fileUploadControl.files[0];
-  		var parseFile = new Parse.File(file.name, file);
+        var parseFile = new Parse.File(file.name.replace(/.+(\.)([A-Za-z0-9]+)/, 'image$1$2'), file);
 		parseFile.save().then(function() {
 			var doc = new Document;
 			doc.set("type", "file");
