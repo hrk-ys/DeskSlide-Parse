@@ -117,6 +117,14 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)close
+{
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    } else {
+        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    }
+}
 
 - (IBAction)tappedSaveButton:(id)sender {
     LOGInfoTrace;
@@ -147,18 +155,15 @@
         } else {
             [DSViewController updateDocument];
         }
-        [self.navigationController popViewControllerAnimated:YES];
+        [self close];
     }];
     
 }
 
 - (IBAction)tappedCloseButton:(id)sender {
     LOGInfoTrace;
-    if (self.navigationController) {
-        [self.navigationController popViewControllerAnimated:YES];
-    } else {
-        [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
-    }
+
+    [self close];
 }
 
 - (BOOL)prefersStatusBarHidden

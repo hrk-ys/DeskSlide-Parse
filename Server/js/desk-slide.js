@@ -50,6 +50,7 @@ $(function() {
 		var doc = new Document;
 		doc.set("type", "text");
 		doc.set("text", text);
+        doc.set("notice", "1");
 		doc.setACL(new Parse.ACL(Parse.User.current()));
 		doc.save(null, {
 			success: function(doc) {
@@ -78,6 +79,7 @@ $(function() {
 			var doc = new Document;
 			doc.set("type", "file");
 			doc.set("file", parseFile);
+            doc.set("notice", "1");
 		    doc.setACL(new Parse.ACL(Parse.User.current()));
 			doc.save(null, {
 				success: function(doc) {

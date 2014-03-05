@@ -14,6 +14,10 @@ Parse.Cloud.afterSave("Document", function(request) {
 	query.get(request.object.id, {
 		success: function(doc) {
 			var message;
+            if (doc.get("notice") != '1') {
+                return;
+            }
+
 			if (doc.get("type") == 'text') {
 					message = doc.get("text").substr(0, 100);
 			} else {
