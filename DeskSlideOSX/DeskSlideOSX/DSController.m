@@ -18,13 +18,14 @@ NSString *const kDSDocumentTypeKey = @"type";
 NSString *const kDSDocumentTextKey = @"text";
 NSString *const kDSDocumentFileKey = @"file";
 
+NSString *const kDSDocumentNoticeKey = @"notice";
 
 // DocumentType
 NSString *const kDSDocumentTypeText = @"text";
 NSString *const kDSDocumentTypeFile = @"file";
 
-NSString* const kDSSendImageMenuItemTitle = @"クリップボードの画像を送信";
-NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選択";
+NSString *const kDSSendImageMenuItemTitle   = @"クリップボードの画像を送信";
+NSString *const kDSSelectImageMenuItemTitle = @"送信するファイルを選択";
 
 @implementation DSController
 
@@ -93,7 +94,7 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
     if ([PFUser currentUser]) {
         NSString *text = [self pastText];
         if (text) {
-            if (text.length > 30) text = [NSString stringWithFormat:@"%@...", [text substringToIndex:30]];
+            if (text.length > 30) { text = [NSString stringWithFormat:@"%@...", [text substringToIndex:30]]; }
             [self.sendTextMenuItem setTitle:[NSString stringWithFormat:@"クリップボードのテキストを送信: [%@]", text]];
         } else {
             [self.sendTextMenuItem setTitle:[NSString stringWithFormat:@"クリップボードのテキストを送信"]];
@@ -157,10 +158,9 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
 {
 }
 
-
 #pragma mark -
 
-- (void)sendImage:(PFFile*)imageFile progressBlock:(PFProgressBlock)progressBlock
+- (void)sendImage:(PFFile *)imageFile progressBlock:(PFProgressBlock)progressBlock
 {
     // Save PFFile
     
@@ -173,6 +173,7 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
             PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
             [doc setObject:kDSDocumentTypeFile forKey:kDSDocumentTypeKey];
             [doc setObject:imageFile forKey:kDSDocumentFileKey];
+            [doc setObject:@"1" forKey:kDSDocumentNoticeKey];
             
             [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 if (!error) {
@@ -193,12 +194,9 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
         }
     } progressBlock:^(int percentDone) {
         // Update your progress spinner here. percentDone will be between 0 and 100.
-        if (progressBlock) progressBlock(percentDone);
+        if (progressBlock) { progressBlock(percentDone); }
     }];
 }
-
-
-
 
 - (IBAction)preformOpen:(id)sender
 {
@@ -228,6 +226,7 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
     PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
     [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
     [doc setObject:text forKey:kDSDocumentTextKey];
+    [doc setObject:@"1" forKey:kDSDocumentNoticeKey];
     
     [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
@@ -236,7 +235,7 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
             return;
         }
         
-       
+        
         [self showTitle:@"" message:@"送信しました" forWindow:NULL];
     }];
 }
@@ -260,36 +259,32 @@ NSString* const kDSSelectImageMenuItemTitle = @"送信するファイルを選�
     }];
 }
 
-- (IBAction)onSelectFile:(id)sender {
-    
-    NSOpenPanel *openPanel	= [NSOpenPanel openPanel];
-    NSArray *allowedFileTypes = [NSArray arrayWithObjects:@"png",@"'PNG'", @"jpg", @"'JPG'", @"jpeg", @"'JPEG'", nil];
+- (IBAction)onSelectFile:(id)sender
+{
+    NSOpenPanel *openPanel        = [NSOpenPanel openPanel];
+    NSArray     *allowedFileTypes = [NSArray arrayWithObjects:@"png", @"'PNG'", @"jpg", @"'JPG'", @"jpeg", @"'JPEG'", nil];
     //  NSOpenPanel interface has changed since Mac OSX v10.6.
     [openPanel setAllowedFileTypes:allowedFileTypes];
     NSInteger pressedButton = [openPanel runModal];
     
-    if( pressedButton == NSOKButton ){
-        
+    if (pressedButton == NSOKButton) {
         // get file path
-        NSURL * filePath = [openPanel URL];
+        NSURL  *filePath  = [openPanel URL];
         PFFile *imageFile = [PFFile fileWithName:[[[filePath path] pathComponents] lastObject]
                                   contentsAtPath:filePath.path];
         [self sendImage:imageFile progressBlock:^(int percentDone) {
             [self.selectFileMenuItem setTitle:[NSString stringWithFormat:@"%@: %d %%", kDSSelectImageMenuItemTitle, percentDone]];
         }];
         // open file here
-        
-    }else if( pressedButton == NSCancelButton ){
-    }else{
-     	// error
+    } else if (pressedButton == NSCancelButton) {
+    } else {
+        // error
     }
-
 }
-
 
 #pragma mark - login
 
-- (IBAction)tappedLoginButton:(NSButton*)sender
+- (IBAction)tappedLoginButton:(NSButton *)sender
 {
     NSString *username = self.usernameField.stringValue;
     NSString *password = self.passwordField.stringValue;

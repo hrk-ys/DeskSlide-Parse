@@ -498,7 +498,7 @@
 				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlideOSX/DeskSlideOSX-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -520,7 +520,7 @@
 				GCC_PREFIX_HEADER = "DeskSlideOSX/DeskSlideOSX-Prefix.pch";
 				INFOPLIST_FILE = "DeskSlideOSX/DeskSlideOSX-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
-				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
