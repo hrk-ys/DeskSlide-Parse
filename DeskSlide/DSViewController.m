@@ -31,6 +31,8 @@ MFMailComposeViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
+
+
 @property (weak, nonatomic) IBOutlet DSToolView *toolView;
 @property (weak, nonatomic) IBOutlet UIButton   *textButton;
 @property (weak, nonatomic) IBOutlet UIButton   *libraryButton;
@@ -69,10 +71,21 @@ static NSDate* documentUpdatedAt = nil;
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)finishedTutorial
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"kFinishedTutorial"];
+}
+- (void)setFinishedTutorial
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kFinishedTutorial"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     self.dataSource = @[].mutableCopy;
     self.shouldReloadOnAppear = YES;
@@ -121,6 +134,15 @@ static NSDate* documentUpdatedAt = nil;
     if (![PFUser currentUser]) {
         [(DSAppDelegate *) [[UIApplication sharedApplication] delegate] presentLoginViewController : self animated : NO];
         
+        return;
+    }
+    
+    
+    if (![self finishedTutorial]) {
+        [self setFinishedTutorial];
+        
+        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
+        [self presentViewController:vc animated:NO completion:nil];
         return;
     }
     
@@ -274,9 +296,7 @@ static NSDate* documentUpdatedAt = nil;
     
     [SVProgressHUD show];
     
-    PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
-    [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
-    [doc setObject:text forKey:kDSDocumentTextKey];
+    PFObject *doc = [DSUtils createObjectWithText:text];
     
     [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {

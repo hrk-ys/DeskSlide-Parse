@@ -13,4 +13,6 @@
 + (BOOL)isTextObject:(PFObject*)object;
 + (BOOL)isFileObject:(PFObject*)object;
 
++ (PFObject*)createObjectWithText:(NSString*)text;
+
 @end

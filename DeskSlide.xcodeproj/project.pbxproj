@@ -9,6 +9,15 @@
 /* Begin PBXBuildFile section */
 		0086357FE7384BDE9C2BFDF3 /* libPods-DeskSlide Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */; };
 		428906B4306148B29122289D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2BE02A234641CD9A2FB596 /* libPods.a */; };
+		E91C02D418C8AB75001A06E4 /* DSTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */; };
+		E91C02D618C8C508001A06E4 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02D518C8C508001A06E4 /* close@2x.png */; };
+		E91C02D718C8C981001A06E4 /* Reveal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E929386F18C3059500F28256 /* Reveal.framework */; };
+		E91C02D918C8D17A001A06E4 /* pc_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02D818C8D17A001A06E4 /* pc_login@2x.png */; };
+		E91C02DB18C8E0BE001A06E4 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02DA18C8E0BE001A06E4 /* back@2x.png */; };
+		E91C02DF18C8E43F001A06E4 /* DSTutorialRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */; };
+		E91C02E218C8E88F001A06E4 /* DSTutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */; };
+		E91C02E418C8EC32001A06E4 /* pc_index@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02E318C8EC32001A06E4 /* pc_index@2x.png */; };
+		E91C02E718C952B8001A06E4 /* DSTutorial3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */; };
 		E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7317F02353008C7968 /* UIKit.framework */; };
 		E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7517F02353008C7968 /* Foundation.framework */; };
 		E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7717F02353008C7968 /* CoreGraphics.framework */; };
@@ -79,6 +88,18 @@
 /* Begin PBXFileReference section */
 		3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeskSlide Tests.xcconfig"; path = "Pods/Pods-DeskSlide Tests.xcconfig"; sourceTree = "<group>"; };
 		ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeskSlide Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91C02D218C8AB75001A06E4 /* DSTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorialViewController.h; sourceTree = "<group>"; };
+		E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorialViewController.m; sourceTree = "<group>"; };
+		E91C02D518C8C508001A06E4 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		E91C02D818C8D17A001A06E4 /* pc_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pc_login@2x.png"; sourceTree = "<group>"; };
+		E91C02DA18C8E0BE001A06E4 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		E91C02DD18C8E43F001A06E4 /* DSTutorialRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorialRootViewController.h; sourceTree = "<group>"; };
+		E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorialRootViewController.m; sourceTree = "<group>"; };
+		E91C02E018C8E88F001A06E4 /* DSTutorial2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorial2ViewController.h; sourceTree = "<group>"; };
+		E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorial2ViewController.m; sourceTree = "<group>"; };
+		E91C02E318C8EC32001A06E4 /* pc_index@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pc_index@2x.png"; sourceTree = "<group>"; };
+		E91C02E518C952B8001A06E4 /* DSTutorial3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorial3ViewController.h; sourceTree = "<group>"; };
+		E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorial3ViewController.m; sourceTree = "<group>"; };
 		E922FA7017F02353008C7968 /* DeskSlide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskSlide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E922FA7317F02353008C7968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E922FA7517F02353008C7968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -189,6 +210,7 @@
 				E9B0E7B417F8FA4600544C88 /* CoreData.framework in Frameworks */,
 				E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */,
 				E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */,
+				E91C02D718C8C981001A06E4 /* Reveal.framework in Frameworks */,
 				428906B4306148B29122289D /* libPods.a in Frameworks */,
 				E9B0E7B217F8FA1100544C88 /* libGoogleAnalyticsServices.a in Frameworks */,
 				E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */,
@@ -210,6 +232,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91C02DC18C8E42A001A06E4 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				E91C02DD18C8E43F001A06E4 /* DSTutorialRootViewController.h */,
+				E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */,
+				E91C02D218C8AB75001A06E4 /* DSTutorialViewController.h */,
+				E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */,
+				E91C02E018C8E88F001A06E4 /* DSTutorial2ViewController.h */,
+				E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */,
+				E91C02E518C952B8001A06E4 /* DSTutorial3ViewController.h */,
+				E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		E922FA6717F02353008C7968 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +341,7 @@
 		E922FAC617F04846008C7968 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E91C02DC18C8E42A001A06E4 /* Tutorial */,
 				E922FAC717F04885008C7968 /* DSLoginViewController.h */,
 				E922FAC817F04885008C7968 /* DSLoginViewController.m */,
 				E99B83131810474000E7C4CB /* DSAuthViewController.h */,
@@ -348,6 +386,8 @@
 			isa = PBXGroup;
 			children = (
 				E929387318C3116000F28256 /* btn_w@2x.png */,
+				E91C02DA18C8E0BE001A06E4 /* back@2x.png */,
+				E91C02D518C8C508001A06E4 /* close@2x.png */,
 				E97B2EDD18B7B92200795D07 /* Icon-Small-50.png */,
 				E97B2EDE18B7B92200795D07 /* Icon-Small-50@2x.png */,
 				E97B2EDF18B7B92200795D07 /* Icon-Small.png */,
@@ -359,6 +399,8 @@
 				E9B0E7C717F9CAF400544C88 /* Icon-60@2x.png */,
 				E9B0E7C817F9CAF400544C88 /* Icon.png */,
 				E9B0E7C917F9CAF400544C88 /* Icon@2x.png */,
+				E91C02E318C8EC32001A06E4 /* pc_index@2x.png */,
+				E91C02D818C8D17A001A06E4 /* pc_login@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -541,10 +583,14 @@
 				E97B2EE318B7B92300795D07 /* Icon-Small.png in Resources */,
 				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
 				E9B0E7CA17F9CAF400544C88 /* Icon-60.png in Resources */,
+				E91C02E418C8EC32001A06E4 /* pc_index@2x.png in Resources */,
+				E91C02DB18C8E0BE001A06E4 /* back@2x.png in Resources */,
 				E9B0E7CB17F9CAF400544C88 /* Icon-60@2x.png in Resources */,
+				E91C02D918C8D17A001A06E4 /* pc_login@2x.png in Resources */,
 				E97B2EE118B7B92200795D07 /* Icon-Small-50.png in Resources */,
 				E9B0E7CC17F9CAF400544C88 /* Icon.png in Resources */,
 				E9B0E7CD17F9CAF400544C88 /* Icon@2x.png in Resources */,
+				E91C02D618C8C508001A06E4 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -640,13 +686,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E922FA8017F02353008C7968 /* main.m in Sources */,
+				E91C02D418C8AB75001A06E4 /* DSTutorialViewController.m in Sources */,
 				E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */,
 				E929386E18C2FC3B00F28256 /* DSConfig.m in Sources */,
 				E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */,
+				E91C02E718C952B8001A06E4 /* DSTutorial3ViewController.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
+				E91C02DF18C8E43F001A06E4 /* DSTutorialRootViewController.m in Sources */,
 				E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */,
 				E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */,
+				E91C02E218C8E88F001A06E4 /* DSTutorial2ViewController.m in Sources */,
 				E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */,
 				E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */,
 				E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */,
