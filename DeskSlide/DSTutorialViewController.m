@@ -8,6 +8,7 @@
 
 #import "DSTutorialViewController.h"
 #import "DSTutorial2ViewController.h"
+#import "DSViewController.h"
 
 #import <SVProgressHUD.h>
 
@@ -39,7 +40,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = @"ステップ1";
+    self.title = @"使い方 ステップ1";
     
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:self action:@selector(tappedCloseButton:)];
    
@@ -64,6 +65,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)showNextStep
+{
+    UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView2"];
+    ((DSTutorial2ViewController*)vc).textDoc = self.textDoc;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)showTextInputAlert
@@ -99,7 +107,7 @@
 {
     LOGTrace;
     
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     PFObject *doc = [DSUtils createObjectWithText:text];
    
@@ -111,21 +119,28 @@
             return;
         }
         
+        [DSViewController updateDocument];
+        
         [DSTracker trackEvent:@"create doc" properties:@{ @"docType": @"text"}];
         [DSTracker increment:@"doc count" by:@1];
         
         [SVProgressHUD showSuccessWithStatus:@"Success"];
        
-        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView2"];
-        self.textDoc = ((DSTutorial2ViewController*)vc).textDoc = doc;
-        [self.navigationController pushViewController:vc animated:YES];
+        self.textDoc = doc;
+        [self showNextStep];
+
     }];
 }
 
 - (IBAction)tappedTextButton:(id)sender
 {
     LOGTrace;
-    [DSTracker trackEvent:@"tutorial close button"];
+    if (self.textDoc) {
+        [self showNextStep];
+        return;
+    }
+    
+    [DSTracker trackEvent:@"tapped send text"];
     
     UIPasteboard *pastebd = [UIPasteboard generalPasteboard];
     
@@ -147,6 +162,7 @@
 }
 
 - (IBAction)tappedCloseButton:(id)sender {
+    [DSTracker trackEvent:@"tutorial close button"];
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 

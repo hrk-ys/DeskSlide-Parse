@@ -31,7 +31,7 @@
     self = [super init];
     if (self) {
         [self setupGoogleAnalytics];
-//        [self setupMixpanel];
+        [self setupMixpanel];
     }
     return self;
 }

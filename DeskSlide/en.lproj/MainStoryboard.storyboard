@@ -653,8 +653,8 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1qt-jM-3Zi"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naE-Yj-QbS" userLabel="toolView" customClass="DSToolView">
@@ -775,11 +775,11 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-pE-xQX" userLabel="bg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-pE-xQX" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lNM-zd-mOy">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="545" translatesAutoresizingMaskIntoConstraints="NO" id="lNM-zd-mOy">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
@@ -796,13 +796,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         <rect key="frame" x="40" y="86" width="240" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="http://desk-slide.hrk-ys.net/" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OLd-YC-3D9">
-                                        <rect key="frame" x="61" y="57" width="214" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先ほど登録したユーザ名とパスワードでログインすると、登録したテキストや画像がPC上で見る事ができます。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="I7X-jd-LNq">
                                         <rect key="frame" x="28" y="274" width="280" height="75"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -810,14 +803,46 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pc_index.png" translatesAutoresizingMaskIntoConstraints="NO" id="XP5-PD-VUS">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pc_index.png" translatesAutoresizingMaskIntoConstraints="NO" id="XP5-PD-VUS">
                                         <rect key="frame" x="40" y="352" width="240" height="180"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="180" id="fcQ-Yl-ytu"/>
+                                            <constraint firstAttribute="width" constant="240" id="lgz-4A-G4e"/>
+                                        </constraints>
                                     </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heM-pC-AXo">
+                                        <rect key="frame" x="20" y="48" width="280" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <state key="normal" title="http://desk-slide.hrk-ys.net/">
+                                            <color key="titleColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tappedLinkButton:" destination="TOl-9Y-zyk" eventType="touchUpInside" id="yVy-bo-e85"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="XP5-PD-VUS" firstAttribute="top" secondItem="lNM-zd-mOy" secondAttribute="top" constant="352" id="1IK-M5-pC1"/>
+                                    <constraint firstAttribute="trailing" secondItem="XP5-PD-VUS" secondAttribute="trailing" constant="40" id="CfS-Kb-woO"/>
+                                    <constraint firstItem="XP5-PD-VUS" firstAttribute="leading" secondItem="lNM-zd-mOy" secondAttribute="leading" constant="40" id="bfp-1J-04t"/>
+                                    <constraint firstAttribute="bottom" secondItem="XP5-PD-VUS" secondAttribute="bottom" constant="13" id="tDQ-7G-PDA"/>
+                                </constraints>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lNM-zd-mOy" firstAttribute="top" secondItem="jC5-J3-8Mm" secondAttribute="bottom" id="1qU-0c-hfT"/>
+                            <constraint firstItem="Iaa-pE-xQX" firstAttribute="leading" secondItem="G2n-xC-1pM" secondAttribute="leading" id="9ZQ-WD-eZ9"/>
+                            <constraint firstItem="4et-eT-FjZ" firstAttribute="top" secondItem="lNM-zd-mOy" secondAttribute="bottom" id="CZy-5H-9Q7"/>
+                            <constraint firstAttribute="trailing" secondItem="lNM-zd-mOy" secondAttribute="trailing" id="JVf-Ax-VgN"/>
+                            <constraint firstItem="4et-eT-FjZ" firstAttribute="top" secondItem="Iaa-pE-xQX" secondAttribute="bottom" id="LzG-4R-sbB"/>
+                            <constraint firstAttribute="trailing" secondItem="Iaa-pE-xQX" secondAttribute="trailing" id="d17-qq-7cc"/>
+                            <constraint firstItem="lNM-zd-mOy" firstAttribute="leading" secondItem="G2n-xC-1pM" secondAttribute="leading" id="oTV-SO-iRQ"/>
+                            <constraint firstItem="Iaa-pE-xQX" firstAttribute="top" secondItem="G2n-xC-1pM" secondAttribute="top" id="zWc-hJ-Esr"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="dPL-jH-kAo">
@@ -849,17 +874,23 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-cT-5Yx">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-cT-5Yx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-gG-ayW">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-gG-ayW">
                                         <rect key="frame" x="70" y="518" width="180" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="d1Q-I6-fD4"/>
+                                        </constraints>
                                         <state key="normal" title="閉じる">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tappedCloseButton:" destination="9bj-u2-k01" eventType="touchUpInside" id="Nmu-dc-tWi"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3.プレビュー画面を確認する" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="jFg-ks-Zld">
                                         <rect key="frame" x="20" y="71" width="286" height="44"/>
@@ -871,7 +902,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="スマホやPCブラウザから登録した内容は一覧ページから確認できます" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-FO-A4l">
                                         <rect key="frame" x="20" y="129" width="280" height="54"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -897,14 +928,33 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                             <segue destination="Vw7-Wb-jH5" kind="modal" identifier="preview" id="m1j-d7-Bh4"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↑ここをタップ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-Q9-pPH">
+                                        <rect key="frame" x="153" y="299" width="135" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="O1b-gG-ayW" firstAttribute="leading" secondItem="XiH-cT-5Yx" secondAttribute="leading" constant="70" id="4PX-qG-rVK"/>
+                                    <constraint firstAttribute="trailing" secondItem="O1b-gG-ayW" secondAttribute="trailing" constant="70" id="b9W-Za-nYn"/>
+                                    <constraint firstAttribute="bottom" secondItem="O1b-gG-ayW" secondAttribute="bottom" constant="20" id="ey2-gS-Imm"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ox6-sa-OtZ" firstAttribute="top" secondItem="XiH-cT-5Yx" secondAttribute="bottom" id="Ihi-MD-ngv"/>
+                            <constraint firstItem="XiH-cT-5Yx" firstAttribute="top" secondItem="phR-wc-sSS" secondAttribute="top" id="VVz-Gz-QWl"/>
+                            <constraint firstItem="XiH-cT-5Yx" firstAttribute="leading" secondItem="phR-wc-sSS" secondAttribute="leading" id="YwS-uV-KQQ"/>
+                            <constraint firstAttribute="trailing" secondItem="XiH-cT-5Yx" secondAttribute="trailing" id="i1d-fy-3Xd"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SuB-Ms-VXx"/>
                     <connections>
+                        <outlet property="closeButton" destination="O1b-gG-ayW" id="b2v-lB-Wx8"/>
                         <outlet property="docImageView" destination="gn0-0G-r5k" id="inN-fd-wnf"/>
                         <outlet property="docTextView" destination="cbW-Ha-98y" id="5Z6-VO-qAO"/>
                     </connections>

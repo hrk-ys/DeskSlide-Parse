@@ -12,6 +12,7 @@
 @interface DSTutorial3ViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *docImageView;
 @property (weak, nonatomic) IBOutlet UILabel     *docTextView;
+@property (weak, nonatomic) IBOutlet UIButton    *closeButton;
 
 @end
 
@@ -40,6 +41,8 @@
                                                   fontSize:100
                                                 attributes:attributes];
     self.docTextView.text = [self.textDoc objectForKey:kDSDocumentTextKey];
+    
+    [self.closeButton setBackgroundImage:[UIImage imageWithColor:[UIColor colorWithWhite:0.243 alpha:1.000]] forState:UIControlStateNormal];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -58,9 +61,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([segue.identifier isEqualToString:@"preview"]) {
-        DSPreviewViewController *preview   = segue.destinationViewController;
+        DSPreviewViewController *preview = segue.destinationViewController;
         preview.object = self.textDoc;
     }
+}
+
+
+- (IBAction)tappedCloseButton:(id)sender
+{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

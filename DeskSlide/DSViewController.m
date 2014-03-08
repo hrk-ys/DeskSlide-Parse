@@ -14,8 +14,6 @@
 
 #import "GADBannerView.h"
 
-#import <MessageUI/MFMailComposeViewController.h>
-#import <MessageUI/MessageUI.h>
 #import <Mixpanel.h>
 #import <SVProgressHUD.h>
 #import <Social/Social.h>
@@ -26,8 +24,8 @@
 UINavigationControllerDelegate, UIImagePickerControllerDelegate,
 UIAlertViewDelegate,
 ADBannerViewDelegate,
-GADBannerViewDelegate,
-MFMailComposeViewControllerDelegate>
+GADBannerViewDelegate
+>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -138,14 +136,7 @@ static NSDate* documentUpdatedAt = nil;
     }
     
     
-    if (![self finishedTutorial]) {
-        [self setFinishedTutorial];
-        
-        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
-        [self presentViewController:vc animated:NO completion:nil];
-        return;
-    }
-    
+   
     if (!self.lastUpdateAt || ![self.lastUpdateAt isEqualToDate:documentUpdatedAt]) {
         [self loadObjects];
     }
@@ -153,6 +144,13 @@ static NSDate* documentUpdatedAt = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (![self finishedTutorial]) {
+        [self setFinishedTutorial];
+        
+        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     
     [DSTracker trackView:@"main"];
 }
@@ -213,29 +211,6 @@ static NSDate* documentUpdatedAt = nil;
 
 #pragma mark - action
 
-- (IBAction)tappedLinkButton:(id)sender {
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        
-        controller.mailComposeDelegate = self;
-        [controller setSubject:@"DeskSlide PCブラウザ用URL"];
-        [controller setMessageBody:@"http://desk-slide.hrk-ys.net/" isHTML:NO];
-        
-        [self presentViewController:controller animated:YES completion:nil];
-        
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://desk-slide.hrk-ys.net/"]];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    if (error) [error show];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 
 - (void)showTextInputAlert
@@ -294,7 +269,7 @@ static NSDate* documentUpdatedAt = nil;
 {
     LOGTrace;
     
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     PFObject *doc = [DSUtils createObjectWithText:text];
     
@@ -353,7 +328,7 @@ static NSDate* documentUpdatedAt = nil;
     LOGTrace;
     
     // HUD creation here (see example for code)
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     // Save PFFile
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -423,6 +398,7 @@ static NSDate* documentUpdatedAt = nil;
 
 - (IBAction)tappedDisableAd:(id)sender {
     
+    [DSTracker trackView:@"tapped disable ad link"];
     NSString* message = [[DSConfig sharedInstance] configForKey:@"twitter_invite_message"];
     
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];

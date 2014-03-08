@@ -1,5 +1,5 @@
 platform :ios, 6.1
-pod 'HYUtils', :git => 'https://github.com/hrk-ys/HYUtils.git', :commit => '11d1836e3917371a20171d43bb8bc50789920f35'
+pod 'HYUtils', :git => 'https://github.com/hrk-ys/HYUtils.git', :commit => '806679b2773695602825a57ff1d7b8edb4e63bdb'
 pod 'Parse', '1.2.18'
 pod 'FontAwesomeKit', '1.1.3'
 pod 'SDWebImage', '3.5.2'

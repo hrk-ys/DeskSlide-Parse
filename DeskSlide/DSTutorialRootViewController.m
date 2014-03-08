@@ -38,7 +38,7 @@
     
     [self.navigationBar setTitleTextAttributes:@{ NSForegroundColorAttributeName: [UIColor whiteColor] }];
     [self.navigationBar setBackgroundImage:[[UIImage alloc] init] forBarPosition:UIBarPositionAny barMetrics:UIBarMetricsDefault];
-    [self.navigationBar setShadowImage:[[UIImage alloc] init]];
+    [self.navigationBar setShadowImage:[UIImage imageWithColor:[UIColor whiteColor]]];
 }
 
 - (void)didReceiveMemoryWarning
