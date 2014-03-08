@@ -51,11 +51,11 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wid-kz-CZX">
                     <rect key="frame" x="20" y="407" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.22745099663734436" green="0.49803924560546875" blue="0.73725491762161255" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="s2I-6t-bcD"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="新規登録">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
