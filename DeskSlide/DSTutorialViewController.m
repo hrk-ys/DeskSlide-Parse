@@ -9,6 +9,7 @@
 #import "DSTutorialViewController.h"
 #import "DSTutorial2ViewController.h"
 #import "DSViewController.h"
+#import "DSTutorialRootViewController.h"
 
 #import <SVProgressHUD.h>
 
@@ -41,8 +42,9 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"使い方 ステップ1";
-    
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:self action:@selector(tappedCloseButton:)];
+    if (! [((DSTutorialRootViewController*)self.navigationController) disableNaviCloseButton]) {
+        self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"close"] style:UIBarButtonItemStylePlain target:self action:@selector(tappedCloseButton:)];
+    }
    
     [self.toolView setupToolButton:self.textButton icon:FAKIconPaperClip];
     [self.toolView setupToolButton:self.libraryButton icon:FAKIconFolderOpen];

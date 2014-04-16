@@ -11,8 +11,9 @@
 #import "DSAppDelegate.h"
 #import "DSDocumentCell.h"
 #import "DSPreviewViewController.h"
+#import "DSTutorialRootViewController.h"
 
-#import "GADBannerView.h"
+#import <GADBannerView.h>
 
 #import <Mixpanel.h>
 #import <SVProgressHUD.h>
@@ -148,6 +149,8 @@ static NSDate* documentUpdatedAt = nil;
         [self setFinishedTutorial];
         
         UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
+        [((DSTutorialRootViewController*)vc) setDisableNaviCloseButton:YES];
+        
         [self presentViewController:vc animated:YES completion:nil];
         return;
     }

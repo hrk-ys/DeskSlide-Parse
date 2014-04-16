@@ -23,11 +23,12 @@
 
 #endif
 
-#define CRASHLYTICS_API_KEY     @""
-#define PARSE_APP_ID            @""
-#define PARSE_CLIENT_KEY        @""
-#define HELPSHIFT_API_KEY       @""
-#define HELPSHIFT_DOMAIN_NAME   @""
-#define HELPSHIFT_APP_ID        @""
-#define MIXPANEL_TOKEN          @""
-#define GA_TRACKING_ID          @""
+#define CRASHLYTICS_API_KEY     @"4f4cbdfd77a574332d47a8f7ae911db6c976181d"
+#define PARSE_APP_ID            @"pFG9MpdcFCveSEsE7sD3gHQPa1UeH2ikIOeg2vFS"
+#define PARSE_CLIENT_KEY        @"HiymDpcIsmQCXoYrWEgv89kAYvLbkjMn2p15gmlX"
+#define HELPSHIFT_API_KEY       @"62abc7c6505789c20cc45f0538303d12"
+#define HELPSHIFT_DOMAIN_NAME   @"hrk-ys.helpshift.com"
+#define HELPSHIFT_APP_ID        @"hrk-ys_platform_20140222040126521-50d9c1f80382fa5"
+#define MIXPANEL_TOKEN          @"61871337d5301da2039fed897c5f7e6f"
+#define GA_TRACKING_ID          @"UA-42236549-2"
+

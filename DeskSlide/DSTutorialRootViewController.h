@@ -10,4 +10,6 @@
 
 @interface DSTutorialRootViewController : UINavigationController
 
+@property (nonatomic) BOOL disableNaviCloseButton;
+
 @end

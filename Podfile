@@ -6,6 +6,8 @@ pod 'SDWebImage', '3.5.2'
 pod 'SVProgressHUD', '1.0'
 pod 'Helpshift', '4.2.0'
 pod 'Mixpanel', '2.3.2'
+pod 'GoogleAnalytics-iOS-SDK'
+pod 'Google-Mobile-Ads-SDK'
 
 target 'DeskSlide Tests', :exclusive => true do
   pod 'KIF', '~> 2.0'
