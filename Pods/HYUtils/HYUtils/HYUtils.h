@@ -11,3 +11,4 @@
 #import "UIView+RectExtension.h"
 #import "UIDevice+Version.h"
 #import "NSDictionary+Extention.h"
+#import "UIImage+Extention.h"

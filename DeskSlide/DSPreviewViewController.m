@@ -73,7 +73,8 @@
                                                      imageSize:CGSizeMake(320, 320)
                                                       fontSize:320
                                                    attributes:attributes];
-        self.saveButton.hidden = YES;
+        
+        [self.saveButton setTitle:@"コピー" forState:UIControlStateNormal];
         
         float statusBarHeight =[[UIApplication sharedApplication] statusBarFrame].size.height;
         self.textView.contentInset = UIEdgeInsetsMake(statusBarHeight, 0, 0, 0);
@@ -85,7 +86,6 @@
         [self.imageView setImageWithURL:[NSURL URLWithString:file.url]];
         
         self.textView.hidden = YES;
-        self.saveButton.hidden = NO;
     }
 }
 
@@ -129,8 +129,14 @@
 - (IBAction)tappedSaveButton:(id)sender {
     LOGInfoTrace;
     
-    UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:), nil);
-    [SVProgressHUD show];
+    if ([DSUtils isTextObject:self.object]) {
+        UIPasteboard *pastebd = [UIPasteboard generalPasteboard];
+        [pastebd setValue:[self.object objectForKey:kDSDocumentTypeText] forPasteboardType: @"public.utf8-plain-text"];
+        
+    } else if ([DSUtils isFileObject:self.object]) {
+        UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:), nil);
+        [SVProgressHUD show];
+    }
 }
 
 // 完了を知らせる

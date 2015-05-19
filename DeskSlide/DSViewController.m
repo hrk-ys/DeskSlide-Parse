@@ -11,11 +11,10 @@
 #import "DSAppDelegate.h"
 #import "DSDocumentCell.h"
 #import "DSPreviewViewController.h"
+#import "DSTutorialRootViewController.h"
 
-#import "GADBannerView.h"
+#import <GADBannerView.h>
 
-#import <MessageUI/MFMailComposeViewController.h>
-#import <MessageUI/MessageUI.h>
 #import <Mixpanel.h>
 #import <SVProgressHUD.h>
 #import <Social/Social.h>
@@ -26,10 +25,12 @@
 UINavigationControllerDelegate, UIImagePickerControllerDelegate,
 UIAlertViewDelegate,
 ADBannerViewDelegate,
-GADBannerViewDelegate,
-MFMailComposeViewControllerDelegate>
+GADBannerViewDelegate
+>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
+
+
 
 @property (weak, nonatomic) IBOutlet DSToolView *toolView;
 @property (weak, nonatomic) IBOutlet UIButton   *textButton;
@@ -69,10 +70,21 @@ static NSDate* documentUpdatedAt = nil;
     return UIStatusBarStyleLightContent;
 }
 
+- (BOOL)finishedTutorial
+{
+    return [[NSUserDefaults standardUserDefaults] boolForKey:@"kFinishedTutorial"];
+}
+- (void)setFinishedTutorial
+{
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"kFinishedTutorial"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
     
     self.dataSource = @[].mutableCopy;
     self.shouldReloadOnAppear = YES;
@@ -124,6 +136,8 @@ static NSDate* documentUpdatedAt = nil;
         return;
     }
     
+    
+   
     if (!self.lastUpdateAt || ![self.lastUpdateAt isEqualToDate:documentUpdatedAt]) {
         [self loadObjects];
     }
@@ -131,6 +145,15 @@ static NSDate* documentUpdatedAt = nil;
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
+    if (![self finishedTutorial]) {
+        [self setFinishedTutorial];
+        
+        UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
+        [((DSTutorialRootViewController*)vc) setDisableNaviCloseButton:YES];
+        
+        [self presentViewController:vc animated:YES completion:nil];
+        return;
+    }
     
     [DSTracker trackView:@"main"];
 }
@@ -191,29 +214,6 @@ static NSDate* documentUpdatedAt = nil;
 
 #pragma mark - action
 
-- (IBAction)tappedLinkButton:(id)sender {
-    if ([MFMailComposeViewController canSendMail]) {
-        MFMailComposeViewController *controller = [[MFMailComposeViewController alloc] init];
-        
-        controller.mailComposeDelegate = self;
-        [controller setSubject:@"DeskSlide PCブラウザ用URL"];
-        [controller setMessageBody:@"http://desk-slide.hrk-ys.net/" isHTML:NO];
-        
-        [self presentViewController:controller animated:YES completion:nil];
-        
-    } else {
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://desk-slide.hrk-ys.net/"]];
-    }
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
-{
-    if (error) [error show];
-    
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-
 
 
 - (void)showTextInputAlert
@@ -272,11 +272,9 @@ static NSDate* documentUpdatedAt = nil;
 {
     LOGTrace;
     
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
-    PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
-    [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
-    [doc setObject:text forKey:kDSDocumentTextKey];
+    PFObject *doc = [DSUtils createObjectWithText:text];
     
     [doc saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
@@ -333,7 +331,7 @@ static NSDate* documentUpdatedAt = nil;
     LOGTrace;
     
     // HUD creation here (see example for code)
-    [SVProgressHUD show];
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeClear];
     
     // Save PFFile
     [imageFile saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -403,6 +401,7 @@ static NSDate* documentUpdatedAt = nil;
 
 - (IBAction)tappedDisableAd:(id)sender {
     
+    [DSTracker trackView:@"tapped disable ad link"];
     NSString* message = [[DSConfig sharedInstance] configForKey:@"twitter_invite_message"];
     
     SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];

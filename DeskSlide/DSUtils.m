@@ -19,4 +19,12 @@
     return [[object objectForKey:kDSDocumentTypeKey] isEqualToString:kDSDocumentTypeFile];
 }
 
++ (PFObject*)createObjectWithText:(NSString*)text
+{
+    PFObject *doc = [PFObject objectWithClassName:kDSDocumentClassKey];
+    [doc setObject:kDSDocumentTypeText forKey:kDSDocumentTypeKey];
+    [doc setObject:text forKey:kDSDocumentTextKey];
+    return doc;
+}
+
 @end

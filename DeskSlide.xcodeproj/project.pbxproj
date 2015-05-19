@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		0086357FE7384BDE9C2BFDF3 /* libPods-DeskSlide Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */; };
 		428906B4306148B29122289D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2BE02A234641CD9A2FB596 /* libPods.a */; };
+		E91C02D418C8AB75001A06E4 /* DSTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */; };
+		E91C02D618C8C508001A06E4 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02D518C8C508001A06E4 /* close@2x.png */; };
+		E91C02D918C8D17A001A06E4 /* pc_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02D818C8D17A001A06E4 /* pc_login@2x.png */; };
+		E91C02DB18C8E0BE001A06E4 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02DA18C8E0BE001A06E4 /* back@2x.png */; };
+		E91C02DF18C8E43F001A06E4 /* DSTutorialRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */; };
+		E91C02E218C8E88F001A06E4 /* DSTutorial2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */; };
+		E91C02E418C8EC32001A06E4 /* pc_index@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02E318C8EC32001A06E4 /* pc_index@2x.png */; };
+		E91C02E718C952B8001A06E4 /* DSTutorial3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */; };
 		E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7317F02353008C7968 /* UIKit.framework */; };
 		E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7517F02353008C7968 /* Foundation.framework */; };
 		E922FA7817F02353008C7968 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7717F02353008C7968 /* CoreGraphics.framework */; };
@@ -47,7 +55,6 @@
 		E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E79817F0A92800544C88 /* DSDocumentCell.m */; };
 		E9B0E7A517F8850800544C88 /* DSPreviewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E7A417F8850800544C88 /* DSPreviewViewController.m */; };
 		E9B0E7A817F8F76600544C88 /* DSUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = E9B0E7A717F8F76600544C88 /* DSUtils.m */; };
-		E9B0E7B217F8FA1100544C88 /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B117F8FA1100544C88 /* libGoogleAnalyticsServices.a */; };
 		E9B0E7B417F8FA4600544C88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B317F8FA4600544C88 /* CoreData.framework */; };
 		E9B0E7B617F8FA5500544C88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */; };
 		E9B0E7B817F8FA5E00544C88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B717F8FA5E00544C88 /* libz.dylib */; };
@@ -57,7 +64,6 @@
 		E9B0E7CC17F9CAF400544C88 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E7C817F9CAF400544C88 /* Icon.png */; };
 		E9B0E7CD17F9CAF400544C88 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E7C917F9CAF400544C88 /* Icon@2x.png */; };
 		E9B0E7CF17FBA65400544C88 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7CE17FBA65400544C88 /* iAd.framework */; };
-		E9B0E7DB17FC71C500544C88 /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */; };
 		E9B0E7DD17FC77D600544C88 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DC17FC77D600544C88 /* MessageUI.framework */; };
 		E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */; };
 		E9C7804A18B8FC2600C4E79C /* HelpshiftLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */; };
@@ -79,6 +85,18 @@
 /* Begin PBXFileReference section */
 		3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeskSlide Tests.xcconfig"; path = "Pods/Pods-DeskSlide Tests.xcconfig"; sourceTree = "<group>"; };
 		ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeskSlide Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E91C02D218C8AB75001A06E4 /* DSTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorialViewController.h; sourceTree = "<group>"; };
+		E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorialViewController.m; sourceTree = "<group>"; };
+		E91C02D518C8C508001A06E4 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
+		E91C02D818C8D17A001A06E4 /* pc_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pc_login@2x.png"; sourceTree = "<group>"; };
+		E91C02DA18C8E0BE001A06E4 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		E91C02DD18C8E43F001A06E4 /* DSTutorialRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorialRootViewController.h; sourceTree = "<group>"; };
+		E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorialRootViewController.m; sourceTree = "<group>"; };
+		E91C02E018C8E88F001A06E4 /* DSTutorial2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorial2ViewController.h; sourceTree = "<group>"; };
+		E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorial2ViewController.m; sourceTree = "<group>"; };
+		E91C02E318C8EC32001A06E4 /* pc_index@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pc_index@2x.png"; sourceTree = "<group>"; };
+		E91C02E518C952B8001A06E4 /* DSTutorial3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorial3ViewController.h; sourceTree = "<group>"; };
+		E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorial3ViewController.m; sourceTree = "<group>"; };
 		E922FA7017F02353008C7968 /* DeskSlide.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DeskSlide.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E922FA7317F02353008C7968 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		E922FA7517F02353008C7968 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -135,13 +153,6 @@
 		E9B0E7A417F8850800544C88 /* DSPreviewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSPreviewViewController.m; sourceTree = "<group>"; };
 		E9B0E7A617F8F76600544C88 /* DSUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSUtils.h; sourceTree = "<group>"; };
 		E9B0E7A717F8F76600544C88 /* DSUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSUtils.m; sourceTree = "<group>"; };
-		E9B0E7AB17F8FA1100544C88 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		E9B0E7AC17F8FA1100544C88 /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		E9B0E7AD17F8FA1100544C88 /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		E9B0E7AE17F8FA1100544C88 /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		E9B0E7AF17F8FA1100544C88 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		E9B0E7B017F8FA1100544C88 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		E9B0E7B117F8FA1100544C88 /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
 		E9B0E7B317F8FA4600544C88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E9B0E7B717F8FA5E00544C88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -151,16 +162,6 @@
 		E9B0E7C817F9CAF400544C88 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		E9B0E7C917F9CAF400544C88 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		E9B0E7CE17FBA65400544C88 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		E9B0E7D117FC71C500544C88 /* GADAdMobExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdMobExtras.h; sourceTree = "<group>"; };
-		E9B0E7D217FC71C500544C88 /* GADAdNetworkExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdNetworkExtras.h; sourceTree = "<group>"; };
-		E9B0E7D317FC71C500544C88 /* GADAdSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADAdSize.h; sourceTree = "<group>"; };
-		E9B0E7D417FC71C500544C88 /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
-		E9B0E7D517FC71C500544C88 /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
-		E9B0E7D617FC71C500544C88 /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
-		E9B0E7D717FC71C500544C88 /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
-		E9B0E7D817FC71C500544C88 /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
-		E9B0E7D917FC71C500544C88 /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
 		E9B0E7DC17FC77D600544C88 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		E9B0E7DE17FC77DF00544C88 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E9C7804018B8FC2600C4E79C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/HelpshiftLocalizable.strings; sourceTree = "<group>"; };
@@ -190,9 +191,7 @@
 				E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */,
 				E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */,
 				428906B4306148B29122289D /* libPods.a in Frameworks */,
-				E9B0E7B217F8FA1100544C88 /* libGoogleAnalyticsServices.a in Frameworks */,
 				E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */,
-				E9B0E7DB17FC71C500544C88 /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +209,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E91C02DC18C8E42A001A06E4 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				E91C02DD18C8E43F001A06E4 /* DSTutorialRootViewController.h */,
+				E91C02DE18C8E43F001A06E4 /* DSTutorialRootViewController.m */,
+				E91C02D218C8AB75001A06E4 /* DSTutorialViewController.h */,
+				E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */,
+				E91C02E018C8E88F001A06E4 /* DSTutorial2ViewController.h */,
+				E91C02E118C8E88F001A06E4 /* DSTutorial2ViewController.m */,
+				E91C02E518C952B8001A06E4 /* DSTutorial3ViewController.h */,
+				E91C02E618C952B8001A06E4 /* DSTutorial3ViewController.m */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		E922FA6717F02353008C7968 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +318,7 @@
 		E922FAC617F04846008C7968 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E91C02DC18C8E42A001A06E4 /* Tutorial */,
 				E922FAC717F04885008C7968 /* DSLoginViewController.h */,
 				E922FAC817F04885008C7968 /* DSLoginViewController.m */,
 				E99B83131810474000E7C4CB /* DSAuthViewController.h */,
@@ -348,6 +363,8 @@
 			isa = PBXGroup;
 			children = (
 				E929387318C3116000F28256 /* btn_w@2x.png */,
+				E91C02DA18C8E0BE001A06E4 /* back@2x.png */,
+				E91C02D518C8C508001A06E4 /* close@2x.png */,
 				E97B2EDD18B7B92200795D07 /* Icon-Small-50.png */,
 				E97B2EDE18B7B92200795D07 /* Icon-Small-50@2x.png */,
 				E97B2EDF18B7B92200795D07 /* Icon-Small.png */,
@@ -359,6 +376,8 @@
 				E9B0E7C717F9CAF400544C88 /* Icon-60@2x.png */,
 				E9B0E7C817F9CAF400544C88 /* Icon.png */,
 				E9B0E7C917F9CAF400544C88 /* Icon@2x.png */,
+				E91C02E318C8EC32001A06E4 /* pc_index@2x.png */,
+				E91C02D818C8D17A001A06E4 /* pc_login@2x.png */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -377,41 +396,8 @@
 		E9B0E7A917F8FA1100544C88 /* Vender */ = {
 			isa = PBXGroup;
 			children = (
-				E9B0E7D017FC71C500544C88 /* GoogleAdMobAdsSdkiOS-6.5.1 */,
-				E9B0E7AA17F8FA1100544C88 /* GoogleAnalytics */,
 			);
 			path = Vender;
-			sourceTree = "<group>";
-		};
-		E9B0E7AA17F8FA1100544C88 /* GoogleAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				E9B0E7AB17F8FA1100544C88 /* GAI.h */,
-				E9B0E7AC17F8FA1100544C88 /* GAIDictionaryBuilder.h */,
-				E9B0E7AD17F8FA1100544C88 /* GAIFields.h */,
-				E9B0E7AE17F8FA1100544C88 /* GAILogger.h */,
-				E9B0E7AF17F8FA1100544C88 /* GAITrackedViewController.h */,
-				E9B0E7B017F8FA1100544C88 /* GAITracker.h */,
-				E9B0E7B117F8FA1100544C88 /* libGoogleAnalyticsServices.a */,
-			);
-			path = GoogleAnalytics;
-			sourceTree = "<group>";
-		};
-		E9B0E7D017FC71C500544C88 /* GoogleAdMobAdsSdkiOS-6.5.1 */ = {
-			isa = PBXGroup;
-			children = (
-				E9B0E7D117FC71C500544C88 /* GADAdMobExtras.h */,
-				E9B0E7D217FC71C500544C88 /* GADAdNetworkExtras.h */,
-				E9B0E7D317FC71C500544C88 /* GADAdSize.h */,
-				E9B0E7D417FC71C500544C88 /* GADBannerView.h */,
-				E9B0E7D517FC71C500544C88 /* GADBannerViewDelegate.h */,
-				E9B0E7D617FC71C500544C88 /* GADInterstitial.h */,
-				E9B0E7D717FC71C500544C88 /* GADInterstitialDelegate.h */,
-				E9B0E7D817FC71C500544C88 /* GADRequest.h */,
-				E9B0E7D917FC71C500544C88 /* GADRequestError.h */,
-				E9B0E7DA17FC71C500544C88 /* libGoogleAdMobAds.a */,
-			);
-			path = "GoogleAdMobAdsSdkiOS-6.5.1";
 			sourceTree = "<group>";
 		};
 		E9C7803D18B8FC2600C4E79C /* HSLocalization */ = {
@@ -541,10 +527,14 @@
 				E97B2EE318B7B92300795D07 /* Icon-Small.png in Resources */,
 				E9B0E78C17F074CC00544C88 /* bg@2x.png in Resources */,
 				E9B0E7CA17F9CAF400544C88 /* Icon-60.png in Resources */,
+				E91C02E418C8EC32001A06E4 /* pc_index@2x.png in Resources */,
+				E91C02DB18C8E0BE001A06E4 /* back@2x.png in Resources */,
 				E9B0E7CB17F9CAF400544C88 /* Icon-60@2x.png in Resources */,
+				E91C02D918C8D17A001A06E4 /* pc_login@2x.png in Resources */,
 				E97B2EE118B7B92200795D07 /* Icon-Small-50.png in Resources */,
 				E9B0E7CC17F9CAF400544C88 /* Icon.png in Resources */,
 				E9B0E7CD17F9CAF400544C88 /* Icon@2x.png in Resources */,
+				E91C02D618C8C508001A06E4 /* close@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +620,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./Crashlytics.framework/run b23780728daaf4165202578d33fcddfe13bf2bef";
+			shellScript = "./Crashlytics.framework/run 4f4cbdfd77a574332d47a8f7ae911db6c976181d 75ce25d8fe0235749b0e873452d98d4b5b71caf6a953f5045caf7cb97df30c30";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -640,13 +630,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				E922FA8017F02353008C7968 /* main.m in Sources */,
+				E91C02D418C8AB75001A06E4 /* DSTutorialViewController.m in Sources */,
 				E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */,
 				E929386E18C2FC3B00F28256 /* DSConfig.m in Sources */,
 				E99B83161810474000E7C4CB /* DSAuthViewController.m in Sources */,
+				E91C02E718C952B8001A06E4 /* DSTutorial3ViewController.m in Sources */,
 				E922FA8417F02353008C7968 /* DSAppDelegate.m in Sources */,
 				E922FA9017F02353008C7968 /* DSViewController.m in Sources */,
+				E91C02DF18C8E43F001A06E4 /* DSTutorialRootViewController.m in Sources */,
 				E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */,
 				E9B0E78F17F07B0800544C88 /* DSSettingViewController.m in Sources */,
+				E91C02E218C8E88F001A06E4 /* DSTutorial2ViewController.m in Sources */,
 				E9B0E79317F07DB800544C88 /* DSToolView.m in Sources */,
 				E9B0E79617F0A3CC00544C88 /* DSConstants.m in Sources */,
 				E9B0E79917F0A92800544C88 /* DSDocumentCell.m in Sources */,
@@ -776,7 +770,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
-					/work/github/DeskSlide,
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -793,7 +787,7 @@
 					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8A454A7B-156D-4D25-BEC3-06738D9418F8";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -802,12 +796,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hiroki Yoshifuji (Z8E8FLY423)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
-					/work/github/DeskSlide,
+					"$(SRCROOT)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -820,7 +814,7 @@
 					/work/github/DeskSlide/DeskSlide/Vender,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6B875F59-6FCD-4AB6-8CDA-C580552377D7";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

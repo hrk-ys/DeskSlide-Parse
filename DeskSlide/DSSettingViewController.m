@@ -15,7 +15,8 @@
 #import <Helpshift.h>
 
 typedef enum {
-   	kDSSettingTableRowContact,
+   	kDSSettingTableRowTutorial,
+    kDSSettingTableRowContact,
 	kDSSettingTableRowVersion,
 	kDSSettingTableRowLogout,
 } kDSSettingTableRows;
@@ -107,6 +108,12 @@ typedef enum {
     LOGTrace;
     
     switch (indexPath.row) {
+        case kDSSettingTableRowTutorial:
+        {
+            UIViewController* vc = [self.storyboard instantiateViewControllerWithIdentifier:@"tutorialView"];
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+            break;
         case kDSSettingTableRowContact:
         {
             [[Helpshift sharedInstance] showConversation:self withOptions:@{ @"name": [[PFUser currentUser] username]}];
