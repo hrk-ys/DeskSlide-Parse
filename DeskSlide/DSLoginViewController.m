@@ -30,7 +30,6 @@
         | PFLogInFieldsDismissButton
         ;
         
-        self.logInView.logo = [self _makeLogoWithFrame:self.logInView.logo.frame];
     }
     return self;
 }
@@ -38,10 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     imageView.image = [UIImage imageNamed:@"bg"];
     [self.view insertSubview:imageView atIndex:0];
-	// Do any additional setup after loading the view.
+    
+    self.logInView.logo = [self _makeLogoWithFrame:self.logInView.logo.frame];
 
 //    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg"]];
 //    self.logInView.usernameField.backgroundColor = [UIColor grayColor];
@@ -75,16 +75,16 @@
     title.textColor = [UIColor whiteColor];
     title.backgroundColor = [UIColor clearColor];
     title.textAlignment = NSTextAlignmentCenter;
-    title.font = [UIFont systemFontOfSize:18.0f];
+    title.font = [UIFont systemFontOfSize:24.0f];
     
-    UILabel* title2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
+    UILabel* title2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 24, 280, 40)];
     title2.text = @"以前登録したユーザ名、パスワードを入力してください";
     title2.numberOfLines = 0;
     title2.textColor = [UIColor whiteColor];
     title2.backgroundColor = [UIColor clearColor];
-    title2.font = [UIFont systemFontOfSize:11.0f];
+    title2.font = [UIFont systemFontOfSize:16.0f];
     title2.textAlignment = NSTextAlignmentCenter;
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 50)];
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [view addSubview:title];
     [view addSubview:title2];
     

@@ -29,7 +29,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIImageView* imageView = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    UIImageView* imageView = [[UIImageView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     imageView.image = [UIImage imageNamed:@"bg"];
     [self.view insertSubview:imageView atIndex:0];
     
@@ -57,14 +57,14 @@
     title.textColor = [UIColor whiteColor];
     title.backgroundColor = [UIColor clearColor];
     title.textAlignment = NSTextAlignmentCenter;
-    title.font = [UIFont systemFontOfSize:18.0f];
+    title.font = [UIFont systemFontOfSize:24.0f];
     
     UILabel* title2 = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, 280, 45)];
     title2.text = @"ユーザ名、パスワードを入力してください。";
     title2.numberOfLines = 0;
     title2.textColor = [UIColor whiteColor];
     title2.backgroundColor = [UIColor clearColor];
-    title2.font = [UIFont systemFontOfSize:11.0f];
+    title2.font = [UIFont systemFontOfSize:16.0f];
     title2.textAlignment = NSTextAlignmentCenter;
     UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 60)];
     [view addSubview:title];

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YAH-AP-wx0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="YAH-AP-wx0">
     <dependencies>
-        <deployment defaultVersion="1552" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,11 +20,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="6wb-eD-fu7" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bgO-7t-QpB" userLabel="AdModView" customClass="GADBannerView">
                                 <rect key="frame" x="0.0" y="20" width="320" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="2xD-gQ-P6B"/>
@@ -31,11 +30,9 @@
                             </view>
                             <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hDw-44-j7m" userLabel="adDisableView">
                                 <rect key="frame" x="0.0" y="70" width="320" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bsq-Dw-ttd">
                                         <rect key="frame" x="15" y="3" width="290" height="24"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <state key="normal" title="Twitterでアプリをシェアすれば広告を非表示にできます"/>
                                         <connections>
@@ -50,7 +47,6 @@
                             </view>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="rdc-8l-Usx">
                                 <rect key="frame" x="0.0" y="20" width="320" height="548"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="BzS-a6-PmY">
                                     <size key="itemSize" width="70" height="70"/>
@@ -68,11 +64,9 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ih8-ry-8PI">
                                                     <rect key="frame" x="5" y="5" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Text Document" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="60" translatesAutoresizingMaskIntoConstraints="NO" id="duk-19-Wgo">
                                                     <rect key="frame" x="5" y="5" width="60" height="60"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,30 +89,24 @@
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q6E-4q-0kc" userLabel="tutorialView">
                                 <rect key="frame" x="0.0" y="203" width="320" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HVK-0p-vQB">
                                         <rect key="frame" x="0.0" y="170" width="320" height="130"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Utz-QL-Yq2">
                                                 <rect key="frame" x="189" y="122" width="7" height="5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ee9-79-QPt">
                                                 <rect key="frame" x="100" y="122" width="7" height="5"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zjS-J9-CH7">
                                                 <rect key="frame" x="102" y="85" width="2" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="142" translatesAutoresizingMaskIntoConstraints="NO" id="wUM-9p-fS0">
                                                 <rect key="frame" x="11" y="44" width="142" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">クリップボードの
 内容を登録</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -127,7 +115,6 @@
                                             </label>
                                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="142" translatesAutoresizingMaskIntoConstraints="NO" id="Mag-Cx-Kdr">
                                                 <rect key="frame" x="149" y="15" width="142" height="42"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <string key="text">ライブラリの
 画像を登録</string>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -136,7 +123,6 @@
                                             </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HIE-Pn-HSI">
                                                 <rect key="frame" x="191" y="56" width="2" height="70"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                             </view>
                                         </subviews>
@@ -155,11 +141,12 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wgh-oV-lG3" userLabel="toolView" customClass="DSToolView">
                                 <rect key="frame" x="20" y="508" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-3z-Xe5" userLabel="textButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2W-3z-Xe5" userLabel="textButton">
                                         <rect key="frame" x="40" y="0.0" width="80" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="5Z1-Jz-cLy"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <state key="normal" title="テキスト">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -172,9 +159,11 @@
                                             <action selector="tappedTextButton:" destination="2" eventType="touchUpInside" id="GSP-UA-iYA"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne2-BG-VmT" userLabel="libraryButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ne2-BG-VmT" userLabel="libraryButton">
                                         <rect key="frame" x="120" y="0.0" width="80" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="9we-l8-AWC"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <state key="normal" title="画像">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -187,9 +176,11 @@
                                             <action selector="tappedLibrary:" destination="2" eventType="touchUpInside" id="XgK-rE-Af7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yB2-Iw-p2X" userLabel="settingButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yB2-Iw-p2X" userLabel="settingButton">
                                         <rect key="frame" x="200" y="0.0" width="80" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="bil-bP-Fv7"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                         <state key="normal" title="設定">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -202,9 +193,12 @@
                                             <segue destination="KwD-2w-4j1" kind="modal" id="Bxz-eb-8B7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q74-BN-MmL" userLabel="refreshButton">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q74-BN-MmL" userLabel="refreshButton">
                                         <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="Ak7-UE-zAH"/>
+                                            <constraint firstAttribute="height" constant="44" id="QFY-Wp-QjK"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                         <state key="normal">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +214,22 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.064705141129032265" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="Ne2-BG-VmT" firstAttribute="width" secondItem="o2W-3z-Xe5" secondAttribute="width" id="2bi-zd-1QM"/>
+                                    <constraint firstItem="yB2-Iw-p2X" firstAttribute="leading" secondItem="Ne2-BG-VmT" secondAttribute="trailing" id="B7j-w0-diI"/>
+                                    <constraint firstItem="o2W-3z-Xe5" firstAttribute="top" secondItem="Wgh-oV-lG3" secondAttribute="top" id="BCi-CU-2RZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="yB2-Iw-p2X" secondAttribute="trailing" id="CcT-oA-P1j"/>
+                                    <constraint firstItem="Q74-BN-MmL" firstAttribute="top" secondItem="Wgh-oV-lG3" secondAttribute="top" id="H0u-43-1du"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q74-BN-MmL" secondAttribute="bottom" id="H2g-wf-5oc"/>
+                                    <constraint firstItem="Ne2-BG-VmT" firstAttribute="width" secondItem="yB2-Iw-p2X" secondAttribute="width" id="Heu-ke-wlF"/>
+                                    <constraint firstItem="Ne2-BG-VmT" firstAttribute="leading" secondItem="o2W-3z-Xe5" secondAttribute="trailing" id="IN2-Fn-GNx"/>
+                                    <constraint firstItem="Q74-BN-MmL" firstAttribute="leading" secondItem="Wgh-oV-lG3" secondAttribute="leading" id="Mn3-mW-E4S"/>
+                                    <constraint firstItem="yB2-Iw-p2X" firstAttribute="leading" secondItem="Ne2-BG-VmT" secondAttribute="trailing" id="NQr-oz-5Uq"/>
+                                    <constraint firstItem="o2W-3z-Xe5" firstAttribute="leading" secondItem="Q74-BN-MmL" secondAttribute="trailing" id="OST-Eu-blP"/>
                                     <constraint firstAttribute="height" constant="44" id="Ul3-jN-L2d"/>
+                                    <constraint firstItem="Ne2-BG-VmT" firstAttribute="top" secondItem="Wgh-oV-lG3" secondAttribute="top" id="d5L-IA-MaC"/>
+                                    <constraint firstAttribute="bottom" secondItem="yB2-Iw-p2X" secondAttribute="bottom" id="e7e-D9-0PC"/>
+                                    <constraint firstItem="yB2-Iw-p2X" firstAttribute="top" secondItem="Wgh-oV-lG3" secondAttribute="top" id="uhz-50-gZh"/>
+                                    <constraint firstItem="o2W-3z-Xe5" firstAttribute="leading" secondItem="Q74-BN-MmL" secondAttribute="trailing" id="xF4-b1-Uhx"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -285,11 +294,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg_w.png" translatesAutoresizingMaskIntoConstraints="NO" id="otS-NX-UFQ" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <imageView contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JhQ-Aq-NLj">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="exM-aY-oSI" appends="YES" id="clk-YH-Vac"/>
@@ -297,7 +304,6 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWH-Gh-4y8">
                                 <rect key="frame" x="20" y="0.0" width="280" height="492"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -305,11 +311,9 @@
                             </textView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbD-Ln-8sz" userLabel="toolView" customClass="DSToolView">
                                 <rect key="frame" x="20" y="512" width="280" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OhJ-ce-2Sa" userLabel="closeButton">
                                         <rect key="frame" x="190" y="0.0" width="90" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="jr0-JS-N6I"/>
                                         </constraints>
@@ -327,7 +331,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dig-oN-OD4">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="80" id="0YH-ra-QvD"/>
                                         </constraints>
@@ -345,7 +348,6 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F5c-JD-UfT">
                                         <rect key="frame" x="80" y="0.0" width="110" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Delete">
@@ -415,24 +417,22 @@
         <!--Setting View Controller-->
         <scene sceneID="G0Q-Bp-NvH">
             <objects>
-                <tableViewController id="KwD-2w-4j1" customClass="DSSettingViewController" sceneMemberID="viewController">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="KwD-2w-4j1" customClass="DSSettingViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="grouped" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="f37-eV-cfs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" id="BQ0-Tg-tc4">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="186"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="193"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="DeskSlideとは" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRO-2b-pP1">
-                                    <rect key="frame" x="20" y="20" width="107" height="21"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="20" y="40" width="107" height="21"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="fJe-C6-ah7">
-                                    <rect key="frame" x="20" y="49" width="280" height="72"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="20" y="69" width="280" height="72"/>
                                     <string key="text">iPhoneとPC間のデータ転送が簡単に行えます。 
 
 URLなどのテキストや、画像ファイルなどが転送できます。 
@@ -441,8 +441,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8vG-Y7-aqL">
-                                    <rect key="frame" x="10" y="129" width="299" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <rect key="frame" x="10" y="149" width="299" height="44"/>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <state key="normal" title="http://desk-slide.hrk-ys.net/">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -462,9 +461,12 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                             <rect key="frame" x="0.0" y="372" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aN-R4i" userLabel="settingButton">
-                                    <rect key="frame" x="190" y="0.0" width="90" height="44"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="toX-aN-R4i" userLabel="settingButton">
+                                    <rect key="frame" x="230" y="0.0" width="90" height="44"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="90" id="li5-JD-cvO"/>
+                                        <constraint firstAttribute="height" constant="44" id="pny-s8-mjW"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                     <state key="normal" title="Close">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -479,6 +481,11 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="toX-aN-R4i" firstAttribute="top" secondItem="Cpf-9p-7Uc" secondAttribute="top" id="0Vz-Hf-cIr"/>
+                                <constraint firstAttribute="trailing" secondItem="toX-aN-R4i" secondAttribute="trailing" id="A6o-OH-ZLG"/>
+                                <constraint firstAttribute="bottom" secondItem="toX-aN-R4i" secondAttribute="bottom" id="civ-iM-Qc2"/>
+                            </constraints>
                         </view>
                         <sections>
                             <tableViewSection id="jUy-3X-j8f">
@@ -494,7 +501,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -512,7 +519,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <rect key="frame" x="15" y="0.0" width="270" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -530,7 +537,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <rect key="frame" x="15" y="11" width="58" height="21"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cTe-Qa-Gma">
@@ -555,7 +562,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </label>
                                             </subviews>
@@ -623,24 +630,20 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-BY-Q1N" userLabel="bg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="qBK-BY-Q1N" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xLG-rt-Mzd">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1.スマホからテキストや画像を登録する" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="Mfs-CX-yo5">
                                         <rect key="frame" x="25" y="3" width="286" height="38"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="ss0-EG-3Qa">
                                         <rect key="frame" x="20" y="92" width="286" height="51"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">テキスト：登録したいテキストをコピーしておく
 画像：アルバムから選択します</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -649,7 +652,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="↓ここから登録" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drg-Xc-R4N">
                                         <rect key="frame" x="85" y="415" width="139" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="1qt-jM-3Zi"/>
                                         </constraints>
@@ -659,11 +661,12 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="naE-Yj-QbS" userLabel="toolView" customClass="DSToolView">
                                         <rect key="frame" x="20" y="444" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPa-sh-ZhG" userLabel="textButton">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RPa-sh-ZhG" userLabel="textButton">
                                                 <rect key="frame" x="40" y="0.0" width="80" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="xo4-5n-5nD"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="テキスト">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -676,9 +679,11 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <action selector="tappedTextButton:" destination="Nr1-kq-j3Q" eventType="touchUpInside" id="ubj-WB-XWp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c09-j5-sFk" userLabel="libraryButton">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c09-j5-sFk" userLabel="libraryButton">
                                                 <rect key="frame" x="120" y="0.0" width="80" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="44" id="WB0-4q-12i"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="画像">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -694,9 +699,12 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <segue destination="TOl-9Y-zyk" kind="push" identifier="" id="ILa-Bo-lRe"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEs-Xb-gVZ" userLabel="settingButton">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YEs-Xb-gVZ" userLabel="settingButton">
                                                 <rect key="frame" x="200" y="0.0" width="80" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="80" id="cJQ-Vt-5cl"/>
+                                                    <constraint firstAttribute="height" constant="44" id="hbh-ZQ-TSe"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                 <state key="normal" title="設定">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -709,9 +717,12 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ0-Ut-xoX" userLabel="refreshButton">
+                                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJ0-Ut-xoX" userLabel="refreshButton">
                                                 <rect key="frame" x="0.0" y="0.0" width="40" height="44"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="CPK-ZE-4hu"/>
+                                                    <constraint firstAttribute="height" constant="44" id="yVJ-ek-Yie"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                                 <state key="normal">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -724,7 +735,22 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                         </subviews>
                                         <color key="backgroundColor" white="0.064705141130000005" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="YEs-Xb-gVZ" firstAttribute="top" secondItem="naE-Yj-QbS" secondAttribute="top" id="2kh-8i-yxP"/>
+                                            <constraint firstItem="TJ0-Ut-xoX" firstAttribute="leading" secondItem="naE-Yj-QbS" secondAttribute="leading" id="6Lx-Yd-ILl"/>
+                                            <constraint firstItem="YEs-Xb-gVZ" firstAttribute="leading" secondItem="c09-j5-sFk" secondAttribute="trailing" id="7Bj-ng-qnp"/>
+                                            <constraint firstItem="c09-j5-sFk" firstAttribute="leading" secondItem="RPa-sh-ZhG" secondAttribute="trailing" id="MAH-uF-DML"/>
+                                            <constraint firstItem="c09-j5-sFk" firstAttribute="top" secondItem="naE-Yj-QbS" secondAttribute="top" id="N1A-aa-ERH"/>
+                                            <constraint firstAttribute="bottom" secondItem="TJ0-Ut-xoX" secondAttribute="bottom" id="V1a-Pm-4wq"/>
+                                            <constraint firstItem="RPa-sh-ZhG" firstAttribute="width" secondItem="c09-j5-sFk" secondAttribute="width" id="Wzk-SR-J3I"/>
+                                            <constraint firstAttribute="bottom" secondItem="RPa-sh-ZhG" secondAttribute="bottom" id="Xa4-SR-UQ0"/>
+                                            <constraint firstAttribute="trailing" secondItem="YEs-Xb-gVZ" secondAttribute="trailing" id="b2J-01-C3w"/>
+                                            <constraint firstItem="c09-j5-sFk" firstAttribute="leading" secondItem="RPa-sh-ZhG" secondAttribute="trailing" id="cpg-iQ-F7Q"/>
+                                            <constraint firstItem="RPa-sh-ZhG" firstAttribute="leading" secondItem="TJ0-Ut-xoX" secondAttribute="trailing" id="ePe-b7-7yu"/>
+                                            <constraint firstItem="TJ0-Ut-xoX" firstAttribute="top" secondItem="naE-Yj-QbS" secondAttribute="top" id="k67-M8-KjW"/>
                                             <constraint firstAttribute="height" constant="44" id="nJx-sR-NuU"/>
+                                            <constraint firstAttribute="bottom" secondItem="YEs-Xb-gVZ" secondAttribute="bottom" id="ppr-9p-gdO"/>
+                                            <constraint firstItem="RPa-sh-ZhG" firstAttribute="top" secondItem="naE-Yj-QbS" secondAttribute="top" id="xDi-fQ-6Qo"/>
+                                            <constraint firstAttribute="bottom" secondItem="c09-j5-sFk" secondAttribute="bottom" id="zmU-QL-VRl"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -741,10 +767,14 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="qBK-BY-Q1N" secondAttribute="trailing" constant="-16" id="3kT-Kf-eYy"/>
                             <constraint firstItem="xLG-rt-Mzd" firstAttribute="top" secondItem="FlU-F1-YuP" secondAttribute="top" constant="64" id="F3M-nK-NgC"/>
+                            <constraint firstItem="qBK-BY-Q1N" firstAttribute="leading" secondItem="FlU-F1-YuP" secondAttribute="leadingMargin" constant="-16" id="lbv-xl-yCh"/>
                             <constraint firstItem="xLG-rt-Mzd" firstAttribute="leading" secondItem="FlU-F1-YuP" secondAttribute="leading" id="nFe-5N-vGp"/>
+                            <constraint firstItem="qBK-BY-Q1N" firstAttribute="top" secondItem="FlU-F1-YuP" secondAttribute="topMargin" id="wPZ-Iw-QrR"/>
                             <constraint firstItem="QkR-n9-KwZ" firstAttribute="top" secondItem="xLG-rt-Mzd" secondAttribute="bottom" id="xQY-1Q-qNk"/>
                             <constraint firstAttribute="trailing" secondItem="xLG-rt-Mzd" secondAttribute="trailing" id="yTf-Hv-7eV"/>
+                            <constraint firstItem="QkR-n9-KwZ" firstAttribute="top" secondItem="qBK-BY-Q1N" secondAttribute="bottom" id="zJj-zm-0VO"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -763,7 +793,7 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
             </objects>
             <point key="canvasLocation" x="951" y="-707"/>
         </scene>
-        <!--Tutorial2 View Controller - PCログイン-->
+        <!--PCログイン-->
         <scene sceneID="3BZ-oc-q4s">
             <objects>
                 <viewController storyboardIdentifier="tutorialView2" title="PCログイン" automaticallyAdjustsScrollViewInsets="NO" id="TOl-9Y-zyk" customClass="DSTutorial2ViewController" sceneMemberID="viewController">
@@ -777,15 +807,12 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Iaa-pE-xQX" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="545" translatesAutoresizingMaskIntoConstraints="NO" id="lNM-zd-mOy">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="AdU-gR-idm">
                                         <rect key="frame" x="17" y="8" width="286" height="37"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <string key="text">2.PCブラウザでDeskSlideにアクセスする
 　</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -794,18 +821,15 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pc_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="p5W-NE-U7w">
                                         <rect key="frame" x="40" y="86" width="240" height="180"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="先ほど登録したユーザ名とパスワードでログインすると、登録したテキストや画像がPC上で見る事ができます。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="I7X-jd-LNq">
                                         <rect key="frame" x="28" y="274" width="280" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pc_index.png" translatesAutoresizingMaskIntoConstraints="NO" id="XP5-PD-VUS">
                                         <rect key="frame" x="40" y="352" width="240" height="180"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="fcQ-Yl-ytu"/>
                                             <constraint firstAttribute="width" constant="240" id="lgz-4A-G4e"/>
@@ -813,7 +837,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heM-pC-AXo">
                                         <rect key="frame" x="20" y="48" width="280" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <state key="normal" title="http://desk-slide.hrk-ys.net/">
                                             <color key="titleColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
@@ -870,17 +893,14 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kay-Ci-i3K" userLabel="bg">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="bg.png" translatesAutoresizingMaskIntoConstraints="NO" id="Kay-Ci-i3K" userLabel="bg">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XiH-cT-5Yx">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-gG-ayW">
                                         <rect key="frame" x="70" y="518" width="180" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="d1Q-I6-fD4"/>
                                         </constraints>
@@ -894,25 +914,21 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="3.プレビュー画面を確認する" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="286" translatesAutoresizingMaskIntoConstraints="NO" id="jFg-ks-Zld">
                                         <rect key="frame" x="20" y="71" width="286" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="スマホやPCブラウザから登録した内容は一覧ページから確認できます" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="nbR-FO-A4l">
                                         <rect key="frame" x="20" y="129" width="280" height="54"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gn0-0G-r5k">
                                         <rect key="frame" x="110" y="191" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Text Document" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" preferredMaxLayoutWidth="100" translatesAutoresizingMaskIntoConstraints="NO" id="cbW-Ha-98y">
                                         <rect key="frame" x="110" y="191" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -920,7 +936,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jX-eS-Syz">
                                         <rect key="frame" x="110" y="191" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -930,7 +945,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="↑ここをタップ" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8F-Q9-pPH">
                                         <rect key="frame" x="153" y="299" width="135" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <color key="textColor" red="0.9529411793" green="0.62352943419999995" blue="0.098039217289999994" alpha="1" colorSpace="deviceRGB"/>
                                         <nil key="highlightedColor"/>
@@ -946,10 +960,14 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ox6-sa-OtZ" firstAttribute="top" secondItem="Kay-Ci-i3K" secondAttribute="bottom" id="8jB-uu-9as"/>
                             <constraint firstItem="ox6-sa-OtZ" firstAttribute="top" secondItem="XiH-cT-5Yx" secondAttribute="bottom" id="Ihi-MD-ngv"/>
+                            <constraint firstItem="Kay-Ci-i3K" firstAttribute="leading" secondItem="phR-wc-sSS" secondAttribute="leadingMargin" constant="-16" id="Shg-kB-Hbx"/>
                             <constraint firstItem="XiH-cT-5Yx" firstAttribute="top" secondItem="phR-wc-sSS" secondAttribute="top" id="VVz-Gz-QWl"/>
                             <constraint firstItem="XiH-cT-5Yx" firstAttribute="leading" secondItem="phR-wc-sSS" secondAttribute="leading" id="YwS-uV-KQQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Kay-Ci-i3K" secondAttribute="trailing" constant="-16" id="bs7-Hp-X7s"/>
                             <constraint firstAttribute="trailing" secondItem="XiH-cT-5Yx" secondAttribute="trailing" id="i1d-fy-3Xd"/>
+                            <constraint firstItem="Kay-Ci-i3K" firstAttribute="top" secondItem="phR-wc-sSS" secondAttribute="topMargin" id="zYM-hC-09o"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SuB-Ms-VXx"/>
@@ -976,6 +994,6 @@ iPhoneアプリとブラウザ間でやり取りできるため、どんなPCで
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="vuU-vO-5Jt"/>
+        <segue reference="m1j-d7-Bh4"/>
     </inferredMetricsTieBreakers>
 </document>

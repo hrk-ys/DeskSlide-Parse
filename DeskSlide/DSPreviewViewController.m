@@ -133,6 +133,8 @@
         UIPasteboard *pastebd = [UIPasteboard generalPasteboard];
         [pastebd setValue:[self.object objectForKey:kDSDocumentTypeText] forPasteboardType: @"public.utf8-plain-text"];
         
+        [SVProgressHUD showSuccessWithStatus:@"コピーしました"];
+
     } else if ([DSUtils isFileObject:self.object]) {
         UIImageWriteToSavedPhotosAlbum(self.imageView.image, self, @selector(savingImageIsFinished:didFinishSavingWithError:contextInfo:), nil);
         [SVProgressHUD show];

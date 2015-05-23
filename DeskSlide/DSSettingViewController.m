@@ -46,10 +46,11 @@ typedef enum {
     } else {
         self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_w"]];
     }
+    self.view.backgroundColor = [UIColor whiteColor];
     
     UIView* toolView = self.tableView.tableFooterView;
     self.tableView.tableFooterView = nil;
-    toolView.frame = CGRectMake(20, self.view.height - 12 - toolView.height, 280, 44);
+    toolView.frame = CGRectMake(20, self.view.height - 12 - toolView.height, [UIScreen mainScreen].bounds.size.width-40, 44);
     [self.view addSubview:toolView];
     
     //FAKIconRemoveCircle, FAKIconRemoveSign

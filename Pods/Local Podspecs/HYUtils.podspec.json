@@ -1,0 +1,25 @@
+{
+  "name": "HYUtils",
+  "version": "0.0.4",
+  "summary": "HYUtils.",
+  "license": "MIT",
+  "authors": "hrk-ys",
+  "platforms": {
+    "ios": "5.0"
+  },
+  "requires_arc": true,
+  "source": {
+    "git": "git@github.com:hrk-ys/HYUtils.git",
+    "tag": "0.0.4"
+  },
+  "source_files": [
+    "HYUtils",
+    "HYUtils/**/*.{h,m}"
+  ],
+  "exclude_files": "HYUtilsDemo",
+  "dependencies": {
+    "CocoaLumberjack": [
+
+    ]
+  }
+}

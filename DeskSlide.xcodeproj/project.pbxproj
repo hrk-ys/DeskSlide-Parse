@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0086357FE7384BDE9C2BFDF3 /* libPods-DeskSlide Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */; };
 		428906B4306148B29122289D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2BE02A234641CD9A2FB596 /* libPods.a */; };
 		E91C02D418C8AB75001A06E4 /* DSTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */; };
 		E91C02D618C8C508001A06E4 /* close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E91C02D518C8C508001A06E4 /* close@2x.png */; };
@@ -31,12 +30,6 @@
 		E922FAC917F04885008C7968 /* DSLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E922FAC817F04885008C7968 /* DSLoginViewController.m */; };
 		E929386E18C2FC3B00F28256 /* DSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = E929386D18C2FC3B00F28256 /* DSConfig.m */; };
 		E929387418C3116000F28256 /* btn_w@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E929387318C3116000F28256 /* btn_w@2x.png */; };
-		E9590AF11807054100594FFB /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9590AF01807054100594FFB /* XCTest.framework */; };
-		E9590AF21807054100594FFB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7517F02353008C7968 /* Foundation.framework */; };
-		E9590AF31807054100594FFB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E922FA7317F02353008C7968 /* UIKit.framework */; };
-		E9590AF91807054100594FFB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9590AF71807054100594FFB /* InfoPlist.strings */; };
-		E9590B0418070BDE00594FFB /* LoginTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = E9590B0318070BDE00594FFB /* LoginTestCase.m */; };
-		E9590B0718070C2300594FFB /* KIFUITestActor+EXAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E9590B0618070C2300594FFB /* KIFUITestActor+EXAdditions.m */; };
 		E97B2EDC18B7AA9300795D07 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E97B2EDB18B7AA9300795D07 /* Settings.bundle */; };
 		E97B2EE118B7B92200795D07 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = E97B2EDD18B7B92200795D07 /* Icon-Small-50.png */; };
 		E97B2EE218B7B92300795D07 /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E97B2EDE18B7B92200795D07 /* Icon-Small-50@2x.png */; };
@@ -58,7 +51,6 @@
 		E9B0E7B417F8FA4600544C88 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B317F8FA4600544C88 /* CoreData.framework */; };
 		E9B0E7B617F8FA5500544C88 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */; };
 		E9B0E7B817F8FA5E00544C88 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7B717F8FA5E00544C88 /* libz.dylib */; };
-		E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */; };
 		E9B0E7CA17F9CAF400544C88 /* Icon-60.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E7C617F9CAF400544C88 /* Icon-60.png */; };
 		E9B0E7CB17F9CAF400544C88 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E7C717F9CAF400544C88 /* Icon-60@2x.png */; };
 		E9B0E7CC17F9CAF400544C88 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B0E7C817F9CAF400544C88 /* Icon.png */; };
@@ -69,22 +61,17 @@
 		E9C7804A18B8FC2600C4E79C /* HelpshiftLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9C7803E18B8FC2600C4E79C /* HelpshiftLocalizable.strings */; };
 		E9C7805218B9144D00C4E79C /* HelpshiftConfig.plist in Resources */ = {isa = PBXBuildFile; fileRef = E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */; };
 		E9C7805618BA27A800C4E79C /* DSTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = E9C7805518BA27A800C4E79C /* DSTracker.m */; };
+		E9DDB9F81B0CC0010035C644 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9DDB9F71B0CC0010035C644 /* Crashlytics.framework */; };
+		E9DDB9FA1B0CC1D00035C644 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DDB9F91B0CC1D00035C644 /* Launch Screen.xib */; };
 		E9DFBBC1181193F100153FA6 /* DSSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		E9590AFD1807054100594FFB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = E922FA6817F02353008C7968 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = E922FA6F17F02353008C7968;
-			remoteInfo = DeskSlide;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeskSlide Tests.xcconfig"; path = "Pods/Pods-DeskSlide Tests.xcconfig"; sourceTree = "<group>"; };
+		84754A832F9215CFF56EED63 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ACD6C658E78D4BB58CD3EE37 /* libPods-DeskSlide Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-DeskSlide Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2B6486EEE103E7EB688C986 /* Pods-DeskSlide Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeskSlide Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DeskSlide Tests/Pods-DeskSlide Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		C4419B52EE0C250EB0527334 /* Pods-DeskSlide Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DeskSlide Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DeskSlide Tests/Pods-DeskSlide Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DF44B7BEEA2CB63DEF4A80D4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		E91C02D218C8AB75001A06E4 /* DSTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTutorialViewController.h; sourceTree = "<group>"; };
 		E91C02D318C8AB75001A06E4 /* DSTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTutorialViewController.m; sourceTree = "<group>"; };
 		E91C02D518C8C508001A06E4 /* close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close@2x.png"; sourceTree = "<group>"; };
@@ -119,7 +106,6 @@
 		E929386D18C2FC3B00F28256 /* DSConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSConfig.m; sourceTree = "<group>"; };
 		E929386F18C3059500F28256 /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		E929387318C3116000F28256 /* btn_w@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_w@2x.png"; sourceTree = "<group>"; };
-		E9590AEF1807054100594FFB /* DeskSlide Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DeskSlide Tests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9590AF01807054100594FFB /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		E9590AF61807054100594FFB /* DeskSlide Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DeskSlide Tests-Info.plist"; sourceTree = "<group>"; };
 		E9590AF81807054100594FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -156,7 +142,6 @@
 		E9B0E7B317F8FA4600544C88 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E9B0E7B717F8FA5E00544C88 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = DeskSlide/Vender/Crashlytics.framework; sourceTree = "<group>"; };
 		E9B0E7C617F9CAF400544C88 /* Icon-60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60.png"; sourceTree = "<group>"; };
 		E9B0E7C717F9CAF400544C88 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		E9B0E7C817F9CAF400544C88 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
@@ -168,9 +153,10 @@
 		E9C7805018B9144D00C4E79C /* HelpshiftConfig.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = HelpshiftConfig.plist; sourceTree = "<group>"; };
 		E9C7805418BA27A800C4E79C /* DSTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSTracker.h; sourceTree = "<group>"; };
 		E9C7805518BA27A800C4E79C /* DSTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSTracker.m; sourceTree = "<group>"; };
+		E9DDB9F71B0CC0010035C644 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		E9DDB9F91B0CC1D00035C644 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		E9DFBBBF181193F100153FA6 /* DSSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSSignUpViewController.h; sourceTree = "<group>"; };
 		E9DFBBC0181193F100153FA6 /* DSSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSSignUpViewController.m; sourceTree = "<group>"; };
-		FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		FB2BE02A234641CD9A2FB596 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -185,30 +171,30 @@
 				E9B0E7DF17FC77DF00544C88 /* AudioToolbox.framework in Frameworks */,
 				E9B0E7DD17FC77D600544C88 /* MessageUI.framework in Frameworks */,
 				E9B0E7CF17FBA65400544C88 /* iAd.framework in Frameworks */,
+				E9DDB9F81B0CC0010035C644 /* Crashlytics.framework in Frameworks */,
 				E9B0E7B817F8FA5E00544C88 /* libz.dylib in Frameworks */,
 				E9B0E7B617F8FA5500544C88 /* SystemConfiguration.framework in Frameworks */,
 				E9B0E7B417F8FA4600544C88 /* CoreData.framework in Frameworks */,
 				E922FA7417F02353008C7968 /* UIKit.framework in Frameworks */,
 				E922FA7617F02353008C7968 /* Foundation.framework in Frameworks */,
 				428906B4306148B29122289D /* libPods.a in Frameworks */,
-				E9B0E7BB17F8FFD300544C88 /* Crashlytics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E9590AEC1807054100594FFB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9590AF11807054100594FFB /* XCTest.framework in Frameworks */,
-				E9590AF31807054100594FFB /* UIKit.framework in Frameworks */,
-				E9590AF21807054100594FFB /* Foundation.framework in Frameworks */,
-				0086357FE7384BDE9C2BFDF3 /* libPods-DeskSlide Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ABC0D66A9D79C107763A2A52 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				84754A832F9215CFF56EED63 /* Pods.debug.xcconfig */,
+				DF44B7BEEA2CB63DEF4A80D4 /* Pods.release.xcconfig */,
+				C2B6486EEE103E7EB688C986 /* Pods-DeskSlide Tests.debug.xcconfig */,
+				C4419B52EE0C250EB0527334 /* Pods-DeskSlide Tests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E91C02DC18C8E42A001A06E4 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,8 +217,7 @@
 				E9590AF41807054100594FFB /* DeskSlide Tests */,
 				E922FA7217F02353008C7968 /* Frameworks */,
 				E922FA7117F02353008C7968 /* Products */,
-				FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */,
-				3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */,
+				ABC0D66A9D79C107763A2A52 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -240,7 +225,6 @@
 			isa = PBXGroup;
 			children = (
 				E922FA7017F02353008C7968 /* DeskSlide.app */,
-				E9590AEF1807054100594FFB /* DeskSlide Tests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +232,7 @@
 		E922FA7217F02353008C7968 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9DDB9F71B0CC0010035C644 /* Crashlytics.framework */,
 				E929386F18C3059500F28256 /* Reveal.framework */,
 				E99B831E1810665000E7C4CB /* QuartzCore.framework */,
 				E99B831C1810663F00E7C4CB /* CFNetwork.framework */,
@@ -257,7 +242,6 @@
 				E9B0E7B717F8FA5E00544C88 /* libz.dylib */,
 				E9B0E7B517F8FA5500544C88 /* SystemConfiguration.framework */,
 				E9B0E7B317F8FA4600544C88 /* CoreData.framework */,
-				E9B0E7BA17F8FFD300544C88 /* Crashlytics.framework */,
 				E922FA7317F02353008C7968 /* UIKit.framework */,
 				E922FA7517F02353008C7968 /* Foundation.framework */,
 				E922FA7717F02353008C7968 /* CoreGraphics.framework */,
@@ -294,6 +278,7 @@
 				E9B0E7A717F8F76600544C88 /* DSUtils.m */,
 				E929386C18C2FC3B00F28256 /* DSConfig.h */,
 				E929386D18C2FC3B00F28256 /* DSConfig.m */,
+				E9DDB9F91B0CC1D00035C644 /* Launch Screen.xib */,
 			);
 			path = DeskSlide;
 			sourceTree = "<group>";
@@ -439,26 +424,6 @@
 			productReference = E922FA7017F02353008C7968 /* DeskSlide.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E9590AEE1807054100594FFB /* DeskSlide Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E9590B011807054100594FFB /* Build configuration list for PBXNativeTarget "DeskSlide Tests" */;
-			buildPhases = (
-				DE9BA8283E0946D2A9CACFA6 /* Check Pods Manifest.lock */,
-				E9590AEB1807054100594FFB /* Sources */,
-				E9590AEC1807054100594FFB /* Frameworks */,
-				E9590AED1807054100594FFB /* Resources */,
-				9962771FC1F54ED995FFDDEF /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E9590AFE1807054100594FFB /* PBXTargetDependency */,
-			);
-			name = "DeskSlide Tests";
-			productName = "DeskSlide Tests";
-			productReference = E9590AEF1807054100594FFB /* DeskSlide Tests.octest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -471,9 +436,6 @@
 				TargetAttributes = {
 					E922FA6F17F02353008C7968 = {
 						DevelopmentTeam = Z8E8FLY423;
-					};
-					E9590AEE1807054100594FFB = {
-						TestTargetID = E922FA6F17F02353008C7968;
 					};
 				};
 			};
@@ -500,7 +462,6 @@
 			projectRoot = "";
 			targets = (
 				E922FA6F17F02353008C7968 /* DeskSlide */,
-				E9590AEE1807054100594FFB /* DeskSlide Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -519,6 +480,7 @@
 				E929387418C3116000F28256 /* btn_w@2x.png in Resources */,
 				E922FA8817F02353008C7968 /* Default@2x.png in Resources */,
 				E922FA8A17F02353008C7968 /* Default-568h@2x.png in Resources */,
+				E9DDB9FA1B0CC1D00035C644 /* Launch Screen.xib in Resources */,
 				E99B83171810474000E7C4CB /* DSAuthViewController.xib in Resources */,
 				E97B2EDC18B7AA9300795D07 /* Settings.bundle in Resources */,
 				E922FA8D17F02353008C7968 /* MainStoryboard.storyboard in Resources */,
@@ -538,32 +500,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9590AED1807054100594FFB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9590AF91807054100594FFB /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		9962771FC1F54ED995FFDDEF /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-DeskSlide Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B2DD17FB0C5F4DAF912F2792 /* Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -591,22 +530,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DE9BA8283E0946D2A9CACFA6 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9B0E7B917F8FFB700544C88 /* ShellScript */ = {
@@ -650,24 +574,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E9590AEB1807054100594FFB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E9590B0418070BDE00594FFB /* LoginTestCase.m in Sources */,
-				E9590B0718070C2300594FFB /* KIFUITestActor+EXAdditions.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		E9590AFE1807054100594FFB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = E922FA6F17F02353008C7968 /* DeskSlide */;
-			targetProxy = E9590AFD1807054100594FFB /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E922FA7C17F02353008C7968 /* InfoPlist.strings */ = {
@@ -763,7 +670,7 @@
 		};
 		E922FA9417F02353008C7968 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
+			baseConfigurationReference = 84754A832F9215CFF56EED63 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -771,6 +678,7 @@
 					"$(inherited)",
 					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -794,7 +702,7 @@
 		};
 		E922FA9517F02353008C7968 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FADB12D7AD884D52A2B2A2FF /* Pods.xcconfig */;
+			baseConfigurationReference = DF44B7BEEA2CB63DEF4A80D4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
@@ -802,6 +710,7 @@
 					"$(inherited)",
 					"\\\"$(SRCROOT)/DeskSlide/Vender\\\"",
 					"$(SRCROOT)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DeskSlide/DeskSlide-Prefix.pch";
@@ -816,69 +725,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		E9590AFF1807054100594FFB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeskSlide.app/DeskSlide";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DeskSlide Tests/DeskSlide Tests-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DeskSlide Tests/DeskSlide Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		E9590B001807054100594FFB /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3EC8C144E41146E0B0C6ED14 /* Pods-DeskSlide Tests.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DeskSlide.app/DeskSlide";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DeskSlide Tests/DeskSlide Tests-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "DeskSlide Tests/DeskSlide Tests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -899,15 +745,6 @@
 			buildConfigurations = (
 				E922FA9417F02353008C7968 /* Debug */,
 				E922FA9517F02353008C7968 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E9590B011807054100594FFB /* Build configuration list for PBXNativeTarget "DeskSlide Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E9590AFF1807054100594FFB /* Debug */,
-				E9590B001807054100594FFB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
